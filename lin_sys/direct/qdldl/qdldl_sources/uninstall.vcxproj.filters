@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Nuevo_Build_OSQP\CMakeFiles\b64662e3b6f29972af3b409b083c535f\uninstall.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\OxfordSolver\osqp\lin_sys\direct\qdldl\qdldl_sources\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Nuevo_Build_OSQP\lin_sys\direct\qdldl\qdldl_sources\CMakeFiles\uninstall" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{205DA90E-B5F5-3FC8-8DB7-DD31A6ED6FF7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

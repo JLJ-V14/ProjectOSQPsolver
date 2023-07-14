@@ -1,0 +1,5 @@
+﻿  Configurar_Problema.c
+Configurar_Problema.c(30,3): warning C4013: 'Crear_Array_Dinamico_Double' undefined; assuming extern returning int
+Configurar_Problema.c(71,3): warning C4013: 'Calcular_Variables_Vehiculos' undefined; assuming extern returning int
+Configurar_Problema.c(85,55): warning C4028: formal parameter 1 different from declaration
+Configurar_Problema.c(87,25): warning C4028: formal parameter 8 different from declaration

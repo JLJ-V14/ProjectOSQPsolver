@@ -1,0 +1,10 @@
+^D:\NUEVO_BUILD_OSQP\CMAKEFILES\30C46665DABB6476A8069F6A81F88C57\GENERATE.STAMP.RULE
+setlocal
+D:\CMAKE\bin\cmake.exe -SD:/OxfordSolver/osqp -BD:/Nuevo_Build_OSQP --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Nuevo_Build_OSQP/osqp.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

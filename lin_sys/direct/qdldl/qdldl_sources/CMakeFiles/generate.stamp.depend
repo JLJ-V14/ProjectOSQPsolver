@@ -1,0 +1,7 @@
+# CMake generation dependency list for this directory.
+D:/CMAKE/share/cmake-3.26/Modules/CMakePackageConfigHelpers.cmake
+D:/CMAKE/share/cmake-3.26/Modules/GNUInstallDirs.cmake
+D:/CMAKE/share/cmake-3.26/Modules/WriteBasicConfigVersionFile.cmake
+D:/OxfordSolver/osqp/lin_sys/direct/qdldl/qdldl_sources/CMakeLists.txt
+D:/OxfordSolver/osqp/lin_sys/direct/qdldl/qdldl_sources/configure/cmake/cmake_uninstall.cmake.in
+D:/OxfordSolver/osqp/lin_sys/direct/qdldl/qdldl_sources/configure/qdldl_types.h.in

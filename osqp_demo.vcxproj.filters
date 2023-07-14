@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\OxfordSolver\osqp\examples\osqp_demo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Obtener_Info_Entrada.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Preparar_Arrays.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Optimizacion_Cuadratica.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Configurar_Ajustes_Problema.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Configurar_Problema.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Calcular_Matriz_P.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Calcular_Matriz_A.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Calcular_Vector_L_U.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Calcular_Vector_Q.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\OxfordSolver\osqp\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{AFD98B65-EAF3-3A09-905F-1CEF0E2B8C20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{c59ecd93-eeec-4163-b3a0-08c56768b63e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Obtener_Info_Entrada.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tipos_Optimizacion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Preparar_Arrays.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Optimizacion_Cuadratica.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Configurar_Ajustes_Problema.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Calcular_Matriz_P.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Calcular_Matriz_A.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="calcular_restricciones.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Calcular_Vector_L_U.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Calcular_Vector_Q.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Configurar_Problema.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

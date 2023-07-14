@@ -1,0 +1,10 @@
+^D:\OXFORDSOLVER\OSQP\LIN_SYS\DIRECT\QDLDL\CMAKELISTS.TXT
+setlocal
+D:\CMAKE\bin\cmake.exe -SD:/OxfordSolver/osqp -BD:/Nuevo_Build_OSQP --check-stamp-file D:/Nuevo_Build_OSQP/lin_sys/direct/qdldl/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
