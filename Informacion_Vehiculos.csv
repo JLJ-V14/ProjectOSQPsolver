@@ -1,0 +1,10 @@
+Terminal,Tipo Dispositivo,ID Vehiculo,Modo Carga,Capacidad Bateria,Bateria Inicial,Bateria Final,Maxima Potencia,Dia Inicial Carga,Hora Inicial Carga,Minuto Inicial Carga,Dia Final Carga,Hora  Final Carga,Minuto Final Carga,¿Cargar Batería?
+1,Vehiculo,1,Normal,80,0.1,0.9,40,1,1,0,2,23,0,No
+2,Vehiculo,1,Normal,80,0.1,0.9,40,1,1,0,2,23,0,No
+3,Vehiculo,1,Normal,80,0.1,0.9,40,1,1,0,2,23,0,No
+5,Vehiculo,1,Normal,80,0.1,0.9,40,1,1,0,2,23,0,No
+6,Vehiculo,1,Normal,80,0.1,0.9,40,1,1,0,2,23,0,No
+7,Vehiculo,1,Normal,80,0.1,0.9,40,1,1,0,2,23,0,No
+9,Vehiculo,1,Normal,80,0.1,0.9,40,1,1,0,2,23,0,No
+10,Vehiculo,1,Normal,80,0.1,0.9,40,1,1,0,2,23,0,No
+11,Vehiculo,1,Normal,80,0.1,0.9,40,1,1,0,2,23,0,No

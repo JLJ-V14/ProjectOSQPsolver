@@ -34,6 +34,12 @@
     <ClCompile Include="Calcular_Vector_Q.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Calcular_Size_Matrices.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Comprobar_Informacion.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\OxfordSolver\osqp\CMakeLists.txt" />
@@ -71,7 +77,7 @@
     <ClInclude Include="Calcular_Matriz_A.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="calcular_restricciones.h">
+    <ClInclude Include="Calcular_Restricciones.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Calcular_Vector_L_U.h">
@@ -81,6 +87,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Configurar_Problema.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Calcular_Size_Matrices.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Comprobar_Informacion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

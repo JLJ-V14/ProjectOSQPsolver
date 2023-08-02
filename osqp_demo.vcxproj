@@ -315,8 +315,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="Calcular_Matriz_A.c" />
     <ClCompile Include="Calcular_Matriz_P.c" />
+    <ClCompile Include="Calcular_Size_Matrices.c" />
     <ClCompile Include="Calcular_Vector_L_U.c" />
     <ClCompile Include="Calcular_Vector_Q.c" />
+    <ClCompile Include="Comprobar_Informacion.c" />
     <ClCompile Include="Configurar_Ajustes_Problema.c" />
     <ClCompile Include="Configurar_Problema.c" />
     <ClCompile Include="D:\OxfordSolver\osqp\examples\osqp_demo.c" />
@@ -340,9 +342,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClInclude Include="Calcular_Matriz_A.h" />
     <ClInclude Include="Calcular_Matriz_P.h" />
-    <ClInclude Include="calcular_restricciones.h" />
+    <ClInclude Include="Calcular_Restricciones.h" />
+    <ClInclude Include="Calcular_Size_Matrices.h" />
     <ClInclude Include="Calcular_Vector_L_U.h" />
     <ClInclude Include="Calcular_Vector_Q.h" />
+    <ClInclude Include="Comprobar_Informacion.h" />
     <ClInclude Include="Configurar_Ajustes_Problema.h" />
     <ClInclude Include="Configurar_Problema.h" />
     <ClInclude Include="main.h" />

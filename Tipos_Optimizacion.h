@@ -6,6 +6,19 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+	//Se crea una variable para poder almacenar los datos del CSV de
+	typedef enum {STRING,DOUBLE1}TipoDato;
+	//Se define este tipo para poder almacenar la informacion que se lee del CSV donde esta contenida la informacion
+	//de los vehículos que tienen su carga programada. Esta informacion puede ser de tipo double.
+	typedef struct {
+		TipoDato Tipo;
+			union {
+			char* str;
+			double dbl;
+		}data;
+	}Celda;
+
+
 	typedef struct {
 		double	Maxima_Potencia_Red_Entrada;            //Maxima potencia que puede llegar de la red a la electrolinera
 		double  Minima_Potencia_Red_Entrada;            //Minima potencia que puede llegar de la red a la electrolinera

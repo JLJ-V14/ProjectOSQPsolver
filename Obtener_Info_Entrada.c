@@ -13,7 +13,95 @@
 #define Obj_Vida_Bat 2
 #define Obj_Referencia_Operador 3
 #define Obj_Bateria_Adicional 4
-#define Max_Bateria 500;    //Se establece la capacidad maxima de la bateria 500 kWh
+#define Max_Bateria 500    //Se establece la capacidad maxima de la bateria 500 kWh
+//Defino una serie de variables, para establecer el tamaño del array
+#define MAX_FILAS    100
+#define MAX_COLUMNAS 100
+
+Celda *** Leer_CSV(const char* Nombre_Archivo, int* Filas, int* Columnas) {
+	//Subprograma que se utiliza para leer el fichero con extensión csv donde viene incluido la información de 
+	//los vehículos que se van a cargar.
+	FILE* file = fopen(Nombre_Archivo, "r");
+	if (file == NULL) {
+		printf("Error abriendo el archivo \n");
+		return NULL;
+	}
+	Celda*** data = (Celda***)malloc(MAX_FILAS * sizeof(Celda**));
+	if (data == NULL) {
+		printf("Error de reserva de memoria \n");
+		fclose(file);
+		return NULL;
+	}
+	char line[1000]; //Asumiendo una linea maxima de 1000 caracteres
+	int fila = 0;
+	while (fgets(line, sizeof(line), file) != NULL && fila < MAX_FILAS) {
+		//Se reserva memoria en el array para almacenar los datos del array.
+		data[fila] = (Celda**)malloc(MAX_COLUMNAS * sizeof(Celda*));
+		if (data[fila] == NULL) {
+			printf("Error de reserva de memoria");
+			fclose(file);
+
+			//Se libera memoria reservada previamente si ha habido un error en la reserva de la memoria.
+			for (int i = 0; i < fila; i++) {
+				for (int j = 0; j < Columnas[i]; j++) {
+					if (data[i][j]->Tipo == STRING) {
+						free(data[i][j]->data.str);
+					}
+					free(data[i][j]);
+				}
+				free(data[i]);
+
+			}
+			free(data);
+			return NULL;
+		}
+		//Se crea un puntero llamado token para apuntar al primer caracter de cada celda del CSV.
+		char* token;
+		int   col = 0;
+		token = strtok(line, ",");
+		while (token != NULL && col < MAX_COLUMNAS) {
+			char* end;
+			double value = strtod(token, &end);
+			data[fila][col] = (Celda*)malloc(sizeof(Celda));
+			//Si el dato es de tipo string->
+			if (end == token) {
+				data[fila][col]->Tipo = STRING;
+				data[fila][col]->data.str = strdup(token);
+			}
+			else {
+				data[fila][col]->Tipo = DOUBLE1;
+				data[fila][col]->data.dbl = value;
+			}
+			token = strtok(NULL, ",");
+			col++;
+		}
+		//Si una fila tiene menos columnas que el resto se tiene esto en cuenta.
+		for (; col < MAX_COLUMNAS; col++) {
+			data[fila][col] = NULL;
+		}
+		//Se actualiza el numero de columnas que se leen par esta red.
+		Columnas[fila] = col;
+		fila++;
+	}
+	   fclose(file);
+	   *Filas = fila;
+	   return data;
+}
+
+void freeCSV(Celda *** data, int filas, int* columnas) {
+	//Subprograma que se utiliza para liberar m
+	for (int i = 0; i < filas; i++) {
+		for (int j = 0; j < columnas[i]; j++) {
+			if (data[i][j]->Tipo == STRING) {
+				free(data[i][j]->data.str);
+				data[i][j]->data.str = NULL;
+			}
+			free(data[i][j]);
+		}
+		free(data[i]);
+	}
+	free(data);
+}
 static int Leer_Objetivo_Usuario(const char* Mensaje) {
 	//Este subprograma lee la variable booleana que indica si cada determinado objetivo se tiene en cuenta.
 	int Valor;
@@ -142,6 +230,7 @@ int Obtener_Restricciones_Red_Electrolinera(Restricciones_Electrolinera* Restric
 	//Pongo los valores minimos y maximos de la potencia global que la red puede intercambiar con el sistema
 	Restricciones->Maxima_Potencia_Red = Max_In;
 	Restricciones->Minima_Potencia_Red = -Max_Out;
+	
 	return 0;
 }
 static int Fijar_Tipo_Tarifa(Vehiculo* Coche, const char* str) {
@@ -746,50 +835,51 @@ int Leer_Informacion(Objetivos* Objetivos_Optimizacion, Restricciones_Electrolin
 	Caracteristicas_Simulacion* Tiempo_Algoritmo, Sistema_Carga* Electrolinera,
 	Panel_Solar* Datos_Panel_Fotovoltaico, Carga_Adicional* Datos_Carga, c_float* Precio_Compra,
 	c_float* Precio_Venta, Operador_Red* Demanda_Operador, Bateria* Baterias_Sistema) {
+	
 	if (Leer_Tipos_Objetivos(Objetivos_Optimizacion) == -1) {
 		return -1;
 	};
 	//Se Leen las restriciones de los intercambios de potencia entre la electrolinera y la red.
-	if (Obtener_Restricciones_Red_Electrolinera(Restricciones_Potencia) == -1) {
-		return -1;
-	}
-	if ((!Configurar_Tiempo_Simulacion(Tiempo_Algoritmo)) == -1) {
-		printf("Error al introducir los datos de tiempo \n");
-		return -1;
-	}
+	//if (Obtener_Restricciones_Red_Electrolinera(Restricciones_Potencia) == -1) {
+	//	return -1;
+	//}
+	//if ((!Configurar_Tiempo_Simulacion(Tiempo_Algoritmo)) == -1) {
+		//printf("Error al introducir los datos de tiempo \n");
+	//	return -1;
+	//}
 	//ME QUEDO POR AQUI REVISANDO CARGAR DATOS ELECTROLINERA
-	if (Obtener_Informacion_Electrolinera(Electrolinera, *Tiempo_Algoritmo) == -1) {
-		return -1;
-	}
+	//if (Obtener_Informacion_Electrolinera(Electrolinera, *Tiempo_Algoritmo) == -1) {
+		//return -1;
+	//}
 
 	//Se Leen los datos de potencia solar
-	if (Obtener_Datos_Panel_Fotovoltaico(Datos_Panel_Fotovoltaico, *Tiempo_Algoritmo) == -1) {
-		printf("Error al introducir el panel solar o la carga \n");
-		return -1;
-	}
+	//if (Obtener_Datos_Panel_Fotovoltaico(Datos_Panel_Fotovoltaico, *Tiempo_Algoritmo) == -1) {
+		//printf("Error al introducir el panel solar o la carga \n");
+		//return -1;
+	//}
 	//Leo los datos de potencia consumida por la carga
-	if (Obtener_Datos_Cargas(Datos_Carga, *Tiempo_Algoritmo) == -1) {
-		printf("Error al introducir el panel solar o la carga \n");
-		return -1;
-	}
+	//if (Obtener_Datos_Cargas(Datos_Carga, *Tiempo_Algoritmo) == -1) {
+		//printf("Error al introducir el panel solar o la carga \n");
+		//return -1;
+	//}
 	//Solo se leen los precios si de considera el objetivo de reducir el precio de compra.
-	if (Objetivos_Optimizacion->Minimizar_Coste == 1) {
-		if (Leer_Precios(&Precio_Compra, &Precio_Venta, Tiempo_Algoritmo->Numero_Horas) == -1) {
-			printf("Error al introducir los precios \n");
-			return -1;
-		};
-	}
+	//if (Objetivos_Optimizacion->Minimizar_Coste == 1) {
+		//if (Leer_Precios(&Precio_Compra, &Precio_Venta, Tiempo_Algoritmo->Numero_Horas) == -1) {
+			//printf("Error al introducir los precios \n");
+			//return -1;
+		//};
+	//}
 	//Leo la referencia de lo que el operador de la red se quiere que se consuma por fase:
 	//Solo se lee si se considera el objetivo de referencia de la red
-	if (Objetivos_Optimizacion->Obj_Referencia_Red == 1) {
-		if (Leer_Datos_Operador(&Demanda_Operador, Tiempo_Algoritmo->Numero_Horas) == -1) {
-			printf("Error al introducir los datos del operador \n");
-			return -1;
-		}
-	}
-	if ((Leer_Baterias(Baterias_Sistema)) == -1) {
-		printf("Error al introducir la bateria del sistema \n");
-		return -1;
-	}
+	//if (Objetivos_Optimizacion->Obj_Referencia_Red == 1) {
+		//if (Leer_Datos_Operador(&Demanda_Operador, Tiempo_Algoritmo->Numero_Horas) == -1) {
+			//printf("Error al introducir los datos del operador \n");
+			//return -1;
+		//}
+	//}
+	//if ((Leer_Baterias(Baterias_Sistema)) == -1) {
+		//printf("Error al introducir la bateria del sistema \n");
+		//return -1;
+	//}
 	return 0;
 }

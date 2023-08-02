@@ -3,6 +3,7 @@
 #include "osqp.h"
 #include "Configurar_Ajustes_Problema.h"
 #include "Tipos_Optimizacion.h"
+#include "Calcular_Size_Matrices.h"
 
 static void Configurar_Matriz_P(OSQPData* Data) {
 	//En este subprograma se configura la matriz que viene a representar los objetivos cuadraticos
