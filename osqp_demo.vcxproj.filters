@@ -40,6 +40,7 @@
     <ClCompile Include="Comprobar_Informacion.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Configurar_Vehiculos.c" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\OxfordSolver\osqp\CMakeLists.txt" />
@@ -93,6 +94,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Comprobar_Informacion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Configurar_Vehiculos.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

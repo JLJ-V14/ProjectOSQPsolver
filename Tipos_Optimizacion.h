@@ -3,9 +3,52 @@
 #ifndef TIPOS_OPTIMIZACION_H
 #define TIPOS_OPTIMIZACION_H
 #include <stdbool.h>
+#include "Tipos_Optimizacion.h"
+#include <time.h>
+#include "osqp.h"
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+	typedef enum {
+		CARGA_RAPIDA = 0,       //0 significa carga rapida
+	    CARGA_NORMAL = 1        //1 significa carga normal
+	}Tipo_Carga;
+
+	typedef struct {
+		int           Punto_Inicial_Carga;  //Punto inicial de la carga del vehiculo->
+		int           Punto_Final_Carga;    //Punto Final de la carga del vehiculo  ->
+		double        Capacidad_Bateria;   //Capacidad de la bateria del vehiculo  ->
+		char          Fase;                //Fase a la que esta conectada el vehiculo ->
+		double        Bateria_Inicial;    //Porcentaje de la bateria inicial a la que esta conectada el vehiculo.
+		double        Bateria_Final;      //Porcentaje de bateria final que se desea.
+		double        Maxima_Potencia;    //Potencia maxima que acepta el vehiculo
+		Tipo_Carga    Modo_Carga;         //Variable que almacena el modo de carga del vehiculo 0 rapida 1 lenta.
+	}Vehiculos;
+
+	typedef struct {
+		int Numero_Puntos;
+		int Numero_Vehiculos;
+		Vehiculos* Vehiculos_Sistema;
+	}Elementos_Electrolinera;
+	
+	//Tipo propio para almacenar la informacion importante de cada vehiculo.
+	
+	
+	
+	
+	//Creo un tipo para almacenar, puntos de simulacion que deben estar ya que coinciden con la fecha de inicio
+	// de carga o de finalizacion de carga de vehiculos, o bien con una hora en punto.
+	typedef struct {
+		struct tm date;
+	}Puntos_Adicionales;
+	//Creo un tipo para asociar cada punto de la simulacion a una fecha.
+	typedef struct {
+		int Punto_Simulacion;
+		int Delta_Simulacion;
+		struct tm Fecha;
+	}Puntos_Optimizacion;
+
 	//Se crea una variable para poder almacenar los datos del CSV de
 	typedef enum {STRING,DOUBLE1}TipoDato;
 	//Se define este tipo para poder almacenar la informacion que se lee del CSV donde esta contenida la informacion
@@ -14,11 +57,11 @@ extern "C" {
 		TipoDato Tipo;
 			union {
 			char* str;
-			double dbl;
+			c_float dbl;
 		}data;
 	}Celda;
 
-
+	//-------------------------------------------------------------------------------------------------------//
 	typedef struct {
 		double	Maxima_Potencia_Red_Entrada;            //Maxima potencia que puede llegar de la red a la electrolinera
 		double  Minima_Potencia_Red_Entrada;            //Minima potencia que puede llegar de la red a la electrolinera
@@ -68,7 +111,7 @@ extern "C" {
 		Estandar,
 		Prisa
 	}Tipo_Tarifa;
-
+	
 	typedef struct {
 		double          Capacidad_Bateria;                  //Capacidad de la bateria del vehiculo 
 		double          Estado_Inicial_Bateria;             //Estado inicial de la bateria del vehiculo
@@ -85,7 +128,7 @@ extern "C" {
 		int             Punto_Inicio_Carga;                 //Variable que indica el punto de inicio de la carga
 		int             Punto_Final_Carga;                  //Variable que indica el punto de finalizacion de la carga.	
 	} Vehiculo;
-
+	
 	typedef struct {
 		Vehiculo    *Vehiculos;                          //Array de tipo vehiculos, cada vehiculo contiene la informacion del mismo 
 		int         Num_Vehiculos;                      //Numero de vehiculos que tienen la carga programada en el terminal
@@ -152,7 +195,7 @@ extern "C" {
 		double Bateria_Inicial_T;                  //Variable que indica el porcentaje de la bateria inicial conectada a fase T
 	}Bateria;
 
-
+	
 #ifdef __cplusplus
 }
 #endif

@@ -1,1 +1,2 @@
 D:\Nuevo_Build_OSQP\lin_sys\direct\linsys_pardiso.dir\Debug\linsys_pardiso.lib
+D:\NuevoBuildOSQP2\lin_sys\direct\linsys_pardiso.dir\Debug\linsys_pardiso.lib

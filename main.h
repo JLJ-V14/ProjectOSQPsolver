@@ -15,7 +15,7 @@ extern "C" {
 	/* Function Declarations */
 	extern int main(int argc, char** argv);
 
-	extern void main_optimizacionC(void);
+    extern void main_optimizacionC(void);
 
 #ifdef __cplusplus
 }

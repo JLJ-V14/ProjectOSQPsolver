@@ -1,17 +1,1 @@
-﻿  Building Custom Rule D:/OxfordSolver/osqp/CMakeLists.txt
-  auxil.c
-  error.c
-  lin_alg.c
-  osqp.c
-D:\OxfordSolver\osqp\src\osqp.c(469,58): warning C4244: 'function': conversion from 'c_int' to 'double', possible loss of data
-  proj.c
-  scaling.c
-  util.c
-  kkt.c
-  cs.c
-  polish.c
-  lin_sys.c
-  ctrlc.c
-  lib_handler.c
-  Generating Code...
-  osqpstatic.vcxproj -> D:\Nuevo_Build_OSQP\out\Debug\osqp.lib
+﻿  osqpstatic.vcxproj -> D:\Nuevo_Build_OSQP\out\Debug\osqp.lib

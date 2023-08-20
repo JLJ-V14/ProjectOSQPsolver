@@ -1,4 +1,2 @@
-Mes Inicio,Dia Inicio,Hora Inicio,Minuto Inicio,Mes Final,Dia Final,Hora Final,Minuto Final,?t Simulacion,
-1,1,0,0,1,2,0,0,60,
-,,,,,,,,,
-,,,,,,,,,
+Year Inicio,Mes Inicio ,Dia Inicio,Hora Inicio ,Minuto Inicio,Year Final ,Mes Final ,Dia Final ,Hora Final ,Minuto Final ,Delta 
+1,1,1,0,20,1,1,2,0,0,60

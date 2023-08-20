@@ -1,52 +1,130 @@
-// Juan López Jódar Últimos Cambios : 1 / 08 / 2023
+// Juan López Jódar Últimos Cambios : 7 / 08 / 2023
 //Incluyo una serie de archivos
 #include <stdio.h>
 #include <stdbool.h>
 #include "main.h" 
-#include "Obtener_Info_Entrada.h"      //Header file que incluye las funciones de leer la entrada.
-#include "Optimizacion_Cuadratica.h"   //Header file que incluye la funcion principal de optimizacion
-#include "osqp.h"                      //Header file que incluye las funciones del algoritmo de optimizacion
-#include "Preparar_Arrays.h"           //Header file en el que van incluidas las funciones para reservar memorias para los arrays.s
-#include "Tipos_Optimizacion.h"        //Header file que incluye los tipos propios definidos para el algoritmo de optimizacion 
-#define  Num_Objetivos 5               //Numero de objetivos = 5
+#include "Comprobar_Informacion.h"       //Header file que incluye las funciones de comprobar la informacion
+#include "Configurar_Ajustes_Problema.h" //Header file donde se incluye las funciones que calculan los ajustes.
+#include "Configurar_Vehiculos.h"
+#include "Obtener_Info_Entrada.h"        //Header file que incluye las funciones de leer la entrada.
+#include "Optimizacion_Cuadratica.h"     //Header file que incluye la funcion principal de optimizacion
+#include "osqp.h"                        //Header file que incluye las funciones del algoritmo de optimizacion
+#include "Preparar_Arrays.h"             //Header file en el que van incluidas las funciones para reservar memorias para los arrays.s
+#include "Tipos_Optimizacion.h"          //Header file que incluye los tipos propios definidos para el algoritmo de optimizacion 
+#include "time.h"
+#define  Num_Objetivos 5                 //Numero de objetivos = 5
 
 
 void main_optimizacionC(void) {
 	//FUNCIONAMIENTO DEL CODIGO:
 	//PRIMERO SE LEE LA INFORMACION DEL SISTEMA, POSTERIORMENTE SE CONFIGURAN LAS MATRICES, Y FINALMENTE SE EJECUTA LA FUNCION PRINCIPAL DE OPTIMIZACION.
 	//POSTERIORMENTE SE EXTRAEN LOS RESULTADOS
-	//Sistema_Carga                                Electrolinera;                            //Variable que almacena los datos de la electrolinera
-	//Operador_Red* Demanda_Operador = NULL;                                                 //Inicializo la demanda del operador
-	//Caracteristicas_Simulacion                   Tiempo_Algoritmo;                         //Variable que almacena las caracteristicas Temporales de la simulacion
-	//Panel_Solar                                  Datos_Panel_Fotovoltaico;                 //Variable que almacena los valores generados por los paneles fotovoltaicos
-	//Carga_Adicional                              Datos_Carga;                              //Variable que almacena los valores consumidos por la carga adicional.
-	//Restricciones_Electrolinera                  Restricciones_Potencia;                   //Variable que almacena los valores que pueden
-	//Bateria                                      Baterias_Sistema;                         //Variable que sirve para indicar las baterias que hay en el sistema
-	//const int                                    Numero_Estaciones = 12;                   //Se considera que hay 12 estaciones.
-	//c_float                                      Precio_Compra;                            //Variable que  indica los precios de compra de la electricidad
-	///c_float                                      Precio_Venta;                             //Variable que  indica los precios de vender electricidad al operador de la red
-	//Objetivos                                    Objetivos_Optimizacion;                   //Array booleano que indica si se estan considerando una serie de objetivos, donde cada casilla representa un objetivo.
+
+	Celda***                                       Data_Terminales;
+	Celda***                                       Data_Vehiculos;
+	Celda***                                       Data_Tiempo;
+	Celda***                                       Data_Restricciones;
+	Celda***                                       Data_Precio_Compra;
+	Celda***                                       Data_Precio_Venta;
+	//Variable que almacena la informacion de los elementos presentes en la electrolinera (Vehiculo, Baterias..)
+	Elementos_Electrolinera*                       Informacion_Electrolinera;
+	//Se crea una variable que es un array que sirve para relacionar los puntos de simulacion con, una fecha
+	//asociada.
+	//Variable para crear unas variable que sirve para almacenar el numero de puntos de simulacion_>
+	int Numero_Puntos_Simulacion=0;
+	//Se crea una serie de variables para leer los datos almacenados en los CSV.
+	int* Filas_Terminales    =    (int*)malloc(sizeof(int));
+	int* Columnas_Terminales =    (int*)malloc(sizeof(int));
+	int* Filas_Vehiculos     =    (int*)malloc(sizeof(int));
+	int* Columnas_Vehiculos  =    (int*)malloc(sizeof(int));
+	int* Filas_Tiempo        =    (int*)malloc(sizeof(int));
+	int* Columnas_Tiempo     =    (int*)malloc(sizeof(int));
+	int* Filas_Restricciones =    (int*)malloc(sizeof(int));
+	int* Columnas_Restricciones = (int*)malloc(sizeof(int));
+	int* Filas_Precio_Compra =    (int*)malloc(sizeof(int));
+	int* Columnas_Precio_Compra = (int*)malloc(sizeof(int));
+	int* Filas_Precio_Venta =     (int*)malloc(sizeof(int));
+	int* Columnas_Precio_Venta =  (int*)malloc(sizeof(int));
+	
+	
+	Puntos_Optimizacion* Array_Puntos_Simulacion=NULL;
+	//Reservo memoria para la variable que almacena los datos de los vehiculos, y de las posibles cargas
+	//conectadas al sistema->
+	 Informacion_Electrolinera = NULL;
+	
+	
+
+	Data_Terminales    = Leer_CSV("Informacion_Terminales.csv",  Filas_Terminales,Columnas_Terminales);
+	Data_Vehiculos     = Leer_CSV("Informacion_Vehiculos.csv",   Filas_Vehiculos,Columnas_Vehiculos);
+	Data_Tiempo        = Leer_CSV("Informacion_Tiempo.csv",      Filas_Tiempo, Columnas_Tiempo);
+	Data_Restricciones = Leer_CSV("Restricciones_Sistema.csv",   Filas_Restricciones, Columnas_Restricciones);
+	Data_Precio_Compra = Leer_CSV("Precio_Compra_Kilovatio.csv", Filas_Precio_Compra, Columnas_Precio_Compra);
+	Data_Precio_Venta =  Leer_CSV("Precio_Venta_Kilovatio.csv",  Filas_Precio_Venta, Columnas_Precio_Venta);
 
 
-	//Se Leen la informacion de todo el Sistema.
-	//if (Leer_Informacion(&Objetivos_Optimizacion, &Restricciones_Potencia, &Tiempo_Algoritmo, &Electrolinera,
-	//	&Datos_Panel_Fotovoltaico, &Datos_Carga, &Precio_Compra, &Precio_Venta, &Demanda_Operador,
-	//	&Baterias_Sistema) == -1) {
-	//	Liberar_Toda_Memoria(&Datos_Panel_Fotovoltaico, &Datos_Carga, Demanda_Operador, &Tiempo_Algoritmo, &Electrolinera);
-	//	return;
-	//}
-	//Optimizacion_Cuadratica(&Electrolinera, &Tiempo_Algoritmo, &Precio_Compra, &Precio_Venta,
-    //&Demanda_Operador, &Objetivos_Optimizacion, &Baterias_Sistema, &Datos_Panel_Fotovoltaico,
-	//	&Datos_Carga, &Restricciones_Potencia);
-	//Liberar_Toda_Memoria(&Datos_Panel_Fotovoltaico, &Datos_Carga, Demanda_Operador, &Tiempo_Algoritmo, &Electrolinera);
+	
+	if (Configurar_Puntos_Simulacion(Data_Vehiculos, Data_Tiempo,&Array_Puntos_Simulacion,Filas_Vehiculos,&Numero_Puntos_Simulacion)==-1) {
+		printf("Error Configurando los puntos de la simulacion \n");
+		free(Array_Puntos_Simulacion);
+	}
+	//Inicializo la variable que almacena los datos de los vehiculos del sistema->
+	if (Inicializar_Cargas_Electrolinera(&Informacion_Electrolinera,Numero_Puntos_Simulacion) == -1) {
+		free(Informacion_Electrolinera);
+	}
+	//Se almacenan los datos en la variable que guarda la informacion sobre el sistema.
+	if (Identificar_Vehiculos(Informacion_Electrolinera,Data_Vehiculos,Filas_Vehiculos,Data_Terminales,
+		                      Array_Puntos_Simulacion)==-1) {
+		printf("Error asignando la informacion a los vehiculos \n");
+		free(Informacion_Electrolinera->Vehiculos_Sistema);
+	}
 
+	Comprobar_Elementos_Electrolinera(Informacion_Electrolinera);
+
+	Escribir_CSV("Comprobar_Terminales.csv",Data_Terminales,*Filas_Terminales,*Columnas_Terminales);
+	Escribir_CSV("Comprobar_Vehiculos.csv", Data_Vehiculos, *Filas_Vehiculos, *Columnas_Vehiculos);
+	Escribir_CSV("Comprobar_Tiempo.csv", Data_Tiempo, *Filas_Tiempo, *Columnas_Tiempo);
+	Escribir_CSV("Comprobar_Restricciones.csv", Data_Restricciones, *Filas_Restricciones, *Columnas_Restricciones);
+	Escribir_CSV("Comprobar_Precio_Compra.csv", Data_Precio_Compra, *Filas_Precio_Compra, *Columnas_Precio_Compra);
+    Escribir_CSV("Comprobar_Precio_Venta.csv",  Data_Precio_Venta,  *Filas_Precio_Venta,  *Columnas_Precio_Venta);
+	
+	//Compruebo el array de que almacena los puntos de simulacion->
+	//Escribir_Array_Puntos_Simulacion(Array_Puntos_Simulacion, &Numero_Puntos_Simulacion);
+	
+	//Libero la memoria asociada al array que contiene los puntos de simulacion 
+	free(Array_Puntos_Simulacion);
+	
+	//Libero la memoria asoicada a la variable que almacena los datos de los vehiculos->
+	free(Informacion_Electrolinera->Vehiculos_Sistema);
+	free(Informacion_Electrolinera);
+
+	//Libero la memoria reservada para leer los datos almacenados en el excel.
+	freeCSV(Data_Terminales, *Filas_Terminales, *Columnas_Terminales);
+	freeCSV(Data_Vehiculos, *Filas_Vehiculos, *Columnas_Vehiculos);
+	freeCSV(Data_Tiempo, *Filas_Tiempo, *Columnas_Tiempo);
+	freeCSV(Data_Restricciones, *Filas_Restricciones, *Columnas_Restricciones);
+	freeCSV(Data_Precio_Compra, *Filas_Precio_Compra, *Columnas_Precio_Compra);
+	freeCSV(Data_Precio_Venta, *Filas_Precio_Venta,   *Columnas_Precio_Venta);
+
+	free(Filas_Terminales);
+	free(Columnas_Terminales);
+	free(Filas_Vehiculos);
+	free(Columnas_Vehiculos);
+	free(Filas_Tiempo);
+	free(Columnas_Tiempo);
+	free(Filas_Restricciones);
+	free(Columnas_Restricciones);
+	free(Filas_Precio_Compra);
+	free(Columnas_Precio_Compra);
+	free(Filas_Precio_Venta);
+	free(Columnas_Precio_Venta);
+	
 }
 
 int main(int argc, char** argv) {
-	//(void)argc;
-	//(void)argv;
-	//main_optimizacionC();   //Main de la optimizacion
-	//return 0;
+	(void)argc;
+	(void)argv;
+	main_optimizacionC();   //Main de la optimizacion
+	return 0;
 }
 //Lista de Índices de las variables:
 //De 0 a Numero de coches *2

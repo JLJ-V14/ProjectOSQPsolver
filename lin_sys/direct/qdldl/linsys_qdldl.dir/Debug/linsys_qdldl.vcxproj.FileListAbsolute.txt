@@ -1,1 +1,2 @@
 D:\Nuevo_Build_OSQP\lin_sys\direct\qdldl\linsys_qdldl.dir\Debug\linsys_qdldl.lib
+D:\NuevoBuildOSQP2\lin_sys\direct\qdldl\linsys_qdldl.dir\Debug\linsys_qdldl.lib

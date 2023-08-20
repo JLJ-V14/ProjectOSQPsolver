@@ -1,5 +1,17 @@
-﻿  Configurar_Problema.c
-Configurar_Problema.c(30,3): warning C4013: 'Crear_Array_Dinamico_Double' undefined; assuming extern returning int
-Configurar_Problema.c(71,3): warning C4013: 'Calcular_Variables_Vehiculos' undefined; assuming extern returning int
-Configurar_Problema.c(85,55): warning C4028: formal parameter 1 different from declaration
-Configurar_Problema.c(87,25): warning C4028: formal parameter 8 different from declaration
+﻿  Configurar_Vehiculos.c
+Configurar_Vehiculos.c(111,81): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Vehiculos.c(117,68): warning C4047: '=': 'char' differs in levels of indirection from 'char *const '
+Configurar_Vehiculos.c(154,91): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Vehiculos.c(155,89): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Vehiculos.c(156,90): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Vehiculos.c(157,91): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Vehiculos.c(158,92): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Vehiculos.c(161,88): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Vehiculos.c(162,87): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Vehiculos.c(163,87): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Vehiculos.c(164,88): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Vehiculos.c(165,90): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Vehiculos.c(243,105): warning C4047: 'function': 'const int' differs in levels of indirection from 'const int *'
+Configurar_Vehiculos.c(243,86): warning C4024: 'Asignar_Informacion_Vehiculos': different types for formal and actual parameter 4
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.c(105): warning C4715: 'Obtener_Modo_Carga': not all control paths return a value
+  osqp_demo.vcxproj -> D:\Nuevo_Build_OSQP\out\Debug\osqp_demo.exe

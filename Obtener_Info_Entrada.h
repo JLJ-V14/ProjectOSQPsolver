@@ -11,6 +11,8 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+	Celda *** Leer_CSV(const char* Nombre_Archivo, int* Filas, int* Columnas);
+	void freeCSV(Celda*** data, int filas,int columnas);
 	int Obtener_Restricciones_Red_Electrolinera(Restricciones_Electrolinera* Restricciones);
 	int Leer_Tipos_Objetivos(Objetivos* Objetivos_Optimizacion);
 	int Obtener_Informacion_Electrolinera(Sistema_Carga* Electrolinera, const Caracteristicas_Simulacion Tiempo_Simulacion);

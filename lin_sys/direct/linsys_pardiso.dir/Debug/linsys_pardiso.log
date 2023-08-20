@@ -1,5 +1,1 @@
-﻿  Building Custom Rule D:/OxfordSolver/osqp/lin_sys/direct/CMakeLists.txt
-  pardiso_interface.c
-  pardiso_loader.c
-  Generating Code...
-  linsys_pardiso.vcxproj -> D:\Nuevo_Build_OSQP\lin_sys\direct\linsys_pardiso.dir\Debug\linsys_pardiso.lib
+﻿  linsys_pardiso.vcxproj -> D:\NuevoBuildOSQP2\lin_sys\direct\linsys_pardiso.dir\Debug\linsys_pardiso.lib
