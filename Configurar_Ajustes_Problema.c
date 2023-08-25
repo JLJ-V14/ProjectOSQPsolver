@@ -645,23 +645,24 @@ int Incluir_Fecha_Final(Puntos_Optimizacion **Array_Puntos_Simulacion,int *Numer
 	// ejecucion del algoritmo al array de los puntos de simulacion.
 	//Cargo la fecha del punto del array->
 	struct tm Fecha_Anterior = (*Array_Puntos_Simulacion)[*Numero_Puntos_Simulacion-1].Fecha;
-	(*Numero_Puntos_Simulacion)++;
-	*Array_Puntos_Simulacion = (Puntos_Optimizacion*)realloc(*Array_Puntos_Simulacion, *Numero_Puntos_Simulacion * sizeof(Puntos_Optimizacion));
-	//Redimensiono la memoria reservada para el array->
-	if (*Array_Puntos_Simulacion == NULL) {
-		return -1;
+	if (Fechas_Iguales(Fecha_Final, Fecha_Anterior) == false) {
+		(*Numero_Puntos_Simulacion)++;
+		*Array_Puntos_Simulacion = (Puntos_Optimizacion*)realloc(*Array_Puntos_Simulacion, *Numero_Puntos_Simulacion * sizeof(Puntos_Optimizacion));
+		//Redimensiono la memoria reservada para el array->
+		if (*Array_Puntos_Simulacion == NULL) {
+			return -1;
+		}
+		//Obtengo la diferencia en minutos con el punto anterior->
+		printf("El minuto de la fecha anterior es->\n");
+		printf("%d \n", Fecha_Anterior.tm_min);
+		printf("El minuto de la fecha siguiente es-> \n");
+		printf("%d \n", Fecha_Final.tm_min);
+		int Delta_Ultimo = Obtener_Diferencia_Minutos(Fecha_Final, Fecha_Anterior);
+		//Se carga la fecha de finalizacion de la simulacion en el array->
+		(*Array_Puntos_Simulacion)[*Numero_Puntos_Simulacion - 1].Fecha = Fecha_Final;
+		(*Array_Puntos_Simulacion)[*Numero_Puntos_Simulacion - 1].Delta_Simulacion = Delta_Ultimo;
+		(*Array_Puntos_Simulacion)[*Numero_Puntos_Simulacion - 1].Punto_Simulacion = (*Numero_Puntos_Simulacion) - 1;
 	}
-	//Obtengo la diferencia en minutos con el punto anterior->
-	printf("El minuto de la fecha anterior es->\n");
-	printf("%d \n", Fecha_Anterior.tm_min);
-	printf("El minuto de la fecha siguiente es-> \n");
-	printf("%d \n", Fecha_Final.tm_min);
-	int Delta_Ultimo = Obtener_Diferencia_Minutos(Fecha_Final, Fecha_Anterior);
-	//Se carga la fecha de finalizacion de la simulacion en el array->
-	(*Array_Puntos_Simulacion)[*Numero_Puntos_Simulacion-1].Fecha = Fecha_Final;
-	(*Array_Puntos_Simulacion)[*Numero_Puntos_Simulacion-1].Delta_Simulacion =  Delta_Ultimo;
-	(*Array_Puntos_Simulacion)[*Numero_Puntos_Simulacion-1].Punto_Simulacion = (*Numero_Puntos_Simulacion)-1;
-
 	return 0;
 }
 int Configurar_Puntos_Simulacion(const Celda*** Data_Vehiculos, const Celda*** Data_Tiempo,

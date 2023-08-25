@@ -1,17 +1,35 @@
-﻿  Configurar_Vehiculos.c
-Configurar_Vehiculos.c(111,81): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
-Configurar_Vehiculos.c(117,68): warning C4047: '=': 'char' differs in levels of indirection from 'char *const '
-Configurar_Vehiculos.c(154,91): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
-Configurar_Vehiculos.c(155,89): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
-Configurar_Vehiculos.c(156,90): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
-Configurar_Vehiculos.c(157,91): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
-Configurar_Vehiculos.c(158,92): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
-Configurar_Vehiculos.c(161,88): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
-Configurar_Vehiculos.c(162,87): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
-Configurar_Vehiculos.c(163,87): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
-Configurar_Vehiculos.c(164,88): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
-Configurar_Vehiculos.c(165,90): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
-Configurar_Vehiculos.c(243,105): warning C4047: 'function': 'const int' differs in levels of indirection from 'const int *'
-Configurar_Vehiculos.c(243,86): warning C4024: 'Asignar_Informacion_Vehiculos': different types for formal and actual parameter 4
-D:\NuevoBuildOSQP2\Configurar_Vehiculos.c(105): warning C4715: 'Obtener_Modo_Carga': not all control paths return a value
+﻿  Configurar_Ajustes_Problema.c
+Configurar_Ajustes_Problema.c(73,15): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+Configurar_Ajustes_Problema.c(94,94): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(95,92): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(96,89): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(97,90): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(98,91): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(101,90): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(102,88): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(103,85): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(104,86): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(105,87): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(224,9): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(250,42): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(291,120): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(292,118): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(293,114): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(294,115): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(295,116): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(302,120): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(303,118): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(304,114): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(305,115): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(306,116): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(437,46): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(481,45): warning C4090: 'function': different 'const' qualifiers
+Configurar_Ajustes_Problema.c(482,44): warning C4090: 'function': different 'const' qualifiers
+Configurar_Ajustes_Problema.c(517,112): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(519,111): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(521,107): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(523,108): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(525,110): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(694,98): warning C4244: 'initializing': conversion from 'const c_float' to 'const int', possible loss of data
+D:\NuevoBuildOSQP2\Configurar_Ajustes_Problema.c(601): warning C4715: 'Incluir_Nuevo_Punto': not all control paths return a value
   osqp_demo.vcxproj -> D:\Nuevo_Build_OSQP\out\Debug\osqp_demo.exe

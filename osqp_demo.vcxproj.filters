@@ -40,7 +40,18 @@
     <ClCompile Include="Comprobar_Informacion.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Configurar_Vehiculos.c" />
+    <ClCompile Include="Configurar_Baterias.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Configurar_Vehiculos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Configurar_Restricciones.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Configurar_Precios.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\OxfordSolver\osqp\CMakeLists.txt" />
@@ -97,6 +108,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Configurar_Vehiculos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Configurar_Baterias.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Configurar_Restricciones.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Configurar_Precios.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

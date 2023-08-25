@@ -192,6 +192,7 @@ double Obtener_Potencia(const char* Mensaje) {
 	}
 	return Potencia;
 }
+/*
 int Obtener_Restricciones_Red_Electrolinera(Restricciones_Electrolinera* Restricciones) {
 	//En este subprograma se fijan las restricciones para la potencia que puede intercambiar la red con
 	//la electrolinera. 
@@ -239,6 +240,7 @@ int Obtener_Restricciones_Red_Electrolinera(Restricciones_Electrolinera* Restric
 	
 	return 0;
 }
+*/
 static int Fijar_Tipo_Tarifa(Vehiculo* Coche, const char* str) {
 	if (strcmp(str, "Estandar") == 0) {
 		Coche->Modo_Carga = Estandar;

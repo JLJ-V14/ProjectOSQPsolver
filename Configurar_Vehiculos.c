@@ -39,8 +39,9 @@ int Inicializar_Cargas_Electrolinera(Elementos_Electrolinera **Informacion_Siste
 	}
 	(*Informacion_Sistema)->Numero_Puntos = Numero_Puntos;
 	(*Informacion_Sistema)->Numero_Vehiculos = 0;
+	(*Informacion_Sistema)->Numero_Baterias = 0;
 	(*Informacion_Sistema)->Vehiculos_Sistema = NULL;
-
+	(*Informacion_Sistema)->Baterias_Sistema = NULL;
 	return 0;
 }
 
@@ -49,6 +50,22 @@ int Inicializar_Cargas_Electrolinera(Elementos_Electrolinera **Informacion_Siste
 //En funcion de si el numero que devuelve es superior a 0 inferior a 0 o igual a 0
 
 int Comparar_Fechas(struct tm Fecha1, struct tm Fecha2) {
+	printf("La fecha 1 es \n:");
+	printf("%d \n", Fecha1.tm_year);
+	printf("%d \n", Fecha1.tm_mon);
+	printf("%d \n", Fecha1.tm_mday);
+	printf("%d \n", Fecha1.tm_hour);
+	printf("%d \n", Fecha1.tm_min);
+	printf("%d \n", Fecha1.tm_sec);
+
+	printf("La fecha 2 es \n:");
+	printf("%d \n", Fecha2.tm_year);
+	printf("%d \n", Fecha2.tm_mon);
+	printf("%d \n", Fecha2.tm_mday);
+	printf("%d \n", Fecha2.tm_hour);
+	printf("%d \n", Fecha2.tm_min);
+	printf("%d \n", Fecha2.tm_sec);
+
 	time_t t1 = mktime(&Fecha1);
 	time_t t2 = mktime(&Fecha2);
 	if (t1 < t2) return -1;    //Fecha 2 superior
@@ -60,9 +77,17 @@ int Comparar_Fechas(struct tm Fecha1, struct tm Fecha2) {
 //simulacion con la fecha. Para poder asi hallar con precision cual es el punto de inicio y el punto de
 //finalizacion de la simulacion->
 
-int Busqueda_Binaria(Puntos_Optimizacion *Array_Puntos_Simulacion, int size,struct tm Fecha_Objetivo) {
+int Busqueda_Binaria(Puntos_Optimizacion *Array_Puntos_Simulacion, const int size,const struct tm Fecha_Objetivo) {
 	//En este programa de busqueda se va comprobando si la fecha que se va recorriendo del array está por
 	//encima o por debajo de la fecha objetivo->
+	printf("El numero de puntos es %d \n", size);
+	printf("La fecha objetivo es \n :");
+	printf("%d \n", Fecha_Objetivo.tm_year);
+	printf("%d \n", Fecha_Objetivo.tm_mon);
+	printf("%d \n", Fecha_Objetivo.tm_mday);
+	printf("%d \n", Fecha_Objetivo.tm_hour);
+	printf("%d \n", Fecha_Objetivo.tm_min);
+	printf("%d \n", Fecha_Objetivo.tm_sec);
 
 	int Index_Bajo = 0;
 	int Index_Alto = size - 1;
@@ -71,6 +96,7 @@ int Busqueda_Binaria(Puntos_Optimizacion *Array_Puntos_Simulacion, int size,stru
 		int Comparacion = Comparar_Fechas(Fecha_Objetivo, Array_Puntos_Simulacion[Index_Medio].Fecha);
 
 		if (Comparacion == 0) {
+			printf("El punto retornado es el %d \n", Index_Medio);
 			return Index_Medio;
 		}
 		else if (Comparacion < 0) {
@@ -96,25 +122,30 @@ int Reservar_Memoria_Vehiculos(Elementos_Electrolinera *Informacion_Sistema) {
 }
 
 Tipo_Carga Obtener_Modo_Carga(const char *Modo_Carga) {
-	if (strcmp(Modo_Carga, "rapida") == 0) {
+	if ((strcmp(Modo_Carga, "rapida") == 0)||(strcmp(Modo_Carga,"Rapida")==0)) {
+		printf("Carga Rapida \n");
 		return CARGA_RAPIDA;
 	}
-	else if (strcmp(Modo_Carga, "normal") == 0) {
+	else if ((strcmp(Modo_Carga, "normal") == 0)||(strcmp(Modo_Carga,"Normal")==0)) {
+		printf("Carga Normal \n");
 		return CARGA_NORMAL;
 	}
+
 }
 
 
-int   Obtener_Numero_Terminal(const Celda ***Data_Vehiculos, const int N_Fila_CSV) {
+int   Obtener_Numero_Terminal(const Celda ***Data_CSV, const int N_Fila_CSV) {
 	//Este subprogama se utiliza para identificar a que numero de terminal estan conectados los vehiculos.
 	int Numero_Terminal;
-	return  Numero_Terminal = Data_Vehiculos[N_Fila_CSV][COL_NUMERO_TERMINAL]->data.dbl;
+	return  Numero_Terminal = Data_CSV[N_Fila_CSV][COL_NUMERO_TERMINAL]->data.dbl;
 }
 
 
 char Obtener_Fase_Electrica (const Celda ***Data_Terminales, const int Numero_Terminal) {
 	char fase;
-	return fase = Data_Terminales[Numero_Terminal][COL_FASE]->data.str;
+	printf("Prueba Fase Leida \n");
+	
+	return fase = *(Data_Terminales[Numero_Terminal][COL_FASE]->data.str);
 }
 
 
@@ -124,8 +155,14 @@ void  Obtener_Fase_Vehiculo(Elementos_Electrolinera *Informacion_Sistema, const 
 	// R S o T
 	//Primero es necesario identificar a que numero de terminal esta conectado el vehiculo->
 	int Numero_Terminal = Obtener_Numero_Terminal(Data_Vehiculos,N_Fila_CSV);
+	//Imprimo por pantalla el numero de terminal->
+	printf("El numero de terminal en cuestion es \n");
+	printf("%d", Numero_Terminal);
+	Informacion_Sistema->Vehiculos_Sistema[Numero_Terminal].Numero_Terminal;
 	//Segundo es necesario identificar la a fase a la que esta conectada dicho terminal->
 	char fase = Obtener_Fase_Electrica(Data_Terminales, Numero_Terminal);
+	printf("La fase leida es -> \n");
+	printf("%c", fase);
 	//Incluyo la fase en la que esta conectada en el vehiculo correspondiente
 	Informacion_Sistema->Vehiculos_Sistema[Numero_Vehiculo].Fase = fase;
 }
@@ -151,15 +188,15 @@ void Incluir_Punto_Inicial_Final(Elementos_Electrolinera *Informacion_Sistema,Pu
 	struct tm Fecha_Inicio_Vehiculo;
 	struct tm Fecha_Fin_Vehiculo;
 	//Cargo las fechas de inicio y finalizacion de la carga de los vehiculos->
-	Fecha_Inicio_Vehiculo.tm_year = Data_Vehiculos[Numero_Fila_CSV][COL_ANYO_INI_CARGA]->data.dbl;
-	Fecha_Inicio_Vehiculo.tm_mon = Data_Vehiculos[Numero_Fila_CSV][COL_MES_INI_CARGA]->data.dbl;
+	Fecha_Inicio_Vehiculo.tm_year = Data_Vehiculos[Numero_Fila_CSV][COL_ANYO_INI_CARGA]->data.dbl-1900;
+	Fecha_Inicio_Vehiculo.tm_mon =  Data_Vehiculos[Numero_Fila_CSV][COL_MES_INI_CARGA]->data.dbl-1;
 	Fecha_Inicio_Vehiculo.tm_mday = Data_Vehiculos[Numero_Fila_CSV][COL_DIA_INI_CARGA]->data.dbl;
 	Fecha_Inicio_Vehiculo.tm_hour = Data_Vehiculos[Numero_Fila_CSV][COL_HORA_INI_CARGA]->data.dbl;
-	Fecha_Inicio_Vehiculo.tm_min = Data_Vehiculos[Numero_Fila_CSV][COL_MINUTO_INI_CARGA]->data.dbl;
-	Fecha_Inicio_Vehiculo.tm_sec = 0;
+	Fecha_Inicio_Vehiculo.tm_min =  Data_Vehiculos[Numero_Fila_CSV][COL_MINUTO_INI_CARGA]->data.dbl;
+	Fecha_Inicio_Vehiculo.tm_sec =  0;
 	//Cargo la fecha de finalizacion de la carga->
-	Fecha_Fin_Vehiculo.tm_year = Data_Vehiculos[Numero_Fila_CSV][COL_ANYO_FIN_CARGA]->data.dbl;
-	Fecha_Fin_Vehiculo.tm_mon =  Data_Vehiculos[Numero_Fila_CSV][COL_MES_FIN_CARGA]->data.dbl;
+	Fecha_Fin_Vehiculo.tm_year = Data_Vehiculos[Numero_Fila_CSV][COL_ANYO_FIN_CARGA]->data.dbl-1900;
+	Fecha_Fin_Vehiculo.tm_mon =  Data_Vehiculos[Numero_Fila_CSV][COL_MES_FIN_CARGA]->data.dbl-1;
 	Fecha_Fin_Vehiculo.tm_mday = Data_Vehiculos[Numero_Fila_CSV][COL_DIA_FIN_CARGA]->data.dbl;
 	Fecha_Fin_Vehiculo.tm_hour = Data_Vehiculos[Numero_Fila_CSV][COL_HORA_FIN_CARGA]->data.dbl;
 	Fecha_Fin_Vehiculo.tm_min =  Data_Vehiculos[Numero_Fila_CSV][COL_MINUTO_FIN_CARGA]->data.dbl;
@@ -230,17 +267,17 @@ void Asignar_Informacion_Vehiculos(Elementos_Electrolinera* Informacion_Sistema,
 // elementos conectados a la electrolinera los datos de los diferentes vehiculos del sistema
 
 
-int Identificar_Vehiculos(Elementos_Electrolinera * Informacion_Sistema,const Celda*** Data_Vehiculos,const int *Filas_CSV_Vehiculos,
+int Identificar_Vehiculos(Elementos_Electrolinera * Informacion_Sistema,const Celda*** Data_Vehiculos_Baterias,const int *Filas_CSV_Vehiculos,
 	                      const Celda *** Data_Terminales, Puntos_Optimizacion *Array_Puntos_Simulacion) {
 	//Calculo el numero de vehiculos que se tienen en el CSV de entrada->
-	int Numero_Vehiculos = Calcular_Numero_Vehiculos(Data_Vehiculos, Filas_CSV_Vehiculos);
+	int Numero_Vehiculos = Calcular_Numero_Vehiculos(Data_Vehiculos_Baterias,Filas_CSV_Vehiculos);
 	//Guardo el numero de vehiculos que se tienen en el sistema->
 	Informacion_Sistema->Numero_Vehiculos = Numero_Vehiculos;
 	//Reservo memoria para el array que va a contener los datos de los vehiculos
 	if (Reservar_Memoria_Vehiculos(Informacion_Sistema) == -1) {
 		return -1;
 	}
-	Asignar_Informacion_Vehiculos(Informacion_Sistema, Data_Vehiculos, Data_Terminales, Filas_CSV_Vehiculos,
+	Asignar_Informacion_Vehiculos(Informacion_Sistema, Data_Vehiculos_Baterias, Data_Terminales,*Filas_CSV_Vehiculos,
 		                          Array_Puntos_Simulacion);
 	return 0;
 }

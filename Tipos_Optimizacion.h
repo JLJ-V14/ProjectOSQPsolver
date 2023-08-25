@@ -10,12 +10,26 @@
 extern "C" {
 #endif
 
+	typedef struct {
+		int    Punto_Inicial_Bateria;  //Punto inicial de la presencia de la bateria en el sistema
+		int    Punto_Final_Bateria;    // Punto final de la presencia de la bateria en el sistema
+		int    Punto_Objetivo_Bateria; // Punto objetivo de la carga de la bateria en el sistema
+		int    Numero_Terminal;        
+		double Capacidad_Bateria;     // Capacidad de la Bateria del vehiculo
+		char   Fase;                  //  Fase a la que esta conectada la bateria
+		double Bateria_Inicial;       //  Porcentaje de bateria inicial 
+		double Bateria_Final;         //  Porcentaje de bateria final 
+		double Maxima_Potencia;       //  Maxima Potencia que puede intercambiar la bateria
+		bool   Considerar_Carga;      //  Variable booleana que sirve para identificar si se carga la bateria.
+	}Baterias;
+
 	typedef enum {
 		CARGA_RAPIDA = 0,       //0 significa carga rapida
 	    CARGA_NORMAL = 1        //1 significa carga normal
 	}Tipo_Carga;
 
 	typedef struct {
+		int           Numero_Terminal;      //Terminal al que esta conectado el vehiculo
 		int           Punto_Inicial_Carga;  //Punto inicial de la carga del vehiculo->
 		int           Punto_Final_Carga;    //Punto Final de la carga del vehiculo  ->
 		double        Capacidad_Bateria;   //Capacidad de la bateria del vehiculo  ->
@@ -27,9 +41,11 @@ extern "C" {
 	}Vehiculos;
 
 	typedef struct {
-		int Numero_Puntos;
-		int Numero_Vehiculos;
-		Vehiculos* Vehiculos_Sistema;
+		int Numero_Puntos;      //Numero de puntos de simulacion que se han considerado en el sistema.
+		int Numero_Vehiculos;   //Numero de Vehiculos que tiene conectado el sistema
+		int Numero_Baterias;    //Numero de Baterias que tiene conectado el sistema
+		Vehiculos* Vehiculos_Sistema;  //Array de Variables que almacenan la informacion de los vehiculos 
+		Baterias*  Baterias_Sistema;   //Array de Variables que almacenan la informacion de las baterias
 	}Elementos_Electrolinera;
 	
 	//Tipo propio para almacenar la informacion importante de cada vehiculo.
@@ -44,9 +60,11 @@ extern "C" {
 	}Puntos_Adicionales;
 	//Creo un tipo para asociar cada punto de la simulacion a una fecha.
 	typedef struct {
-		int Punto_Simulacion;
-		int Delta_Simulacion;
-		struct tm Fecha;
+		int Punto_Simulacion;        //Numero de punto de calculo del algoritmo
+		int Delta_Simulacion;        //Diferencia en minutos entre un punto del algoritmo y el anterior
+		struct tm Fecha;             //Fecha Asociada al punto de la simulacion
+		double Precio_Compra;        //Precio de compra del kilovatio hora asociado a la hora en la que se encuentra el punto
+		double Precio_Venta;         //Precio de venta  del kilovatio hora asociado a la hora en la que se encuentra el punto.
 	}Puntos_Optimizacion;
 
 	//Se crea una variable para poder almacenar los datos del CSV de
@@ -63,15 +81,15 @@ extern "C" {
 
 	//-------------------------------------------------------------------------------------------------------//
 	typedef struct {
+		double  Maxima_Potencia_Red;                    //Maxima potencia que puede intercambiar la electrolinera con la red
+		double  Minima_Potencia_Red;                    //Minima potencia que puede intercambiar la electrolinera con la red
 		double	Maxima_Potencia_Red_Entrada;            //Maxima potencia que puede llegar de la red a la electrolinera
 		double  Minima_Potencia_Red_Entrada;            //Minima potencia que puede llegar de la red a la electrolinera
 		double  Maxima_Potencia_Red_Salida;             //Maxima potencia que puede salir de la electrolinera a la red.
 		double  Minima_Potencia_Red_Salida;             //Minima potencia que puede salir de la electrolinera a la red.
-		double  Maxima_Potencia_Red;                    //Maxima potencia que puede intercambiar la electrolinera con la red
-		double  Minima_Potencia_Red;                    //Minima potencia que puede intercambiar la electrolinera con la red
-		double  Maximo_Potencia_Red_R;                  //Maxima Potencia que puede intercambiar la electrolinera con la red en fase R
-		double  Maximo_Potencia_Red_S;                  //Maxima Potencia que puede intercambiar la electrolinera con la red en fase S
-		double  Maximo_Potencia_Red_T;                  //Maxima Potencia que puede intercambiar la electrolinera con la red en fase T
+		double  Maxima_Potencia_Red_R;                  //Maxima Potencia que puede intercambiar la electrolinera con la red en fase R
+		double  Maxima_Potencia_Red_S;                  //Maxima Potencia que puede intercambiar la electrolinera con la red en fase S
+		double  Maxima_Potencia_Red_T;                  //Maxima Potencia que puede intercambiar la electrolinera con la red en fase T
 		double  Minima_Potencia_Red_R;                  //Minima Potencia que puede intercambiar la electrolinera con la red en fase R
 		double  Minima_Potencia_Red_S;                  //Minima Potencia que puede intercambiar la electrolinera con la red en fase S
 		double  Minima_Potencia_Red_T;                  //Minima Potencia que puede intercambiar la electrolinera con la red en fase T
@@ -87,6 +105,8 @@ extern "C" {
 		double  Minima_Potencia_Salida_Red_S;           //Minima Potencia que puede salir  de la electrolinera a la red en fase S
 		double  Maxima_Potencia_Salida_Red_T;           //Maxima Potencia que puede salir  de la electrolinera a la red en fase T
 		double  Minima_Potencia_Salida_Red_T;           //Minima Potencia que puede salir  de la electrolinera a la red en fase T
+		double  Maxima_Potencia_Terminal[12];           //Maxima Potencia que puede intercambiar los terminales
+		double  Minima_Potencia_Terminal[12];           //Minima Potenica que puede intercambiar los terminales
 	}Restricciones_Electrolinera;                   //Variable que sirve para almacenar los limitaciones de la red con la electrolienra.
 
 	typedef struct {
