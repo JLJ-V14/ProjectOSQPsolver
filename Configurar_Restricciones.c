@@ -28,35 +28,35 @@ void Calcular_Restricciones_Sistema(const Celda *** Data_Restricciones, Restricc
 	Restricciones->Maxima_Potencia_Red =  Data_Restricciones[MAX_FILA_RESTRICCION_SISTEMA][COLUM_VALOR_RESTRICCIONES]->data.dbl;
 	Restricciones->Minima_Potencia_Red = -Data_Restricciones[MAX_FILA_RESTRICCION_SISTEMA][COLUM_VALOR_RESTRICCIONES]->data.dbl;
 	//Se establece cual es la maxima potencia que pueden intercambiar los terminales->
-	Restricciones->Maxima_Potencia_Terminal_1 =  Data_Restricciones[MAX_FILA_TERMINAL_1][COLUM_VALOR_RESTRICCIONES]->data.dbl;
-	Restricciones->Maxima_Potencia_Terminal_2 =  Data_Restricciones[MAX_FILA_TERMINAL_2][COLUM_VALOR_RESTRICCIONES]->data.dbl;
-	Restricciones->Maxima_Potencia_Terminal_3 =  Data_Restricciones[MAX_FILA_TERMINAL_3][COLUM_VALOR_RESTRICCIONES]->data.dbl;
-	Restricciones->Maxima_Potencia_Terminal_4 =  Data_Restricciones[MAX_FILA_TERMINAL_4][COLUM_VALOR_RESTRICCIONES]->data.dbl;
-	Restricciones->Maxima_Potencia_Terminal_5 =  Data_Restricciones[MAX_FILA_TERMINAL_5][COLUM_VALOR_RESTRICCIONES]->data.dbl;
-	Restricciones->Maxima_Potencia_Terminal_6 =  Data_Restricciones[MAX_FILA_TERMINAL_6][COLUM_VALOR_RESTRICCIONES]->data.dbl;
-	Restricciones->Maxima_Potencia_Terminal_7 =  Data_Restricciones[MAX_FILA_TERMINAL_7][COLUM_VALOR_RESTRICCIONES]->data.dbl;
-	Restricciones->Maxima_Potencia_Terminal_8 =  Data_Restricciones[MAX_FILA_TERMINAL_8][COLUM_VALOR_RESTRICCIONES]->data.dbl;
-	Restricciones->Maxima_Potencia_Terminal_9 =  Data_Restricciones[MAX_FILA_TERMINAL_9][COLUM_VALOR_RESTRICCIONES]->data.dbl;
-	Restricciones->Maxima_Potencia_Terminal_10 = Data_Restricciones[MAX_FILA_TERMINAL_10][COLUM_VALOR_RESTRICCIONES]->data.dbl;
-	Restricciones->Maxima_Potencia_Terminal_11 = Data_Restricciones[MAX_FILA_TERMINAL_11][COLUM_VALOR_RESTRICCIONES]->data.dbl;
-	Restricciones->Maxima_Potencia_Terminal_12 = Data_Restricciones[MAX_FILA_TERMINAL_12][COLUM_VALOR_RESTRICCIONES]->data.dbl;
+	Restricciones->Maxima_Potencia_Terminal[0] =  Data_Restricciones[MAX_FILA_TERMINAL_1][COLUM_VALOR_RESTRICCIONES]->data.dbl;
+	Restricciones->Maxima_Potencia_Terminal[1] =  Data_Restricciones[MAX_FILA_TERMINAL_2][COLUM_VALOR_RESTRICCIONES]->data.dbl;
+	Restricciones->Maxima_Potencia_Terminal[2] =  Data_Restricciones[MAX_FILA_TERMINAL_3][COLUM_VALOR_RESTRICCIONES]->data.dbl;
+	Restricciones->Maxima_Potencia_Terminal[3] =  Data_Restricciones[MAX_FILA_TERMINAL_4][COLUM_VALOR_RESTRICCIONES]->data.dbl;
+	Restricciones->Maxima_Potencia_Terminal[4] =  Data_Restricciones[MAX_FILA_TERMINAL_5][COLUM_VALOR_RESTRICCIONES]->data.dbl;
+	Restricciones->Maxima_Potencia_Terminal[5] =  Data_Restricciones[MAX_FILA_TERMINAL_6][COLUM_VALOR_RESTRICCIONES]->data.dbl;
+	Restricciones->Maxima_Potencia_Terminal[6] =  Data_Restricciones[MAX_FILA_TERMINAL_7][COLUM_VALOR_RESTRICCIONES]->data.dbl;
+	Restricciones->Maxima_Potencia_Terminal[7] =  Data_Restricciones[MAX_FILA_TERMINAL_8][COLUM_VALOR_RESTRICCIONES]->data.dbl;
+	Restricciones->Maxima_Potencia_Terminal[8] =  Data_Restricciones[MAX_FILA_TERMINAL_9][COLUM_VALOR_RESTRICCIONES]->data.dbl;
+	Restricciones->Maxima_Potencia_Terminal[9] =  Data_Restricciones[MAX_FILA_TERMINAL_10][COLUM_VALOR_RESTRICCIONES]->data.dbl;
+	Restricciones->Maxima_Potencia_Terminal[10] = Data_Restricciones[MAX_FILA_TERMINAL_11][COLUM_VALOR_RESTRICCIONES]->data.dbl;
+	Restricciones->Maxima_Potencia_Terminal[11] = Data_Restricciones[MAX_FILA_TERMINAL_12][COLUM_VALOR_RESTRICCIONES]->data.dbl;
 
 	//Se configurar el resto de restricciones en base a la informacion que se ha leido del CSV. Se establece que la
 	//maxima potencia que puede fluir en sentido contrario, es decir del sistema a la red es el mismo valor pero 
 	//con sentido negativo.
 
-	Restricciones->Minima_Potencia_Terminal_1 =  -Restricciones->Maxima_Potencia_Terminal_1;
-	Restricciones->Minima_Potencia_Terminal_2 =  -Restricciones->Maxima_Potencia_Terminal_2;
-	Restricciones->Minima_Potencia_Terminal_3 =  -Restricciones->Maxima_Potencia_Terminal_3;
-	Restricciones->Minima_Potencia_Terminal_4 =  -Restricciones->Maxima_Potencia_Terminal_4;
-	Restricciones->Minima_Potencia_Terminal_5 =  -Restricciones->Maxima_Potencia_Terminal_5;
-	Restricciones->Minima_Potencia_Terminal_6 =  -Restricciones->Maxima_Potencia_Terminal_6;
-	Restricciones->Minima_Potencia_Terminal_7 =  -Restricciones->Maxima_Potencia_Terminal_7;
-	Restricciones->Minima_Potencia_Terminal_8 =  -Restricciones->Maxima_Potencia_Terminal_8;
-	Restricciones->Minima_Potencia_Terminal_9 =  -Restricciones->Maxima_Potencia_Terminal_9;
-	Restricciones->Minima_Potencia_Terminal_10 = -Restricciones->Maxima_Potencia_Terminal_10;
-	Restricciones->Minima_Potencia_Terminal_11 = -Restricciones->Maxima_Potencia_Terminal_11;
-	Restricciones->Minima_Potencia_Terminal_12 = -Restricciones->Maxima_Potencia_Terminal_12;
+	Restricciones->Minima_Potencia_Terminal[0] = -Restricciones->Maxima_Potencia_Terminal[0];
+	Restricciones->Minima_Potencia_Terminal[1] = -Restricciones->Maxima_Potencia_Terminal[1];
+	Restricciones->Minima_Potencia_Terminal[2] = -Restricciones->Maxima_Potencia_Terminal[2];
+	Restricciones->Minima_Potencia_Terminal[3] = -Restricciones->Maxima_Potencia_Terminal[3];
+	Restricciones->Minima_Potencia_Terminal[4] = -Restricciones->Maxima_Potencia_Terminal[4];
+	Restricciones->Minima_Potencia_Terminal[5] = -Restricciones->Maxima_Potencia_Terminal[5];
+	Restricciones->Minima_Potencia_Terminal[6] = -Restricciones->Maxima_Potencia_Terminal[6];
+	Restricciones->Minima_Potencia_Terminal[7] = -Restricciones->Maxima_Potencia_Terminal[7];
+	Restricciones->Minima_Potencia_Terminal[8] = -Restricciones->Maxima_Potencia_Terminal[8];
+	Restricciones->Minima_Potencia_Terminal[9] = -Restricciones->Maxima_Potencia_Terminal[9];
+	Restricciones->Minima_Potencia_Terminal[10] = -Restricciones->Maxima_Potencia_Terminal[10];
+	Restricciones->Minima_Potencia_Terminal[11] = -Restricciones->Maxima_Potencia_Terminal[11];
 
    //Se configurar que la maxima potencia que puede llegar de la red a la electrolinera y de la electrolinera a la 
    //red, es igual al maximo que pueden intercambiar la red y la electrolinera, (la potencia que puede llegar a la

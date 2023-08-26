@@ -143,32 +143,32 @@ void Comprobar_Restricciones_Sistema(const Restricciones_Electrolinera *Restricc
 	Imprimir_Restriccion_Potencia("Maxima Potencia que puede salir de la electrolinera fase T %lf\n", Restricciones->Maxima_Potencia_Salida_Red_T);
 	Imprimir_Restriccion_Potencia("Minima Potencia que puede salir de la electrolinera fase T %lf\n", Restricciones->Minima_Potencia_Salida_Red_T);
 
-	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 1 %lf\n", Restricciones->Maxima_Potencia_Terminal_1);
-	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 2 %lf\n", Restricciones->Maxima_Potencia_Terminal_2);
-	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 3 %lf\n", Restricciones->Maxima_Potencia_Terminal_3);
-	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 4 %lf\n", Restricciones->Maxima_Potencia_Terminal_4);
-	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 5 %lf\n", Restricciones->Maxima_Potencia_Terminal_5);
-	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 6 %lf\n", Restricciones->Maxima_Potencia_Terminal_6);
-	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 7 %lf\n", Restricciones->Maxima_Potencia_Terminal_7);
-	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 8 %lf\n", Restricciones->Maxima_Potencia_Terminal_8);
-	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 9 %lf\n", Restricciones->Maxima_Potencia_Terminal_9);
-	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 10 %lf\n", Restricciones->Maxima_Potencia_Terminal_10);
-	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 11 %lf\n", Restricciones->Maxima_Potencia_Terminal_11);
-	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 12 %lf\n", Restricciones->Maxima_Potencia_Terminal_12);
+	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 1 %lf\n", Restricciones->Maxima_Potencia_Terminal[0]);
+	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 2 %lf\n", Restricciones->Maxima_Potencia_Terminal[1]);
+	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 3 %lf\n", Restricciones->Maxima_Potencia_Terminal[2]);
+	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 4 %lf\n", Restricciones->Maxima_Potencia_Terminal[3]);
+	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 5 %lf\n", Restricciones->Maxima_Potencia_Terminal[4]);
+	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 6 %lf\n", Restricciones->Maxima_Potencia_Terminal[5]);
+	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 7 %lf\n", Restricciones->Maxima_Potencia_Terminal[6]);
+	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 8 %lf\n", Restricciones->Maxima_Potencia_Terminal[7]);
+	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 9 %lf\n", Restricciones->Maxima_Potencia_Terminal[8]);
+	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 10 %lf\n", Restricciones->Maxima_Potencia_Terminal[9]);
+	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 11 %lf\n", Restricciones->Maxima_Potencia_Terminal[10]);
+	Imprimir_Restriccion_Potencia("Maxima Potencia que puede intercambiar el terminal 12 %lf\n", Restricciones->Maxima_Potencia_Terminal[11]);
 
 
-	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 1 %lf\n", Restricciones->Minima_Potencia_Terminal_1);
-	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 2 %lf\n", Restricciones->Minima_Potencia_Terminal_2);
-	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 3 %lf\n", Restricciones->Minima_Potencia_Terminal_3);
-	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 4 %lf\n", Restricciones->Minima_Potencia_Terminal_4);
-	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 5 %lf\n", Restricciones->Minima_Potencia_Terminal_5);
-	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 6 %lf\n", Restricciones->Minima_Potencia_Terminal_6);
-	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 7 %lf\n", Restricciones->Minima_Potencia_Terminal_7);
-	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 8 %lf\n", Restricciones->Minima_Potencia_Terminal_8);
-	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 9 %lf\n", Restricciones->Minima_Potencia_Terminal_9);
-	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 10 %lf\n",Restricciones->Minima_Potencia_Terminal_10);
-	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 11 %lf\n",Restricciones->Minima_Potencia_Terminal_11);
-	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 12 %lf\n",Restricciones->Minima_Potencia_Terminal_12);
+	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 1 %lf\n", Restricciones->Minima_Potencia_Terminal[0]);
+	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 2 %lf\n", Restricciones->Minima_Potencia_Terminal[1]);
+	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 3 %lf\n", Restricciones->Minima_Potencia_Terminal[2]);
+	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 4 %lf\n", Restricciones->Minima_Potencia_Terminal[3]);
+	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 5 %lf\n", Restricciones->Minima_Potencia_Terminal[4]);
+	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 6 %lf\n", Restricciones->Minima_Potencia_Terminal[5]);
+	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 7 %lf\n", Restricciones->Minima_Potencia_Terminal[6]);
+	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 8 %lf\n", Restricciones->Minima_Potencia_Terminal[7]);
+	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 9 %lf\n", Restricciones->Minima_Potencia_Terminal[8]);
+	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 10 %lf\n",Restricciones->Minima_Potencia_Terminal[9]);
+	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 11 %lf\n",Restricciones->Minima_Potencia_Terminal[10]);
+	Imprimir_Restriccion_Potencia("Minima Potencia que puede intercambiar el terminal 12 %lf\n",Restricciones->Minima_Potencia_Terminal[11]);
 }
 
 void Comprobar_Precios(const Elementos_Electrolinera* Informacion_Sistema, Puntos_Optimizacion *Array_Puntos_Simulacion) {
@@ -178,6 +178,21 @@ void Comprobar_Precios(const Elementos_Electrolinera* Informacion_Sistema, Punto
 		printf("El precio de compra es %f \n", Array_Puntos_Simulacion[i].Precio_Compra);
 		printf("El precio de venta es %f \n", Array_Puntos_Simulacion[i].Precio_Venta);
 	}
+}
+
+
+void Comprobar_Vector_L_U(const c_float*Vector_L,const  c_float *Vector_U,const Elementos_Electrolinera *Informacion_Sistema) {
+	FILE* Archivo_L = fopen("Comprobacion_Vector_L.csv", "w");
+	FILE* Archivo_U = fopen("Comprobacion_Vector_U.csv", "w");
+	
+	for (int i = 0; i < Informacion_Sistema->Numero_Puntos; i++) {
+		fprintf(Archivo_L, "%.2f", Vector_L[i]);
+		fprintf(Archivo_L, "\n");
+		fprintf(Archivo_U, "%.2F", Vector_U[i]);
+		fprintf(Archivo_U, "\n");
+	}
+	fclose(Archivo_L);
+	fclose(Archivo_U);
 }
 /*
 void Comprobar_Array_Puntos_Adicionales(Puntos_Adicionales * Array_Puntos_Adicionales) {
