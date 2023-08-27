@@ -328,6 +328,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\OxfordSolver\osqp\examples\osqp_demo.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="Obtener_Info_Entrada.c" />
+    <ClCompile Include="Optimizacion_Carga.c" />
     <ClCompile Include="Optimizacion_Cuadratica.c" />
     <ClCompile Include="Preparar_Arrays.c" />
   </ItemGroup>
@@ -359,6 +360,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="Configurar_Vehiculos.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Obtener_Info_Entrada.h" />
+    <ClInclude Include="Optimizacion_Carga.h" />
     <ClInclude Include="Optimizacion_Cuadratica.h" />
     <ClInclude Include="Preparar_Arrays.h" />
     <ClInclude Include="Tipos_Optimizacion.h" />

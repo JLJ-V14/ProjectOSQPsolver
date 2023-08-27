@@ -11,6 +11,8 @@
 extern "C" {
 #endif
 
+	void Optimizacion_Cuadratica(const Elementos_Electrolinera* Informacion_Sistema,
+		const Restricciones_Electrolinera* Restricciones_Sistema);
 #ifdef __cplusplus
 }
 #endif

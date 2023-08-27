@@ -227,16 +227,14 @@ int  Comparar_Puntos(const void* a, const void* b) {
 int Calcular_Numero_Horas(struct tm Fecha_Inicial, struct tm Fecha_Final) {
 	//En este subprograma se calcula el numero de puntos que van a coincidir con una hora en punto, y que han de
 	// ser añadidos al array->
-	printf("Hora Inicial antes de pasar por el bucle");
-	printf("%d \n", Fecha_Inicial.tm_hour);
+
 	int Horas_En_Punto = 0;
 	if (Fecha_Inicial.tm_min != 0 || Fecha_Inicial.tm_sec != 0) {
 		Fecha_Inicial.tm_min = 0;
 		Fecha_Inicial.tm_sec = 0;
 		Fecha_Inicial.tm_hour++;
 	}
-	printf("Hora Inicial despues de pasar por el bucle \n");
-	printf("%d \n", Fecha_Inicial.tm_hour);
+
 	//Se normalizan las fechas.
 	time_t initial_time = mktime(&Fecha_Inicial);
 	time_t final_time = mktime(&Fecha_Final);
@@ -250,8 +248,7 @@ int Calcular_Numero_Horas(struct tm Fecha_Inicial, struct tm Fecha_Final) {
 		Horas_En_Punto = difference_in_seconds / 3600; // 3600 seconds in an hour
 	}
 	
-	printf("Hora Inicial despues de pasar por el subprograma \n");
-	printf("%d \n", Fecha_Inicial.tm_hour);
+	
 	return Horas_En_Punto;
 }
 void Añadir_Puntos_Horas_En_Punto(Puntos_Adicionales **Array_Puntos,struct tm Fecha_Inicial,struct tm Fecha_Final,
@@ -264,20 +261,13 @@ void Añadir_Puntos_Horas_En_Punto(Puntos_Adicionales **Array_Puntos,struct tm Fe
 	Fecha_Inicial.tm_min = 0;
 	Fecha_Inicial.tm_sec = 0;
 	Fecha_Inicial.tm_hour++;
-	printf("La hora inicial es \n: ");
-	printf("%d", Fecha_Inicial.tm_hour);
+	
 	mktime(&Fecha_Inicial); //Se normaliza la fecha 
 	
 	//Se itera por las horas,añadiendo los nuevos puntos---->
 	while (difftime(mktime(&Fecha_Final), mktime(&Fecha_Inicial)) > 0) {
 		(*Array_Puntos)[Punto_Array].date = Fecha_Inicial;
-		printf("Comprobacion Fecha Hora en punto \n");
-		printf("%d", (*Array_Puntos)[Punto_Array].date.tm_year);
-		printf("%d", (*Array_Puntos)[Punto_Array].date.tm_mon);
-		printf("%d", (*Array_Puntos)[Punto_Array].date.tm_mday);
-		printf("%d", (*Array_Puntos)[Punto_Array].date.tm_hour);
-		printf("%d", (*Array_Puntos)[Punto_Array].date.tm_min);
-		printf("%d", (*Array_Puntos)[Punto_Array].date.tm_sec);
+		
 		//Se mueve a la siguiente hora y se incrementa el contador
 		Fecha_Inicial.tm_hour++;
 		mktime(&Fecha_Inicial);
@@ -315,8 +305,8 @@ void Reordenar_Array(Puntos_Adicionales **Array_Puntos_Adicionales, int *Numero_
 	Reajustar_Array(Array_Puntos_Adicionales, Numero_Puntos);
 	//Comprobar_Array_Puntos_Adicionales(*Array_Puntos_Adicionales);
 	qsort(*Array_Puntos_Adicionales, *Numero_Puntos, sizeof(Puntos_Adicionales), Comparar_Puntos);
-	printf("El numero de puntos es-> \n");
-	printf("%d \n",*Numero_Puntos);
+
+
 	Comprobar_Array_Puntos_Adicionales(*Array_Puntos_Adicionales);
 }
 int Calcular_Punto_Final(const struct tm Fecha_Final) {
@@ -351,11 +341,7 @@ int Obtener_Array_Puntos_Adicionales(const Celda*** Data_Vehiculos,const Celda *
 
 	//Cargo la fecha inicial y final en dos variables para calcular el numero de horas->
 	Cargar_Fecha_Inicial_Final(&Fecha_Inicial, &Fecha_Final, Data_Tiempo);
-	printf("La fecha inicial completa es->\n");
-	printf("%d", Fecha_Inicial.tm_mon);
-	printf("%d", Fecha_Inicial.tm_mday);
-	printf("%d", Fecha_Inicial.tm_hour);
-	printf("%d", Fecha_Inicial.tm_min);
+
 	
 	//Calculo el numero de vehiculos que se tienen en el CSV de entrada->
 	int Numero_Vehiculos=Calcular_Numero_Vehiculos(Data_Vehiculos, N_Filas_CSV);
@@ -369,12 +355,8 @@ int Obtener_Array_Puntos_Adicionales(const Celda*** Data_Vehiculos,const Celda *
 	//Se considera la posibilidad de que la hora final no acabe en una hora  en punto y sea necesario añadir
 	//un punto.
 	int Punto_Final = Calcular_Punto_Final(Fecha_Final);
-	printf("El punto final es->");
-	printf("%d", Punto_Final);
-	//La fecha final es->
-	printf("La Fecha Final es->");
-	printf("%d\n", Fecha_Final.tm_hour);
-	printf("%d\n", Fecha_Final.tm_min);
+	
+
 	//El array ha de tener una dimension que es igual al doble de vehiculos que tienen su carga programada
 	//(se incluye la fecha inicial y final de carga) y el numero de horas (se incluyen las horas en punto)
 
@@ -416,8 +398,7 @@ int Obtener_Array_Puntos_Adicionales(const Celda*** Data_Vehiculos,const Celda *
 	
 	//Se reordena las fechas contenidas en el array en orden cronologico y se eliminan aquellas fechas que 
 	//se encuentren repetidas->
-	printf("El numero de puntos es-> \n");
-	printf("%d \n", *Numero_Puntos);
+	
 	
 	//Comprobar_Array_Puntos_Adicionales(*Array_Puntos);
 	Reordenar_Array(Array_Puntos, Numero_Puntos);
@@ -456,21 +437,12 @@ struct tm Calcular_Siguiente_Punto(const int Delta_Simulacion, const struct tm P
 	//Se copia el punto Actual al punto siguiente->
 	Punto_Siguiente = Punto_Actual;
 	//Se añade el delta en minutos al punto actual->
-	printf("Comprobacion Hora \n");
-	printf("%d", Punto_Siguiente.tm_hour);
-	printf("Comprobacion minuto \n");
-	printf("%d", Punto_Siguiente.tm_min);
-	printf("El delta es \n");
-	printf("%d\n", Delta_Simulacion);
+	
 	Punto_Siguiente.tm_min += Delta_Simulacion;
-	printf("Comprobacion minuto + delta");
-	printf("%d", Punto_Siguiente.tm_min);
+	
 	//Se Normaliza el formato de fecha->
 	mktime(&Punto_Siguiente);
-	printf("Comprobacion Hora \n");
-	printf("%d", Punto_Siguiente.tm_hour);
-	printf("Comprobacion minuto \n");
-	printf("%d", Punto_Siguiente.tm_min);
+
 	return Punto_Siguiente;
 }
 //Se comprueba si el siguiente punto de simulacion supera o iguala la fecha final de la simulacion
@@ -596,8 +568,7 @@ int Incluir_Nuevo_Punto(Puntos_Optimizacion **Array_Puntos_Simulacion, int *Nume
 	(*Array_Puntos_Simulacion)[*Numero_Puntos_Simulacion-1].Punto_Simulacion = (*Numero_Puntos_Simulacion)-1;
 	(*Array_Puntos_Simulacion)[*Numero_Puntos_Simulacion-1].Delta_Simulacion = Delta_Variable;
 	
-	printf("El numero de puntos de simulacion es \n");
-	printf("%d\n", *Numero_Puntos_Simulacion);
+
 }
 int Aumentar_Array_Simulacion     (Puntos_Optimizacion **Array_Puntos_Simulacion,Puntos_Adicionales **Array_Puntos_Adicionales,
 	                              const int Delta_Simulacion, int*Numero_Puntos_Simulacion,struct tm *Fecha_Siguiente,
@@ -608,7 +579,7 @@ int Aumentar_Array_Simulacion     (Puntos_Optimizacion **Array_Puntos_Simulacion
 	if ((Supera_Punto_Carga(*Array_Puntos_Adicionales, *Fecha_Siguiente,*Punto_Actual_Array_Carga)) && (!Fin_Puntos_Carga(Puntos_Array_Adicional,*Punto_Actual_Array_Carga))) {
 		//La fecha del punto siguiente supera al punto del array luego es necesario añadir el punto del array
 		//a la simulacion manualmente
-		printf("Hello_World\n");
+		
 		if (Incluir_Nuevo_Punto(Array_Puntos_Simulacion, Numero_Puntos_Simulacion,*Array_Puntos_Adicionales,*Punto_Actual_Array_Carga,Fecha_Siguiente) == -1) {
 			return -1;
 		}
@@ -620,7 +591,7 @@ int Aumentar_Array_Simulacion     (Puntos_Optimizacion **Array_Puntos_Simulacion
 	else if ((Fechas_Iguales(*Fecha_Siguiente, (*Array_Puntos_Adicionales)[*Punto_Actual_Array_Carga].date))) {
 		//Si las fecha del siguiente punto a añadir en la simulacion coincide con la fecha de un punto del array de 
 		// cargas adicionales ->
-		printf("Segundo_Camino\n");
+		
 		if (Anyadir_Punto(Array_Puntos_Simulacion, Fecha_Siguiente, Delta_Simulacion, Numero_Puntos_Simulacion)) {
 			return -1;
 		}
@@ -629,7 +600,7 @@ int Aumentar_Array_Simulacion     (Puntos_Optimizacion **Array_Puntos_Simulacion
 	else {
 		// Si el siguiente punto a añadir no coincide con un punto especial (Hora en punto, o inicio o fin de carga)
 		// se añade un punto sumandole al punto anterior el delta t.
-		printf("Tercero Camino \n");
+		
 		if (Anyadir_Punto(Array_Puntos_Simulacion, Fecha_Siguiente, Delta_Simulacion, Numero_Puntos_Simulacion)) {
 			return -1;
 		}
@@ -653,10 +624,7 @@ int Incluir_Fecha_Final(Puntos_Optimizacion **Array_Puntos_Simulacion,int *Numer
 			return -1;
 		}
 		//Obtengo la diferencia en minutos con el punto anterior->
-		printf("El minuto de la fecha anterior es->\n");
-		printf("%d \n", Fecha_Anterior.tm_min);
-		printf("El minuto de la fecha siguiente es-> \n");
-		printf("%d \n", Fecha_Final.tm_min);
+		
 		int Delta_Ultimo = Obtener_Diferencia_Minutos(Fecha_Final, Fecha_Anterior);
 		//Se carga la fecha de finalizacion de la simulacion en el array->
 		(*Array_Puntos_Simulacion)[*Numero_Puntos_Simulacion - 1].Fecha = Fecha_Final;

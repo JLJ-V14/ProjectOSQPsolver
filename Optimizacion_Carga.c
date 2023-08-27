@@ -24,8 +24,16 @@ void Optimizacion_Cuadratica(const Elementos_Electrolinera *Informacion_Sistema,
 	//Se configuran algunos ajustes de la optimizacion->
 	Configurar_Ajustes(settings);
 	
+	
 	//Se configuran los vectores L y U:
-	Configurar_Vector_L_U(Vector_L,Vector_U,Informacion_Sistema,Restricciones_Sistema);
+	
+	Configurar_Vector_L_U(&Vector_L,&Vector_U,Informacion_Sistema,Restricciones_Sistema);
+	printf("Comprobacion vector L y U \n");
+	printf("%.2f", Vector_L[0]);
+	printf("%.2f", Vector_U[0]);
+	
+	//Se comprueba que se ha escrito el vector L y el vector U correctamente.
+	Comprobar_Vector_L_U(Vector_L, Vector_U, Informacion_Sistema);
 	//Se libera el espacio en memoria reservado a las estructuras creadas para la optimizacion..
 	c_free(Vector_L);
 	c_free(Vector_U);

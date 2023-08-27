@@ -3,6 +3,8 @@
 //#include "Comprobar_Informacion.h"
 #include <stdio.h>
 #include "Tipos_Optimizacion.h"
+
+#define NUMERO_VARIABLES 36
 void Escribir_CSV(const char* Nombre_Archivo, Celda*** data, int Filas, int Columnas) {
 	FILE* file = fopen(Nombre_Archivo, "w");
 	if (file == NULL) {
@@ -182,17 +184,124 @@ void Comprobar_Precios(const Elementos_Electrolinera* Informacion_Sistema, Punto
 
 
 void Comprobar_Vector_L_U(const c_float*Vector_L,const  c_float *Vector_U,const Elementos_Electrolinera *Informacion_Sistema) {
+	//Este subprograma se utiliza para comprobar que el vector L y el vector U se ha escrito correctamente->
+
 	FILE* Archivo_L = fopen("Comprobacion_Vector_L.csv", "w");
 	FILE* Archivo_U = fopen("Comprobacion_Vector_U.csv", "w");
-	
-	for (int i = 0; i < Informacion_Sistema->Numero_Puntos; i++) {
-		fprintf(Archivo_L, "%.2f", Vector_L[i]);
+	//Prueba imprimir tipo c_float
+	c_float Numero_Prueba = (c_float)1.05;
+	printf("El numero de prueba con c_float es %.2f \n", Numero_Prueba);
+	//Cargo el numero de puntos de simulacion
+	int Numero_Puntos_Simulacion = Informacion_Sistema->Numero_Puntos;
+	int Numero_Variables = NUMERO_VARIABLES * Informacion_Sistema->Numero_Puntos;
+	fprintf(Archivo_L, "Potencia intercambiada red-electrolinera,");
+	fprintf(Archivo_L, "Potencia entra electrolinera,");
+	fprintf(Archivo_L, "Potencia sale  electrolinera,");
+	fprintf(Archivo_L, "Potencia intercambiada red-electrolinera fase R,");
+	fprintf(Archivo_L, "Potencia intercambiada red-electrolinera fase S,");
+	fprintf(Archivo_L, "Potencia intercambiada red-electrolinera fase T,");
+	fprintf(Archivo_L, "Potencia entrada electrolinera fase R,");
+	fprintf(Archivo_L, "Potencia entrada electrolinera fase S,");
+	fprintf(Archivo_L, "Potencia entrada electrolinera fase T,");
+	fprintf(Archivo_L, "Potencia salida  electrolinera fase R,");
+	fprintf(Archivo_L, "Potencia salida  electrolinera fase S,");
+	fprintf(Archivo_L, "Potencia salida  electrolinera fase T,");
+	fprintf(Archivo_L, "Bateria  Terminal 1,");
+	fprintf(Archivo_L, "Bateria  Terminal 2,");
+	fprintf(Archivo_L, "Bateria  Terminal 3,");
+	fprintf(Archivo_L, "Bateria  Terminal 4,");
+	fprintf(Archivo_L, "Bateria  Terminal 5,");
+	fprintf(Archivo_L, "Bateria  Terminal 6,");
+	fprintf(Archivo_L, "Bateria  Terminal 7,");
+	fprintf(Archivo_L, "Bateria  Terminal 8,");
+	fprintf(Archivo_L, "Bateria  Terminal 9,");
+	fprintf(Archivo_L, "Bateria  Terminal 10,");
+	fprintf(Archivo_L, "Bateria  Terminal 11,");
+	fprintf(Archivo_L, "Bateria  Terminal 12,");
+	fprintf(Archivo_L, "Potencia Terminal 1,");
+	fprintf(Archivo_L, "Potencia Terminal 2,");
+	fprintf(Archivo_L, "Potencia Terminal 3,");
+	fprintf(Archivo_L, "Potencia Terminal 4,");
+	fprintf(Archivo_L, "Potencia Terminal 5,");
+	fprintf(Archivo_L, "Potencia Terminal 6,");
+	fprintf(Archivo_L, "Potencia Terminal 7,");
+	fprintf(Archivo_L, "Potencia Terminal 8,");
+	fprintf(Archivo_L, "Potencia Terminal 9,");
+	fprintf(Archivo_L, "Potencia Terminal 10,");
+	fprintf(Archivo_L, "Potencia Terminal 11,");
+	fprintf(Archivo_L, "Potencia Terminal 12,");
+	//Se hace lo mismo pero con el vector U
+	fprintf(Archivo_U, "Potencia intercambiada red-electrolinera,");
+	fprintf(Archivo_U, "Potencia entra electrolinera,");
+	fprintf(Archivo_U, "Potencia sale  electrolinera,");
+	fprintf(Archivo_U, "Potencia intercambiada red-electrolinera fase R,");
+	fprintf(Archivo_U, "Potencia intercambiada red-electrolinera fase S,");
+	fprintf(Archivo_U, "Potencia intercambiada red-electrolinera fase T,");
+	fprintf(Archivo_U, "Potencia entrada electrolinera fase R,");
+	fprintf(Archivo_U, "Potencia entrada electrolinera fase S,");
+	fprintf(Archivo_U, "Potencia entrada electrolinera fase T,");
+	fprintf(Archivo_U, "Potencia salida  electrolinera fase R,");
+	fprintf(Archivo_U, "Potencia salida  electrolinera fase S,");
+	fprintf(Archivo_U, "Potencia salida  electrolinera fase T,");
+	fprintf(Archivo_U, "Bateria  Terminal 1,");
+	fprintf(Archivo_U, "Bateria  Terminal 2,");
+	fprintf(Archivo_U, "Bateria  Terminal 3,");
+	fprintf(Archivo_U, "Bateria  Terminal 4,");
+	fprintf(Archivo_U, "Bateria  Terminal 5,");
+	fprintf(Archivo_U, "Bateria  Terminal 6,");
+	fprintf(Archivo_U, "Bateria  Terminal 7,");
+	fprintf(Archivo_U, "Bateria  Terminal 8,");
+	fprintf(Archivo_U, "Bateria  Terminal 9,");
+	fprintf(Archivo_U, "Bateria  Terminal 10,");
+	fprintf(Archivo_U, "Bateria  Terminal 11,");
+	fprintf(Archivo_U, "Bateria  Terminal 12,");
+	fprintf(Archivo_U, "Potencia Terminal 1,");
+	fprintf(Archivo_U, "Potencia Terminal 2,");
+	fprintf(Archivo_U, "Potencia Terminal 3,");
+	fprintf(Archivo_U, "Potencia Terminal 4,");
+	fprintf(Archivo_U, "Potencia Terminal 5,");
+	fprintf(Archivo_U, "Potencia Terminal 6,");
+	fprintf(Archivo_U, "Potencia Terminal 7,");
+	fprintf(Archivo_U, "Potencia Terminal 8,");
+	fprintf(Archivo_U, "Potencia Terminal 9,");
+	fprintf(Archivo_U, "Potencia Terminal 10,");
+	fprintf(Archivo_U, "Potencia Terminal 11,");
+	fprintf(Archivo_U, "Potencia Terminal 12,");
+	for (int i = 0; i < Numero_Puntos_Simulacion; i++) {
+		for (int j = 0; j < NUMERO_VARIABLES; j++) {
+			printf("Iteracion comprobacion numero %d \n", i);
+
+			fprintf(Archivo_L, "%.2f,", Vector_L[i + j*Numero_Puntos_Simulacion]);
+			fprintf(Archivo_U, "%.2f,", Vector_U[i+ j*Numero_Puntos_Simulacion]);
+		}
 		fprintf(Archivo_L, "\n");
-		fprintf(Archivo_U, "%.2F", Vector_U[i]);
 		fprintf(Archivo_U, "\n");
-	}
+		}
 	fclose(Archivo_L);
 	fclose(Archivo_U);
+}
+
+
+void Comprobacion_Vehiculos_Baterias(const Elementos_Electrolinera *Informacion_Sistema) {
+	//Se utiliza este subprograma para comprobar los puntos iniciales y finales de vehiculos y baterias.
+	FILE* Archivo_Vehiculos = fopen("Archivo_Vehiculos.csv", "w");
+	FILE* Archivo_Baterias = fopen("Archivo_Baterias.csv", "w");
+
+	for (int i = 0; i < Informacion_Sistema->Numero_Vehiculos; i++) {
+		fprintf(Archivo_Vehiculos, "%d,", Informacion_Sistema->Vehiculos_Sistema[i].Numero_Terminal);
+		fprintf(Archivo_Vehiculos, "%d,", Informacion_Sistema->Vehiculos_Sistema[i].Punto_Inicial_Carga);
+		fprintf(Archivo_Vehiculos, "%d,", Informacion_Sistema->Vehiculos_Sistema[i].Punto_Final_Carga);
+		fprintf(Archivo_Vehiculos,"\n");
+	}
+
+	for (int j = 0; j < Informacion_Sistema->Numero_Baterias; j++) {
+		fprintf(Archivo_Vehiculos, "%d", Informacion_Sistema->Baterias_Sistema[j].Numero_Terminal);
+		fprintf(Archivo_Baterias, "%d,", Informacion_Sistema->Baterias_Sistema[j].Punto_Inicial_Bateria);
+		fprintf(Archivo_Baterias, "%d,", Informacion_Sistema->Baterias_Sistema[j].Punto_Final_Bateria);
+		fprintf(Archivo_Baterias, "\n");
+	}
+	fclose(Archivo_Vehiculos);
+	fclose(Archivo_Baterias);
 }
 /*
 void Comprobar_Array_Puntos_Adicionales(Puntos_Adicionales * Array_Puntos_Adicionales) {

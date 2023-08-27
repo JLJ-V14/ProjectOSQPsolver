@@ -104,24 +104,22 @@ void  Obtener_Fase_Bateria(Elementos_Electrolinera* Informacion_Sistema, const C
 	// R S o T
 	//Primero es necesario identificar a que numero de terminal esta conectado el vehiculo->
 	int Numero_Terminal = Obtener_Numero_Terminal(Data_Baterias, N_Fila_CSV);
-	Informacion_Sistema->Baterias_Sistema[Numero_Bateria].Numero_Terminal;
+	
+	Informacion_Sistema->Baterias_Sistema[Numero_Bateria].Numero_Terminal =Numero_Terminal;
+	
 
-	//Imprimo por pantalla el numero de terminal->
-	printf("El numero de terminal en cuestion es \n");
-	printf("%d", Numero_Terminal);
 	//Segundo es necesario identificar la a fase a la que esta conectada dicho terminal->
 	char fase = Obtener_Fase_Electrica(Data_Terminales, Numero_Terminal);
-	printf("La fase leida es -> \n");
-	printf("%c", fase);
+	
 	//Incluyo la fase en la que esta conectada en el vehiculo correspondiente
 	Informacion_Sistema->Baterias_Sistema[Numero_Bateria].Fase = fase;
 }
 bool Comprobar_Objetivo_Carga(const char* Objetivo) {
 	//Funcion booleana que devuelve true si hay que considerar el objetivo de carga de la bateria
 	//o falso si no hay que considerarlo.
-	printf("---------------------------------------------------------------------------\n");
+	
 	if ((strcmp(Objetivo, "Si") == 0) || (strcmp(Objetivo, "si") == 0) || (strcmp(Objetivo, "sí") == 0) || strcmp(Objetivo, "Sí")==0) {
-		printf("Se considera la carga \n");
+		
 		return true;
 	}
 	else {
@@ -130,19 +128,18 @@ bool Comprobar_Objetivo_Carga(const char* Objetivo) {
 }
 void Considerar_Carga_Bateria(Elementos_Electrolinera *Informacion_Sistema, const Celda ***Data_Baterias,
 	                          const int Numero_Fila, const int Numero_Bateria) {
-	printf("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+	
 	//Este subprograma se utiliza para almacenar en la variable que contiene la informacion sobre la electrolinera
 	//si se desean que las baterias se carguen para la fecha objetivo o no.
 	
 		if ((Comprobar_Objetivo_Carga(Data_Baterias[Numero_Fila][COL_OBJETIVO_CARGA]->data.str)==true)) {
-			printf("Hay que considerar la carga \n");
+			
 			Informacion_Sistema->Baterias_Sistema[Numero_Bateria].Considerar_Carga = true;
 		}
 		else {
-			printf("No hay que considerar la carga \n");
+			
 			Informacion_Sistema->Baterias_Sistema[Numero_Bateria].Considerar_Carga = false;
-			printf("%d \n", Informacion_Sistema->Baterias_Sistema[Numero_Bateria].Considerar_Carga);
-			printf("Se considera la carga del objetivo %d \n", Informacion_Sistema->Baterias_Sistema[Numero_Bateria].Considerar_Carga);
+			
 		}
 
 }
@@ -183,11 +180,9 @@ void Incluir_Bateria(const int Numero_Fila_CSV, Elementos_Electrolinera* Informa
 		Numero_Fila_CSV, Numero_Puntos);
 	Obtener_Fase_Bateria(Informacion_Sistema, Data_Baterias, Data_Terminales, Numero_Bateria, Numero_Fila_CSV);
 	Considerar_Carga_Bateria(Informacion_Sistema, Data_Baterias, Numero_Fila_CSV,Numero_Bateria);
-	printf("**********************************************************************************\n");
-	printf("Se considera la carga del objetivo %d \n", Informacion_Sistema->Baterias_Sistema[0].Considerar_Carga);
+	
 	Obtener_Punto_Objetivo(Informacion_Sistema, Array_Puntos_Simulacion, Numero_Bateria, Data_Baterias, Numero_Fila_CSV, Numero_Puntos);
-	printf("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-\n");
-	printf("Se considera la carga del objetivo %d \n", Informacion_Sistema->Baterias_Sistema[0].Considerar_Carga);
+	
 }
 
 
@@ -201,7 +196,7 @@ void Asignar_Informacion_Baterias(Elementos_Electrolinera* Informacion_Sistema, 
 	//Un bucle for que itera por las filas del CSV de los vehiculos->
 	for (int Fila_CSV = 1; Fila_CSV < Filas_CSV_Baterias; Fila_CSV++) {
 		    //Si la fila actual del CSV contiene un vehiculo->
-			printf("Entra bucle \n");
+			
 			//Se incluye el vehiculo correspondiente en la informacion del sistema->
 			Incluir_Bateria(Fila_CSV, Informacion_Sistema, Bateria_Actual, Data_Baterias, Array_Puntos_Simulacion,
 				Numero_Puntos, Data_Terminales);
@@ -210,8 +205,7 @@ void Asignar_Informacion_Baterias(Elementos_Electrolinera* Informacion_Sistema, 
 
 		//Si la fila actual del CSV contiene una bateria->
 	}
-	printf("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-\n");
-	printf("Se considera la carga del objetivo %d \n", Informacion_Sistema->Baterias_Sistema[0].Considerar_Carga);
+	
 }
 
 int Identificar_Baterias(Elementos_Electrolinera* Informacion_Sistema, const Celda*** Data_Baterias,

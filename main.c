@@ -10,7 +10,7 @@
 #include "Configurar_Precios.h"          //Header file donde se incluye las funciones de configurar el precio del kWh
 #include "Configurar_Restricciones.h"    //Header file donde se incluye las funciones de configurar las restricciones
 #include "Obtener_Info_Entrada.h"        //Header file que incluye las funciones de leer la entrada.
-#include "Optimizacion_Cuadratica.h"     //Header file que incluye la funcion principal de optimizacion
+#include "Optimizacion_Carga.h"          //Header file que incluye la funcion principal de optimizacion
 #include "osqp.h"                        //Header file que incluye las funciones del algoritmo de optimizacion
 #include "Preparar_Arrays.h"             //Header file en el que van incluidas las funciones para reservar memorias para los arrays.s
 #include "Tipos_Optimizacion.h"          //Header file que incluye los tipos propios definidos para el algoritmo de optimizacion 
@@ -96,8 +96,11 @@ void main_optimizacionC(void) {
 	Calcular_Restricciones_Sistema(Data_Restricciones, &Restricciones_Sistema);
 	Configurar_Precios(Data_Precio_Compra,Data_Precio_Venta,Array_Puntos_Simulacion,Informacion_Electrolinera,
 		*Filas_Precio_Compra, *Filas_Precio_Venta);
-
+	
+	
+	Optimizacion_Cuadratica(Informacion_Electrolinera,&Restricciones_Sistema);
 	Comprobar_Elementos_Electrolinera(Informacion_Electrolinera);
+	Comprobacion_Vehiculos_Baterias(Informacion_Electrolinera);
 	Comprobar_Restricciones_Sistema(&Restricciones_Sistema);
 	Comprobar_Precios(Informacion_Electrolinera, Array_Puntos_Simulacion);
 

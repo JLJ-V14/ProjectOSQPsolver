@@ -50,21 +50,9 @@ int Inicializar_Cargas_Electrolinera(Elementos_Electrolinera **Informacion_Siste
 //En funcion de si el numero que devuelve es superior a 0 inferior a 0 o igual a 0
 
 int Comparar_Fechas(struct tm Fecha1, struct tm Fecha2) {
-	printf("La fecha 1 es \n:");
-	printf("%d \n", Fecha1.tm_year);
-	printf("%d \n", Fecha1.tm_mon);
-	printf("%d \n", Fecha1.tm_mday);
-	printf("%d \n", Fecha1.tm_hour);
-	printf("%d \n", Fecha1.tm_min);
-	printf("%d \n", Fecha1.tm_sec);
+	
 
-	printf("La fecha 2 es \n:");
-	printf("%d \n", Fecha2.tm_year);
-	printf("%d \n", Fecha2.tm_mon);
-	printf("%d \n", Fecha2.tm_mday);
-	printf("%d \n", Fecha2.tm_hour);
-	printf("%d \n", Fecha2.tm_min);
-	printf("%d \n", Fecha2.tm_sec);
+	
 
 	time_t t1 = mktime(&Fecha1);
 	time_t t2 = mktime(&Fecha2);
@@ -80,14 +68,7 @@ int Comparar_Fechas(struct tm Fecha1, struct tm Fecha2) {
 int Busqueda_Binaria(Puntos_Optimizacion *Array_Puntos_Simulacion, const int size,const struct tm Fecha_Objetivo) {
 	//En este programa de busqueda se va comprobando si la fecha que se va recorriendo del array está por
 	//encima o por debajo de la fecha objetivo->
-	printf("El numero de puntos es %d \n", size);
-	printf("La fecha objetivo es \n :");
-	printf("%d \n", Fecha_Objetivo.tm_year);
-	printf("%d \n", Fecha_Objetivo.tm_mon);
-	printf("%d \n", Fecha_Objetivo.tm_mday);
-	printf("%d \n", Fecha_Objetivo.tm_hour);
-	printf("%d \n", Fecha_Objetivo.tm_min);
-	printf("%d \n", Fecha_Objetivo.tm_sec);
+
 
 	int Index_Bajo = 0;
 	int Index_Alto = size - 1;
@@ -96,7 +77,7 @@ int Busqueda_Binaria(Puntos_Optimizacion *Array_Puntos_Simulacion, const int siz
 		int Comparacion = Comparar_Fechas(Fecha_Objetivo, Array_Puntos_Simulacion[Index_Medio].Fecha);
 
 		if (Comparacion == 0) {
-			printf("El punto retornado es el %d \n", Index_Medio);
+			
 			return Index_Medio;
 		}
 		else if (Comparacion < 0) {
@@ -123,11 +104,11 @@ int Reservar_Memoria_Vehiculos(Elementos_Electrolinera *Informacion_Sistema) {
 
 Tipo_Carga Obtener_Modo_Carga(const char *Modo_Carga) {
 	if ((strcmp(Modo_Carga, "rapida") == 0)||(strcmp(Modo_Carga,"Rapida")==0)) {
-		printf("Carga Rapida \n");
+
 		return CARGA_RAPIDA;
 	}
 	else if ((strcmp(Modo_Carga, "normal") == 0)||(strcmp(Modo_Carga,"Normal")==0)) {
-		printf("Carga Normal \n");
+		
 		return CARGA_NORMAL;
 	}
 
@@ -143,7 +124,7 @@ int   Obtener_Numero_Terminal(const Celda ***Data_CSV, const int N_Fila_CSV) {
 
 char Obtener_Fase_Electrica (const Celda ***Data_Terminales, const int Numero_Terminal) {
 	char fase;
-	printf("Prueba Fase Leida \n");
+	
 	
 	return fase = *(Data_Terminales[Numero_Terminal][COL_FASE]->data.str);
 }
@@ -158,7 +139,7 @@ void  Obtener_Fase_Vehiculo(Elementos_Electrolinera *Informacion_Sistema, const 
 	//Imprimo por pantalla el numero de terminal->
 	printf("El numero de terminal en cuestion es \n");
 	printf("%d", Numero_Terminal);
-	Informacion_Sistema->Vehiculos_Sistema[Numero_Terminal].Numero_Terminal;
+	Informacion_Sistema->Vehiculos_Sistema[Numero_Vehiculo].Numero_Terminal=Numero_Terminal;
 	//Segundo es necesario identificar la a fase a la que esta conectada dicho terminal->
 	char fase = Obtener_Fase_Electrica(Data_Terminales, Numero_Terminal);
 	printf("La fase leida es -> \n");
@@ -205,6 +186,7 @@ void Incluir_Punto_Inicial_Final(Elementos_Electrolinera *Informacion_Sistema,Pu
 
 	
 	int Index_Fecha_Inicio = Busqueda_Binaria(Array_Puntos_Simulacion, Numero_Puntos, Fecha_Inicio_Vehiculo);
+	
 	if (Index_Fecha_Inicio != -1) {
 		Informacion_Sistema->Vehiculos_Sistema[Numero_Vehiculo].Punto_Inicial_Carga = Index_Fecha_Inicio;
 	}
@@ -212,6 +194,7 @@ void Incluir_Punto_Inicial_Final(Elementos_Electrolinera *Informacion_Sistema,Pu
 	if (Index_Fecha_Fin != -1) {
 		Informacion_Sistema->Vehiculos_Sistema[Numero_Vehiculo].Punto_Final_Carga = Index_Fecha_Fin;
 	}
+	
 }
 
 

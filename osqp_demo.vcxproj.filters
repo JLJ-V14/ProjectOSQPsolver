@@ -52,6 +52,9 @@
     <ClCompile Include="Configurar_Precios.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Optimizacion_Carga.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\OxfordSolver\osqp\CMakeLists.txt" />
@@ -117,6 +120,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Configurar_Precios.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Optimizacion_Carga.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
