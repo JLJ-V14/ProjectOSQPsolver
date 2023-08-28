@@ -267,6 +267,8 @@ void Comprobar_Vector_L_U(const c_float*Vector_L,const  c_float *Vector_U,const 
 	fprintf(Archivo_U, "Potencia Terminal 10,");
 	fprintf(Archivo_U, "Potencia Terminal 11,");
 	fprintf(Archivo_U, "Potencia Terminal 12,");
+	fprintf(Archivo_L, "\n");
+	fprintf(Archivo_U, "\n");
 	for (int i = 0; i < Numero_Puntos_Simulacion; i++) {
 		for (int j = 0; j < NUMERO_VARIABLES; j++) {
 			printf("Iteracion comprobacion numero %d \n", i);
@@ -295,7 +297,7 @@ void Comprobacion_Vehiculos_Baterias(const Elementos_Electrolinera *Informacion_
 	}
 
 	for (int j = 0; j < Informacion_Sistema->Numero_Baterias; j++) {
-		fprintf(Archivo_Vehiculos, "%d", Informacion_Sistema->Baterias_Sistema[j].Numero_Terminal);
+		fprintf(Archivo_Baterias, "%d,", Informacion_Sistema->Baterias_Sistema[j].Numero_Terminal);
 		fprintf(Archivo_Baterias, "%d,", Informacion_Sistema->Baterias_Sistema[j].Punto_Inicial_Bateria);
 		fprintf(Archivo_Baterias, "%d,", Informacion_Sistema->Baterias_Sistema[j].Punto_Final_Bateria);
 		fprintf(Archivo_Baterias, "\n");

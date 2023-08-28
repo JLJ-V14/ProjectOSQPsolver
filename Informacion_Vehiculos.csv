@@ -3,7 +3,7 @@ Terminal,Tipo Dispositivo,ID Vehiculo,Modo Carga,Capacidad Bateria,Bateria Inici
 2,Vehiculo,1,Normal,80,0.1,0.9,40,2023,1,1,0,40,2023,1,1,23,0
 3,Vehiculo,1,Normal,80,0.1,0.9,40,2023,1,1,0,20,2023,1,1,23,0
 5,Vehiculo,1,rapida,80,0.1,0.9,40,2023,1,1,2,50,2023,1,1,23,0
-6,Vehiculo,1,Normal,80,0.1,0.9,40,2023,1,1,0,20,2023,1,1,23,0
+6,Vehiculo,1,Normal,80,0.1,0.9,60,2023,1,1,0,20,2023,1,1,23,0
 7,Vehiculo,1,Normal,80,0.1,0.9,40,2023,1,1,5,40,2023,1,1,23,0
 9,Vehiculo,1,Normal,80,0.1,0.9,40,2023,1,1,0,20,2023,1,1,23,0
 10,Vehiculo,1,Normal,80,0.1,0.9,40,2023,1,1,0,23,2023,1,1,23,0

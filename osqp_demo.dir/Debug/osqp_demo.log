@@ -7,6 +7,6 @@ Comprobar_Informacion.c(57,15): warning C4996: 'fopen': This function or variabl
 Comprobar_Informacion.c(109,10): warning C4098: 'Comprobar_Elementos_Electrolinera': 'void' function returning a value
 Comprobar_Informacion.c(189,20): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 Comprobar_Informacion.c(190,20): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-Comprobar_Informacion.c(287,28): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-Comprobar_Informacion.c(288,27): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+Comprobar_Informacion.c(289,28): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+Comprobar_Informacion.c(290,27): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   osqp_demo.vcxproj -> D:\Nuevo_Build_OSQP\out\Debug\osqp_demo.exe

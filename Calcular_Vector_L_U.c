@@ -5,7 +5,7 @@
 #define BATERIAS_TERMINALES  12
 #define POTENCIAS_TERMINALES 12
 #define NUMERO_VARIABLES 36
-
+#define NUMERO_ECUACIONES 20
 //El orden de las variables es el siguiente->
 //La primera variable corresponde a la potencia intercambiada entre la red y la electrolinera
 //
@@ -224,13 +224,17 @@ void Configurar_Vector_L_U(c_float **Vector_L, c_float **Vector_U,  Elementos_El
 	                       const Restricciones_Electrolinera*Restriccion_Sistema) {
 	//El numero de variables en el problema de optimizacion es 36 y hay que multiplicarlas por el numero de
 	//puntos de simulacion.
-	int Numero_Puntos = Informacion_Sistema->Numero_Puntos;
-	int Numero_Variables=NUMERO_VARIABLES*Informacion_Sistema->Numero_Puntos;
 
+	//Ademas el vector L ha de ser tan grande como numero de ecuaciones haya y por tanto->
+
+	int Numero_Puntos = Informacion_Sistema->Numero_Puntos;
+	
+	int Dimension_Vector=(NUMERO_VARIABLES+NUMERO_ECUACIONES)*Numero_Puntos;
+	
 	
 	//Reservo memoria para los vectores L y U 
-	 *Vector_L= (c_float*)calloc(Numero_Variables,sizeof(c_float));
-	 *Vector_U = (c_float*)calloc(Numero_Variables, sizeof(c_float));
+	 *Vector_L= (c_float*)calloc(Dimension_Vector,sizeof(c_float));
+	 *Vector_U = (c_float*)calloc(Dimension_Vector, sizeof(c_float));
 
 	//Se llama a los subprogramas que se encargan de escribir en el vector L y U las restricciones que corresponden
 	//a las variables.
