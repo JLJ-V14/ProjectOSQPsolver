@@ -633,16 +633,22 @@ int Incluir_Fecha_Final(Puntos_Optimizacion **Array_Puntos_Simulacion,int *Numer
 	}
 	return 0;
 }
-int Configurar_Puntos_Simulacion(const Celda*** Data_Vehiculos, const Celda*** Data_Tiempo,
+int Configurar_Puntos_Simulacion(const Datos_CSV *** Data_Vehiculos, const Datos_CSV *** Data_Tiempo,
 	Puntos_Optimizacion** Array_Puntos_Simulacion, const int* Filas_CSV_Vehiculo, int* Numero_Puntos_Simulacion) {
 	
-	//Este subprgograma crea un array que relaciona cada puntos de la simulacion con una fecha->
-    //Se crean una serie de variables para poder crear el array de puntos de simulacion
+	//Este subprograma se encarga de crear un array de tipo Puntos_Optimizacion, donde se asocia a cada punto de 
+	//calculo del algoritmo una fecha real, con año, mes, dia, hora y minuto para que asi cada punto de calculo
+	//tenga un significado temporal real.
 
-	*Numero_Puntos_Simulacion = 1;
+	//Se crea una serie de variables auxiliares:
+	//Fecha Inicial->    Fecha inicial de la ejecucion del algoritmo.
+	//Fecha Final->      Fecha final   de la ejecucion del algoritmo
+	//Fecha Siguiente -> Variable auxiliar que sirve para ir añadiendo los puntos de calculo del algoritmo.
+
 	struct tm Fecha_Inicial   = { 0 };
 	struct tm Fecha_Final     = { 0 };
 	struct tm Fecha_Siguiente = { 0 };
+
 	Cargar_Fecha_Inicial_Final(&Fecha_Inicial, &Fecha_Final, Data_Tiempo);
 	Puntos_Adicionales* Array_Puntos_Adicionales = NULL;
 	int Punto_Actual_Array_Carga = 1;

@@ -55,6 +55,13 @@
     <ClCompile Include="Optimizacion_Carga.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Configurar_Terminales.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Verificar_Entradas.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Funciones_Auxiliares.c" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\OxfordSolver\osqp\CMakeLists.txt" />
@@ -123,6 +130,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Optimizacion_Carga.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Configurar_Terminales.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Definiciones_Globales.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Verificar_Entradas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Funciones_Auxiliares.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -32,6 +32,8 @@ void Optimizacion_Cuadratica(const Elementos_Electrolinera *Informacion_Sistema,
 	printf("%.2f", Vector_L[0]);
 	printf("%.2f", Vector_U[0]);
 	
+	//Se rellena la variable que contiene la informacion de lo que hay conectado a cada terminal
+	
 	//Se comprueba que se ha escrito el vector L y el vector U correctamente.
 	Comprobar_Vector_L_U(Vector_L, Vector_U, Informacion_Sistema);
 	//Se libera el espacio en memoria reservado a las estructuras creadas para la optimizacion..

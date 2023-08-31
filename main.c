@@ -1,4 +1,4 @@
-// Juan López Jódar Últimos Cambios : 24 / 08 / 2023
+// Juan López Jódar Últimos Cambios : 30 / 08 / 2023
 //Incluyo una serie de archivos
 #include <stdio.h>
 #include <stdbool.h>
@@ -15,66 +15,85 @@
 #include "Preparar_Arrays.h"             //Header file en el que van incluidas las funciones para reservar memorias para los arrays.s
 #include "Tipos_Optimizacion.h"          //Header file que incluye los tipos propios definidos para el algoritmo de optimizacion 
 #include "time.h"
-#define  Num_Objetivos 5                 //Numero de objetivos = 5
+
 
 
 void main_optimizacionC(void) {
 	//FUNCIONAMIENTO DEL CODIGO:
 	//PRIMERO SE LEE LA INFORMACION DEL SISTEMA, POSTERIORMENTE SE CONFIGURAN LAS MATRICES, Y FINALMENTE SE EJECUTA LA FUNCION PRINCIPAL DE OPTIMIZACION.
-	//POSTERIORMENTE SE EXTRAEN LOS RESULTADOS
+	//POSTERIORMENTE SE EXTRAEN LOS RESULTADOS.
 
-	Celda***                                       Data_Terminales;
-	Celda***                                       Data_Vehiculos;
-	Celda***                                       Data_Tiempo;
-	Celda***                                       Data_Restricciones;
-	Celda***                                       Data_Precio_Compra;
-	Celda***                                       Data_Precio_Venta;
-	Celda***                                       Data_Baterias;
-	Restricciones_Electrolinera                    Restricciones_Sistema;
-	//Variable que almacena la informacion de los elementos presentes en la electrolinera (Vehiculo, Baterias..)
-	Elementos_Electrolinera*                       Informacion_Electrolinera;
-	//Se crea una variable que es un array que sirve para relacionar los puntos de simulacion con, una fecha
-	//asociada.
-	//Variable para crear unas variable que sirve para almacenar el numero de puntos de simulacion_>
-	int Numero_Puntos_Simulacion=0;
-	//Se crea una serie de variables para leer los datos almacenados en los CSV.
+	//-----------Se definen variables donde se van a almacenar los datos de los ficheros CSV que contienen la------//
+	//-----------informacion de entrada del algoritmo--------------------------------------------------------------//
 
-	int* Filas_Terminales    =    (int*)malloc(sizeof(int));
-	int* Columnas_Terminales =    (int*)malloc(sizeof(int));
-	int* Filas_Vehiculos     =    (int*)malloc(sizeof(int));
-	int* Columnas_Vehiculos  =    (int*)malloc(sizeof(int));
-	int* Filas_Tiempo        =    (int*)malloc(sizeof(int));
-	int* Columnas_Tiempo     =    (int*)malloc(sizeof(int));
-	int* Filas_Restricciones =    (int*)malloc(sizeof(int));
-	int* Columnas_Restricciones = (int*)malloc(sizeof(int));
-	int* Filas_Precio_Compra =    (int*)malloc(sizeof(int));
-	int* Columnas_Precio_Compra = (int*)malloc(sizeof(int));
-	int* Filas_Precio_Venta =     (int*)malloc(sizeof(int));
-	int* Columnas_Precio_Venta =  (int*)malloc(sizeof(int));
-	int* Filas_Baterias =    (int*)malloc(sizeof(int));
-	int* Columnas_Baterias = (int*)malloc(sizeof(int));
+    Datos_CSV***                                       Datos_Terminales;     //Informacion de los terminales.
+	Datos_CSV***                                       Datos_Vehiculos;      //Informacion de los vehiculos
+	Datos_CSV***                                       Datos_Tiempo;         //Datos de tiempo de la simulacion
+	Datos_CSV***                                       Datos_Restricciones;  //Restricciones del sistema
+	Datos_CSV***                                       Datos_Precio_Compra;  //Precios de compra del kW/h
+	Datos_CSV***                                       Datos_Precio_Venta;   //Precios de venta  del kW/h
+	Datos_CSV***                                       Datos_Baterias;       //Datos   de las baterias del sistema
+
+	//-----------Se definen variables para almacenar el numero de filas y columnas que tienen los diferentes CSVs.
+	int* Filas_Terminales       =          (int*)malloc(sizeof(int));
+	int* Columnas_Terminales    =          (int*)malloc(sizeof(int));
+	int* Filas_Vehiculos        =          (int*)malloc(sizeof(int));
+	int* Columnas_Vehiculos     =          (int*)malloc(sizeof(int));
+	int* Filas_Tiempo           =          (int*)malloc(sizeof(int));
+	int* Columnas_Tiempo        =          (int*)malloc(sizeof(int));
+	int* Filas_Restricciones    =          (int*)malloc(sizeof(int));
+	int* Columnas_Restricciones =          (int*)malloc(sizeof(int));
+	int* Filas_Precio_Compra    =          (int*)malloc(sizeof(int));
+	int* Columnas_Precio_Compra =          (int*)malloc(sizeof(int));
+	int* Filas_Precio_Venta     =          (int*)malloc(sizeof(int));
+	int* Columnas_Precio_Venta  =          (int*)malloc(sizeof(int));
+	int* Filas_Baterias         =          (int*)malloc(sizeof(int));
+	int* Columnas_Baterias      =          (int*)malloc(sizeof(int));
+
 	
-	Puntos_Optimizacion* Array_Puntos_Simulacion=NULL;
+	//Se definen 4 variables      :
+	
+	//Informacion_Electrolinera   : Informacion de los vehiculos y baterias que estan conectados a la electrolinera
+	//Restricciones_Electrolinera : Limitaciones a las que se ve sometida el sistema
+	//Array_Puntos_Simulacion     : Array que contiene los puntos de simulacion y las fechas asociadas a los mismos.
+	//Numero_Puntos_Simulacion    : Numero de puntos que contiene la simulacion.
+
+	Elementos_Electrolinera*                           Informacion_Electrolinera;
+	Restricciones_Electrolinera                        Restricciones_Sistema;
+	Puntos_Optimizacion*                               Array_Puntos_Simulacion;
+	int                                                Numero_Puntos_Simulacion;
+	 
+	//Se crea una serie de variables para leer los datos almacenados en los CSV.
+	//Se inicializan estas variables->
+	Informacion_Electrolinera  = NULL;
+	Numero_Puntos_Simulacion   = 1;
+	Array_Puntos_Simulacion    = NULL;
+
 	//Reservo memoria para la variable que almacena los datos de los vehiculos, y de las posibles cargas
 	//conectadas al sistema->
-	 Informacion_Electrolinera = NULL;
 	
 	
+	
+	//Se Lee la informacion de los CSV de entrada.
+	Datos_Terminales    = Leer_CSV("Informacion_Terminales.csv",  Filas_Terminales,Columnas_Terminales);
+	Datos_Vehiculos     = Leer_CSV("Informacion_Vehiculos.csv",   Filas_Vehiculos,Columnas_Vehiculos);
+	Datos_Baterias      = Leer_CSV("Informacion_Baterias.csv",    Filas_Baterias, Columnas_Baterias);
+	Datos_Tiempo        = Leer_CSV("Informacion_Tiempo.csv",      Filas_Tiempo, Columnas_Tiempo);
+	Datos_Restricciones = Leer_CSV("Restricciones_Sistema.csv",   Filas_Restricciones, Columnas_Restricciones);
+	Datos_Precio_Compra = Leer_CSV("Precio_Compra_Kilovatio.csv", Filas_Precio_Compra, Columnas_Precio_Compra);
+	Datos_Precio_Venta =  Leer_CSV("Precio_Venta_Kilovatio.csv",  Filas_Precio_Venta, Columnas_Precio_Venta);
 
-	Data_Terminales    = Leer_CSV("Informacion_Terminales.csv",  Filas_Terminales,Columnas_Terminales);
-	Data_Vehiculos     = Leer_CSV("Informacion_Vehiculos.csv",   Filas_Vehiculos,Columnas_Vehiculos);
-	Data_Baterias      = Leer_CSV("Informacion_Baterias.csv",    Filas_Baterias, Columnas_Baterias);
-	Data_Tiempo        = Leer_CSV("Informacion_Tiempo.csv",      Filas_Tiempo, Columnas_Tiempo);
-	Data_Restricciones = Leer_CSV("Restricciones_Sistema.csv",   Filas_Restricciones, Columnas_Restricciones);
-	Data_Precio_Compra = Leer_CSV("Precio_Compra_Kilovatio.csv", Filas_Precio_Compra, Columnas_Precio_Compra);
-	Data_Precio_Venta =  Leer_CSV("Precio_Venta_Kilovatio.csv",  Filas_Precio_Venta, Columnas_Precio_Venta);
 
 
 	
+	//Se llama al subprograma que se encarga de configurar cuantos puntos de calculo tiene el algoritmo, asi como
+	//asociar a cada punto de la simulacion una fecha real. 
 	if (Configurar_Puntos_Simulacion(Data_Vehiculos, Data_Tiempo,&Array_Puntos_Simulacion,Filas_Vehiculos,&Numero_Puntos_Simulacion)==-1) {
 		printf("Error Configurando los puntos de la simulacion \n");
 		free(Array_Puntos_Simulacion);
 	}
+
+
 	//Inicializo la variable que almacena los datos de los vehiculos del sistema->
 	if (Inicializar_Cargas_Electrolinera(&Informacion_Electrolinera,Numero_Puntos_Simulacion) == -1) {
 		free(Informacion_Electrolinera);

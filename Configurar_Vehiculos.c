@@ -250,8 +250,8 @@ void Asignar_Informacion_Vehiculos(Elementos_Electrolinera* Informacion_Sistema,
 // elementos conectados a la electrolinera los datos de los diferentes vehiculos del sistema
 
 
-int Identificar_Vehiculos(Elementos_Electrolinera * Informacion_Sistema,const Celda*** Data_Vehiculos_Baterias,const int *Filas_CSV_Vehiculos,
-	                      const Celda *** Data_Terminales, Puntos_Optimizacion *Array_Puntos_Simulacion) {
+int Identificar_Vehiculos(Elementos_Electrolinera * Informacion_Sistema,const Datos_CSV *** Data_Vehiculos_Baterias,const int *Filas_CSV_Vehiculos,
+	                      const Datos_CSV *** Data_Terminales, Puntos_Optimizacion *Array_Puntos_Simulacion) {
 	//Calculo el numero de vehiculos que se tienen en el CSV de entrada->
 	int Numero_Vehiculos = Calcular_Numero_Vehiculos(Data_Vehiculos_Baterias,Filas_CSV_Vehiculos);
 	//Guardo el numero de vehiculos que se tienen en el sistema->

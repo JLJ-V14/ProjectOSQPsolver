@@ -18,7 +18,7 @@
 #define MAX_FILAS    40
 #define MAX_COLUMNAS 40
 
-Celda *** Leer_CSV(const char* Nombre_Archivo, int* Filas, int* Columnas) {
+Datos_CSV *** Leer_CSV(const char* Nombre_Archivo, int* Filas, int* Columnas) {
 	//Subprograma que se utiliza para leer el fichero con extensión csv donde viene incluido la información de 
 	//los vehículos que se van a cargar.
 	FILE* file = fopen(Nombre_Archivo, "r");

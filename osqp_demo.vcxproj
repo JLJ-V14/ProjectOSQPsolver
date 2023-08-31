@@ -324,13 +324,16 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="Configurar_Precios.c" />
     <ClCompile Include="Configurar_Problema.c" />
     <ClCompile Include="Configurar_Restricciones.c" />
+    <ClCompile Include="Configurar_Terminales.c" />
     <ClCompile Include="Configurar_Vehiculos.c" />
     <ClCompile Include="D:\OxfordSolver\osqp\examples\osqp_demo.c" />
+    <ClCompile Include="Funciones_Auxiliares.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="Obtener_Info_Entrada.c" />
     <ClCompile Include="Optimizacion_Carga.c" />
     <ClCompile Include="Optimizacion_Cuadratica.c" />
     <ClCompile Include="Preparar_Arrays.c" />
+    <ClCompile Include="Verificar_Entradas.c" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="D:\Nuevo_Build_OSQP\ZERO_CHECK.vcxproj">
@@ -357,13 +360,17 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="Configurar_Precios.h" />
     <ClInclude Include="Configurar_Problema.h" />
     <ClInclude Include="Configurar_Restricciones.h" />
+    <ClInclude Include="Configurar_Terminales.h" />
     <ClInclude Include="Configurar_Vehiculos.h" />
+    <ClInclude Include="Definiciones_Globales.h" />
+    <ClInclude Include="Funciones_Auxiliares.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Obtener_Info_Entrada.h" />
     <ClInclude Include="Optimizacion_Carga.h" />
     <ClInclude Include="Optimizacion_Cuadratica.h" />
     <ClInclude Include="Preparar_Arrays.h" />
     <ClInclude Include="Tipos_Optimizacion.h" />
+    <ClInclude Include="Verificar_Entradas.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

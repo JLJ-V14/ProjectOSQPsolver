@@ -1,12 +1,816 @@
-﻿  Comprobar_Informacion.c
+﻿  Calcular_Matriz_A.c
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(49,3): error C2061: syntax error: identifier 'Informacion_Terminal'
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(50,2): error C2059: syntax error: '}'
+Calcular_Matriz_A.c(152,89): error C2143: syntax error: missing ')' before '*'
+Calcular_Matriz_A.c(152,89): error C2143: syntax error: missing '{' before '*'
+Calcular_Matriz_A.c(152,110): error C2059: syntax error: ')'
+Calcular_Matriz_A.c(152,112): error C2054: expected '(' to follow 'Informacion_Sistema'
+Calcular_Matriz_A.c(163,82): error C2143: syntax error: missing ')' before '*'
+Calcular_Matriz_A.c(163,82): error C2143: syntax error: missing '{' before '*'
+Calcular_Matriz_A.c(163,102): error C2059: syntax error: ')'
+Calcular_Matriz_A.c(163,104): error C2054: expected '(' to follow 'Informacion_Sistema'
+Calcular_Matriz_A.c(179,54): error C2143: syntax error: missing ')' before '*'
+Calcular_Matriz_A.c(179,54): error C2143: syntax error: missing '{' before '*'
+Calcular_Matriz_A.c(179,76): error C2371: 'c_float': redefinition; different basic types
+D:\OxfordSolver\osqp\include\glob_opts.h(87,16): message : see declaration of 'c_float'
+Calcular_Matriz_A.c(179,84): error C2143: syntax error: missing ';' before '*'
+Calcular_Matriz_A.c(179,88): error C2059: syntax error: ')'
+Calcular_Matriz_A.c(179,90): error C2054: expected '(' to follow 'A_x'
+Calcular_Matriz_A.c(187,56): error C2143: syntax error: missing ')' before '*'
+Calcular_Matriz_A.c(187,56): error C2143: syntax error: missing '{' before '*'
+Calcular_Matriz_A.c(187,77): error C2059: syntax error: ')'
+Calcular_Matriz_A.c(187,79): error C2054: expected '(' to follow 'Informacion_Sistema'
+Calcular_Matriz_A.c(194,57): error C2143: syntax error: missing ')' before '*'
+Calcular_Matriz_A.c(194,57): error C2143: syntax error: missing '{' before '*'
+Calcular_Matriz_A.c(194,77): error C2059: syntax error: ')'
+Calcular_Matriz_A.c(194,79): error C2054: expected '(' to follow 'Informacion_Sistema'
+Calcular_Matriz_A.c(239,54): error C2143: syntax error: missing ')' before '*'
+Calcular_Matriz_A.c(239,54): error C2143: syntax error: missing '{' before '*'
+Calcular_Matriz_A.c(239,75): error C2371: 'c_float': redefinition; different basic types
+D:\OxfordSolver\osqp\include\glob_opts.h(87,16): message : see declaration of 'c_float'
+Calcular_Matriz_A.c(239,83): error C2143: syntax error: missing ';' before '*'
+Calcular_Matriz_A.c(239,85): error C2040: 'A_x': 'int **' differs in levels of indirection from 'int *'
+Calcular_Matriz_A.c(239,89): error C2371: 'c_int': redefinition; different basic types
+D:\OxfordSolver\osqp\include\glob_opts.h(80,19): message : see declaration of 'c_int'
+Calcular_Matriz_A.c(239,95): error C2143: syntax error: missing ';' before '*'
+Calcular_Matriz_A.c(240,21): error C2371: 'c_int': redefinition; different basic types
+D:\OxfordSolver\osqp\include\glob_opts.h(80,19): message : see declaration of 'c_int'
+Calcular_Matriz_A.c(240,27): error C2143: syntax error: missing ';' before '*'
+Calcular_Matriz_A.c(240,32): error C2059: syntax error: ')'
+Calcular_Matriz_A.c(240,34): error C2054: expected '(' to follow 'A_i'
+  Calcular_Matriz_P.c
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(49,3): error C2061: syntax error: identifier 'Informacion_Terminal'
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(50,2): error C2059: syntax error: '}'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(16,40): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(16,40): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(16,74): error C2059: syntax error: 'type'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(16,103): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(17,47): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(17,47): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(17,56): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(18,67): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(18,67): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(18,86): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(19,55): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(19,55): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(19,65): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(20,44): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(20,44): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(20,51): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(21,46): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(21,46): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(21,59): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(22,39): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(22,39): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(22,69): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(22,90): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(23,29): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(23,63): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(23,72): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(24,60): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(24,60): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(24,84): error C2059: syntax error: 'type'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(25,46): error C2059: syntax error: ')'
+Calcular_Matriz_P.c(5,47): error C2143: syntax error: missing ')' before '*'
+Calcular_Matriz_P.c(5,47): error C2143: syntax error: missing '{' before '*'
+Calcular_Matriz_P.c(5,98): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Calcular_Matriz_P.c(5,98): error C2143: syntax error: missing ';' before '*'
+Calcular_Matriz_P.c(5,125): error C2371: 'c_float': redefinition; different basic types
+D:\OxfordSolver\osqp\include\glob_opts.h(87,16): message : see declaration of 'c_float'
+Calcular_Matriz_P.c(5,133): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Calcular_Matriz_P.c(5,133): error C2146: syntax error: missing ';' before identifier 'Coeficiente_Precio'
+Calcular_Matriz_P.c(6,2): error C2371: 'c_float': redefinition; different basic types
+D:\OxfordSolver\osqp\include\glob_opts.h(87,16): message : see declaration of 'c_float'
+Calcular_Matriz_P.c(6,9): error C2143: syntax error: missing ';' before '*'
+Calcular_Matriz_P.c(6,45): error C2371: 'c_float': redefinition; different basic types
+D:\OxfordSolver\osqp\include\glob_opts.h(87,16): message : see declaration of 'c_float'
+Calcular_Matriz_P.c(6,52): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Calcular_Matriz_P.c(6,52): error C2143: syntax error: missing ';' before '*'
+Calcular_Matriz_P.c(6,75): error C2371: 'c_float': redefinition; different basic types
+D:\OxfordSolver\osqp\include\glob_opts.h(87,16): message : see declaration of 'c_float'
+Calcular_Matriz_P.c(6,82): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Calcular_Matriz_P.c(6,82): error C2143: syntax error: missing ';' before '*'
+Calcular_Matriz_P.c(6,96): error C2059: syntax error: ')'
+Calcular_Matriz_P.c(6,98): error C2054: expected '(' to follow 'Precio_Venta'
+Calcular_Matriz_P.c(26,58): error C2143: syntax error: missing ')' before '*'
+Calcular_Matriz_P.c(26,58): error C2143: syntax error: missing '{' before '*'
+Calcular_Matriz_P.c(26,77): error C2371: 'c_float': redefinition; different basic types
+D:\OxfordSolver\osqp\include\glob_opts.h(87,16): message : see declaration of 'c_float'
+Calcular_Matriz_P.c(26,84): error C2143: syntax error: missing ';' before '*'
+Calcular_Matriz_P.c(27,20): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Calcular_Matriz_P.c(27,20): error C2143: syntax error: missing ';' before '*'
+Calcular_Matriz_P.c(27,75): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Calcular_Matriz_P.c(27,75): error C2143: syntax error: missing ';' before '*'
+Calcular_Matriz_P.c(27,101): error C2371: 'c_float': redefinition; different basic types
+D:\OxfordSolver\osqp\include\glob_opts.h(87,16): message : see declaration of 'c_float'
+Calcular_Matriz_P.c(27,109): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Calcular_Matriz_P.c(27,109): error C2146: syntax error: missing ';' before identifier 'Coeficiente_Referencia'
+Calcular_Matriz_P.c(27,131): error C2059: syntax error: ')'
+Calcular_Matriz_P.c(27,133): error C2054: expected '(' to follow 'Coeficiente_Referencia'
+  Calcular_Size_Matrices.c
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(49,3): error C2061: syntax error: identifier 'Informacion_Terminal'
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(50,2): error C2059: syntax error: '}'
+Calcular_Size_Matrices.c(4,55): error C2143: syntax error: missing ')' before '*'
+Calcular_Size_Matrices.c(4,55): error C2143: syntax error: missing '{' before '*'
+Calcular_Size_Matrices.c(4,70): error C2059: syntax error: 'type'
+Calcular_Size_Matrices.c(4,83): error C2059: syntax error: ')'
+Calcular_Size_Matrices.c(9,55): error C2143: syntax error: missing ')' before '*'
+Calcular_Size_Matrices.c(9,55): error C2143: syntax error: missing '{' before '*'
+Calcular_Size_Matrices.c(9,76): error C2059: syntax error: 'type'
+Calcular_Size_Matrices.c(9,89): error C2059: syntax error: ')'
+Calcular_Size_Matrices.c(15,90): error C2143: syntax error: missing ')' before '*'
+Calcular_Size_Matrices.c(15,90): error C2143: syntax error: missing '{' before '*'
+Calcular_Size_Matrices.c(16,15): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Calcular_Size_Matrices.c(16,15): error C2143: syntax error: missing ';' before '*'
+Calcular_Size_Matrices.c(16,33): error C2059: syntax error: ')'
+Calcular_Size_Matrices.c(16,35): error C2054: expected '(' to follow 'Baterias_Sistema'
+Calcular_Size_Matrices.c(30,62): error C2143: syntax error: missing ')' before '*'
+Calcular_Size_Matrices.c(30,62): error C2143: syntax error: missing '{' before '*'
+Calcular_Size_Matrices.c(30,82): error C2059: syntax error: 'type'
+Calcular_Size_Matrices.c(31,86): error C2059: syntax error: ')'
+  Calcular_Vector_L_U.c
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(49,3): error C2061: syntax error: identifier 'Informacion_Terminal'
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(50,2): error C2059: syntax error: '}'
+Calcular_Vector_L_U.c(36,87): error C2143: syntax error: missing ')' before '*'
+Calcular_Vector_L_U.c(36,87): error C2143: syntax error: missing '{' before '*'
+Calcular_Vector_L_U.c(36,107): error C2059: syntax error: ')'
+Calcular_Vector_L_U.c(36,109): error C2054: expected '(' to follow 'Informacion_Sistema'
+Calcular_Vector_L_U.c(123,64): error C2143: syntax error: missing ')' before '*'
+Calcular_Vector_L_U.c(123,64): error C2143: syntax error: missing '{' before '*'
+Calcular_Vector_L_U.c(123,96): error C2059: syntax error: 'type'
+Calcular_Vector_L_U.c(124,107): error C2059: syntax error: ')'
+Calcular_Vector_L_U.c(153,31): error C2143: syntax error: missing ')' before '*'
+Calcular_Vector_L_U.c(153,31): error C2143: syntax error: missing '{' before '*'
+Calcular_Vector_L_U.c(153,52): error C2059: syntax error: ')'
+Calcular_Vector_L_U.c(153,54): error C2054: expected '(' to follow 'Informacion_Sistema'
+Calcular_Vector_L_U.c(163,61): error C2143: syntax error: missing ')' before '*'
+Calcular_Vector_L_U.c(163,61): error C2143: syntax error: missing '{' before '*'
+Calcular_Vector_L_U.c(163,92): error C2059: syntax error: 'type'
+Calcular_Vector_L_U.c(163,106): error C2059: syntax error: ')'
+Calcular_Vector_L_U.c(202,70): error C2143: syntax error: missing ')' before '*'
+Calcular_Vector_L_U.c(202,70): error C2143: syntax error: missing '{' before '*'
+Calcular_Vector_L_U.c(202,91): error C2059: syntax error: ')'
+Calcular_Vector_L_U.c(202,93): error C2054: expected '(' to follow 'Informacion_Sistema'
+Calcular_Vector_L_U.c(210,31): error C2143: syntax error: missing ')' before '*'
+Calcular_Vector_L_U.c(210,31): error C2143: syntax error: missing '{' before '*'
+Calcular_Vector_L_U.c(210,59): error C2371: 'Restricciones_Electrolinera': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(112,3): message : see declaration of 'Restricciones_Electrolinera'
+Calcular_Vector_L_U.c(210,87): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Calcular_Vector_L_U.c(210,87): error C2143: syntax error: missing ';' before '*'
+Calcular_Vector_L_U.c(210,109): error C2059: syntax error: ')'
+Calcular_Vector_L_U.c(210,111): error C2054: expected '(' to follow 'Restricciones_Sistema'
+Calcular_Vector_L_U.c(223,93): error C2143: syntax error: missing ')' before '*'
+Calcular_Vector_L_U.c(223,93): error C2081: 'Elementos_Electrolinera': name in formal parameter list illegal
+Calcular_Vector_L_U.c(223,93): error C2143: syntax error: missing '{' before '*'
+Calcular_Vector_L_U.c(224,31): error C2371: 'Restricciones_Electrolinera': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(112,3): message : see declaration of 'Restricciones_Electrolinera'
+Calcular_Vector_L_U.c(224,58): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Calcular_Vector_L_U.c(224,58): error C2143: syntax error: missing ';' before '*'
+Calcular_Vector_L_U.c(224,78): error C2059: syntax error: ')'
+Calcular_Vector_L_U.c(224,80): error C2054: expected '(' to follow 'Restriccion_Sistema'
+  Comprobar_Informacion.c
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(49,3): error C2061: syntax error: identifier 'Informacion_Terminal'
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(50,2): error C2059: syntax error: '}'
 Comprobar_Informacion.c(16,1): warning C4010: single-line comment contains line-continuation character
 Comprobar_Informacion.c(17,1): warning C4010: single-line comment contains line-continuation character
 Comprobar_Informacion.c(9,15): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 Comprobar_Informacion.c(36,15): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 Comprobar_Informacion.c(57,15): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-Comprobar_Informacion.c(109,10): warning C4098: 'Comprobar_Elementos_Electrolinera': 'void' function returning a value
-Comprobar_Informacion.c(189,20): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-Comprobar_Informacion.c(190,20): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-Comprobar_Informacion.c(289,28): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-Comprobar_Informacion.c(290,27): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  osqp_demo.vcxproj -> D:\Nuevo_Build_OSQP\out\Debug\osqp_demo.exe
+Comprobar_Informacion.c(74,63): error C2143: syntax error: missing ')' before '*'
+Comprobar_Informacion.c(74,63): error C2143: syntax error: missing '{' before '*'
+Comprobar_Informacion.c(74,84): error C2059: syntax error: ')'
+Comprobar_Informacion.c(74,86): error C2054: expected '(' to follow 'Informacion_Sistema'
+Comprobar_Informacion.c(176,53): error C2143: syntax error: missing ')' before '*'
+Comprobar_Informacion.c(176,53): error C2143: syntax error: missing '{' before '*'
+Comprobar_Informacion.c(176,76): error C2371: 'Puntos_Optimizacion': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(69,3): message : see declaration of 'Puntos_Optimizacion'
+Comprobar_Informacion.c(176,96): error C2143: syntax error: missing ';' before '*'
+Comprobar_Informacion.c(176,120): error C2059: syntax error: ')'
+Comprobar_Informacion.c(176,122): error C2054: expected '(' to follow 'Array_Puntos_Simulacion'
+Comprobar_Informacion.c(186,105): error C2143: syntax error: missing ')' before '*'
+Comprobar_Informacion.c(186,105): error C2143: syntax error: missing '{' before '*'
+Comprobar_Informacion.c(186,125): error C2059: syntax error: ')'
+Comprobar_Informacion.c(186,127): error C2054: expected '(' to follow 'Informacion_Sistema'
+Comprobar_Informacion.c(287,68): error C2143: syntax error: missing ')' before '*'
+Comprobar_Informacion.c(287,68): error C2143: syntax error: missing '{' before '*'
+Comprobar_Informacion.c(287,88): error C2059: syntax error: ')'
+Comprobar_Informacion.c(287,90): error C2054: expected '(' to follow 'Informacion_Sistema'
+  Configurar_Ajustes_Problema.c
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(49,3): error C2061: syntax error: identifier 'Informacion_Terminal'
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(50,2): error C2059: syntax error: '}'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(17,64): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(17,64): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(17,85): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,54): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,54): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,77): error C2371: 'Puntos_Optimizacion': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(69,3): message : see declaration of 'Puntos_Optimizacion'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,96): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,121): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(20,108): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(20,108): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(20,129): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(21,68): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(21,68): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(21,89): error C2059: syntax error: ')'
+Configurar_Ajustes_Problema.c(73,15): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+Configurar_Ajustes_Problema.c(94,94): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(95,92): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(96,89): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(97,90): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(98,91): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(101,90): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(102,88): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(103,85): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(104,86): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(105,87): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(224,9): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(248,42): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(281,120): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(282,118): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(283,114): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(284,115): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(285,116): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(292,120): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(293,118): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(294,114): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(295,115): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(296,116): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(418,46): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(453,45): warning C4090: 'function': different 'const' qualifiers
+Configurar_Ajustes_Problema.c(454,44): warning C4090: 'function': different 'const' qualifiers
+Configurar_Ajustes_Problema.c(489,112): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(491,111): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(493,107): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(495,108): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(497,110): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Ajustes_Problema.c(662,98): warning C4244: 'initializing': conversion from 'const c_float' to 'const int', possible loss of data
+  Configurar_Baterias.c
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(49,3): error C2061: syntax error: identifier 'Informacion_Terminal'
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(50,2): error C2059: syntax error: '}'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(9,51): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(9,51): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(9,80): error C2371: 'Celda': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(81,3): message : see declaration of 'Celda'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(9,85): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(9,85): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(10,34): error C2059: syntax error: 'type'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(11,69): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(12,64): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(12,64): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(12,67): error C2040: 'Informacion_Sistema': 'int **' differs in levels of indirection from 'int *'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(12,97): error C2059: syntax error: 'type'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(12,110): error C2059: syntax error: ')'
+Configurar_Baterias.c(46,55): error C2143: syntax error: missing ')' before '*'
+Configurar_Baterias.c(46,55): error C2143: syntax error: missing '{' before '*'
+Configurar_Baterias.c(46,76): error C2059: syntax error: ')'
+Configurar_Baterias.c(46,78): error C2054: expected '(' to follow 'Informacion_Sistema'
+Configurar_Baterias.c(58,55): error C2143: syntax error: missing ')' before '*'
+Configurar_Baterias.c(58,55): error C2143: syntax error: missing '{' before '*'
+Configurar_Baterias.c(58,84): error C2371: 'Celda': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(81,3): message : see declaration of 'Celda'
+Configurar_Baterias.c(58,89): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Baterias.c(58,89): error C2143: syntax error: missing ';' before '*'
+Configurar_Baterias.c(59,12): error C2059: syntax error: 'type'
+Configurar_Baterias.c(59,50): error C2059: syntax error: ')'
+Configurar_Baterias.c(67,65): error C2143: syntax error: missing ')' before '*'
+Configurar_Baterias.c(67,65): error C2143: syntax error: missing '{' before '*'
+Configurar_Baterias.c(67,88): error C2371: 'Puntos_Optimizacion': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(69,3): message : see declaration of 'Puntos_Optimizacion'
+Configurar_Baterias.c(67,107): error C2143: syntax error: missing ';' before '*'
+Configurar_Baterias.c(68,12): error C2059: syntax error: 'type'
+Configurar_Baterias.c(69,25): error C2059: syntax error: ')'
+Configurar_Baterias.c(101,51): error C2143: syntax error: missing ')' before '*'
+Configurar_Baterias.c(101,51): error C2143: syntax error: missing '{' before '*'
+Configurar_Baterias.c(101,80): error C2371: 'Celda': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(81,3): message : see declaration of 'Celda'
+Configurar_Baterias.c(101,85): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Baterias.c(101,85): error C2143: syntax error: missing ';' before '*'
+Configurar_Baterias.c(102,8): error C2371: 'Celda': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(81,3): message : see declaration of 'Celda'
+Configurar_Baterias.c(102,13): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Baterias.c(102,13): error C2143: syntax error: missing ';' before '*'
+Configurar_Baterias.c(102,44): error C2059: syntax error: 'type'
+Configurar_Baterias.c(102,80): error C2059: syntax error: ')'
+Configurar_Baterias.c(129,55): error C2143: syntax error: missing ')' before '*'
+Configurar_Baterias.c(129,55): error C2143: syntax error: missing '{' before '*'
+Configurar_Baterias.c(129,83): error C2371: 'Celda': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(81,3): message : see declaration of 'Celda'
+Configurar_Baterias.c(129,89): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Baterias.c(129,89): error C2143: syntax error: missing ';' before '*'
+Configurar_Baterias.c(130,38): error C2059: syntax error: 'type'
+Configurar_Baterias.c(130,75): error C2059: syntax error: ')'
+Configurar_Baterias.c(146,53): error C2143: syntax error: missing ')' before '*'
+Configurar_Baterias.c(146,53): error C2143: syntax error: missing '{' before '*'
+Configurar_Baterias.c(146,75): error C2371: 'Puntos_Optimizacion': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(69,3): message : see declaration of 'Puntos_Optimizacion'
+Configurar_Baterias.c(146,95): error C2143: syntax error: missing ';' before '*'
+Configurar_Baterias.c(147,36): error C2059: syntax error: 'type'
+Configurar_Baterias.c(147,131): error C2059: syntax error: ')'
+Configurar_Baterias.c(175,72): error C2143: syntax error: missing ')' before '*'
+Configurar_Baterias.c(175,72): error C2081: 'Elementos_Electrolinera': name in formal parameter list illegal
+Configurar_Baterias.c(175,72): error C2143: syntax error: missing '{' before '*'
+Configurar_Baterias.c(175,105): error C2059: syntax error: 'type'
+Configurar_Baterias.c(176,133): error C2059: syntax error: ')'
+Configurar_Baterias.c(189,58): error C2143: syntax error: missing ')' before '*'
+Configurar_Baterias.c(189,58): error C2143: syntax error: missing '{' before '*'
+Configurar_Baterias.c(189,87): error C2371: 'Celda': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(81,3): message : see declaration of 'Celda'
+Configurar_Baterias.c(189,92): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Baterias.c(189,92): error C2143: syntax error: missing ';' before '*'
+Configurar_Baterias.c(190,8): error C2371: 'Celda': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(81,3): message : see declaration of 'Celda'
+Configurar_Baterias.c(190,13): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Baterias.c(190,13): error C2143: syntax error: missing ';' before '*'
+Configurar_Baterias.c(190,44): error C2059: syntax error: 'type'
+Configurar_Baterias.c(191,46): error C2059: syntax error: ')'
+Configurar_Baterias.c(211,49): error C2143: syntax error: missing ')' before '*'
+Configurar_Baterias.c(211,49): error C2143: syntax error: missing '{' before '*'
+Configurar_Baterias.c(211,78): error C2371: 'Celda': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(81,3): message : see declaration of 'Celda'
+Configurar_Baterias.c(211,83): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Baterias.c(211,83): error C2143: syntax error: missing ';' before '*'
+Configurar_Baterias.c(212,12): error C2059: syntax error: 'type'
+Configurar_Baterias.c(212,108): error C2059: syntax error: ')'
+  Configurar_Precios.c
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(49,3): error C2061: syntax error: identifier 'Informacion_Terminal'
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(50,2): error C2059: syntax error: '}'
+Configurar_Precios.c(62,73): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Precios.c(63,71): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Precios.c(64,68): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Precios.c(65,69): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Precios.c(79,11): warning C4477: 'printf' : format string '%lf' requires an argument of type 'double', but variadic argument 1 has type 'const Celda *'
+Configurar_Precios.c(90,52): error C2143: syntax error: missing ')' before '*'
+Configurar_Precios.c(90,52): error C2143: syntax error: missing '{' before '*'
+Configurar_Precios.c(90,77): error C2059: syntax error: 'type'
+Configurar_Precios.c(90,120): error C2059: syntax error: ')'
+  Configurar_Problema.c
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(49,3): error C2061: syntax error: identifier 'Informacion_Terminal'
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(50,2): error C2059: syntax error: '}'
+D:\NuevoBuildOSQP2\Configurar_Problema.h(11,99): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Configurar_Problema.h(11,99): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Configurar_Problema.h(11,148): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+D:\NuevoBuildOSQP2\Configurar_Problema.h(11,148): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Configurar_Problema.h(12,9): error C2371: 'c_float': redefinition; different basic types
+D:\OxfordSolver\osqp\include\glob_opts.h(87,16): message : see declaration of 'c_float'
+D:\NuevoBuildOSQP2\Configurar_Problema.h(12,16): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+D:\NuevoBuildOSQP2\Configurar_Problema.h(12,16): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Configurar_Problema.h(12,39): error C2371: 'c_float': redefinition; different basic types
+D:\OxfordSolver\osqp\include\glob_opts.h(87,16): message : see declaration of 'c_float'
+D:\NuevoBuildOSQP2\Configurar_Problema.h(12,46): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+D:\NuevoBuildOSQP2\Configurar_Problema.h(12,46): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Configurar_Problema.h(12,80): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+D:\NuevoBuildOSQP2\Configurar_Problema.h(12,80): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Configurar_Problema.h(12,112): error C2059: syntax error: 'type'
+D:\NuevoBuildOSQP2\Configurar_Problema.h(13,157): error C2059: syntax error: ')'
+Configurar_Problema.c(31,3): warning C4013: 'Crear_Array_Dinamico_Double' undefined; assuming extern returning int
+Configurar_Problema.c(59,27): error C2143: syntax error: missing ')' before '*'
+Configurar_Problema.c(59,27): error C2143: syntax error: missing '{' before '*'
+Configurar_Problema.c(59,49): error C2059: syntax error: 'type'
+Configurar_Problema.c(60,39): error C2059: syntax error: ')'
+Configurar_Problema.c(67,56): error C2143: syntax error: missing ')' before '*'
+Configurar_Problema.c(67,56): error C2143: syntax error: missing '{' before '*'
+Configurar_Problema.c(67,70): error C2059: syntax error: 'type'
+Configurar_Problema.c(67,82): error C2059: syntax error: ')'
+Configurar_Problema.c(72,55): error C2143: syntax error: missing ')' before '*'
+Configurar_Problema.c(72,55): error C2143: syntax error: missing '{' before '*'
+Configurar_Problema.c(72,76): error C2059: syntax error: 'type'
+Configurar_Problema.c(72,89): error C2059: syntax error: ')'
+Configurar_Problema.c(77,89): error C2143: syntax error: missing ')' before '*'
+Configurar_Problema.c(77,89): error C2143: syntax error: missing '{' before '*'
+Configurar_Problema.c(78,51): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Problema.c(78,51): error C2143: syntax error: missing ';' before '*'
+Configurar_Problema.c(78,68): error C2059: syntax error: ')'
+Configurar_Problema.c(78,70): error C2054: expected '(' to follow 'Baterias_Sistema'
+Configurar_Problema.c(92,70): error C2143: syntax error: missing ')' before '*'
+Configurar_Problema.c(92,70): error C2143: syntax error: missing '{' before '*'
+Configurar_Problema.c(92,90): error C2059: syntax error: 'type'
+Configurar_Problema.c(93,131): error C2059: syntax error: ')'
+Configurar_Problema.c(108,102): error C2143: syntax error: missing ')' before '*'
+Configurar_Problema.c(108,102): error C2143: syntax error: missing '{' before '*'
+Configurar_Problema.c(108,150): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Problema.c(108,150): error C2143: syntax error: missing ';' before '*'
+Configurar_Problema.c(109,8): error C2371: 'c_float': redefinition; different basic types
+D:\OxfordSolver\osqp\include\glob_opts.h(87,16): message : see declaration of 'c_float'
+Configurar_Problema.c(109,23): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Problema.c(109,23): error C2143: syntax error: missing ';' before '*'
+Configurar_Problema.c(109,53): error C2371: 'c_float': redefinition; different basic types
+D:\OxfordSolver\osqp\include\glob_opts.h(87,16): message : see declaration of 'c_float'
+Configurar_Problema.c(109,61): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Problema.c(109,61): error C2143: syntax error: missing ';' before '*'
+Configurar_Problema.c(109,99): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Problema.c(109,99): error C2143: syntax error: missing ';' before '*'
+Configurar_Problema.c(110,23): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Problema.c(110,23): error C2143: syntax error: missing ';' before '*'
+Configurar_Problema.c(110,61): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Problema.c(110,61): error C2143: syntax error: missing ';' before '*'
+Configurar_Problema.c(110,99): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Problema.c(110,99): error C2143: syntax error: missing ';' before '*'
+Configurar_Problema.c(111,23): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Problema.c(111,23): error C2143: syntax error: missing ';' before '*'
+Configurar_Problema.c(111,53): error C2371: 'Restricciones_Electrolinera': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(112,3): message : see declaration of 'Restricciones_Electrolinera'
+Configurar_Problema.c(111,81): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Problema.c(111,81): error C2143: syntax error: missing ';' before '*'
+Configurar_Problema.c(111,95): error C2059: syntax error: ')'
+Configurar_Problema.c(111,97): error C2054: expected '(' to follow 'Restricciones'
+  Configurar_Restricciones.c
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(49,3): error C2061: syntax error: identifier 'Informacion_Terminal'
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(50,2): error C2059: syntax error: '}'
+  Configurar_Terminales.c
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(49,3): error C2061: syntax error: identifier 'Informacion_Terminal'
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(50,2): error C2059: syntax error: '}'
+Configurar_Terminales.c(4,49): error C2143: syntax error: missing ')' before '*'
+Configurar_Terminales.c(4,49): error C2143: syntax error: missing '{' before '*'
+Configurar_Terminales.c(4,74): error C2059: syntax error: ')'
+Configurar_Terminales.c(4,76): error C2054: expected '(' to follow 'Informacion_Terminales'
+Configurar_Terminales.c(18,52): error C2143: syntax error: missing ')' before '*'
+Configurar_Terminales.c(18,52): error C2143: syntax error: missing '{' before '*'
+Configurar_Terminales.c(18,94): error C2143: syntax error: missing ';' before '*'
+Configurar_Terminales.c(18,118): error C2059: syntax error: ')'
+Configurar_Terminales.c(18,120): error C2054: expected '(' to follow 'Informacion_Terminales'
+  Configurar_Vehiculos.c
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(49,3): error C2061: syntax error: identifier 'Informacion_Terminal'
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(50,2): error C2059: syntax error: '}'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(17,64): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(17,64): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(17,85): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,54): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,54): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,77): error C2371: 'Puntos_Optimizacion': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(69,3): message : see declaration of 'Puntos_Optimizacion'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,96): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,121): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(20,108): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(20,108): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(20,129): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(21,68): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(21,68): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(21,89): error C2059: syntax error: ')'
+Configurar_Vehiculos.c(34,62): error C2143: syntax error: missing ')' before '*'
+Configurar_Vehiculos.c(34,62): error C2143: syntax error: missing '{' before '*'
+Configurar_Vehiculos.c(34,64): error C2040: 'Informacion_Sistema': 'int **' differs in levels of indirection from 'int *'
+Configurar_Vehiculos.c(34,94): error C2059: syntax error: 'type'
+Configurar_Vehiculos.c(34,107): error C2059: syntax error: ')'
+Configurar_Vehiculos.c(95,56): error C2143: syntax error: missing ')' before '*'
+Configurar_Vehiculos.c(95,56): error C2143: syntax error: missing '{' before '*'
+Configurar_Vehiculos.c(95,76): error C2059: syntax error: ')'
+Configurar_Vehiculos.c(95,78): error C2054: expected '(' to follow 'Informacion_Sistema'
+Configurar_Vehiculos.c(121,75): warning C4244: '=': conversion from 'const c_float' to 'int', possible loss of data
+Configurar_Vehiculos.c(133,53): error C2143: syntax error: missing ')' before '*'
+Configurar_Vehiculos.c(133,53): error C2143: syntax error: missing '{' before '*'
+Configurar_Vehiculos.c(133,81): error C2371: 'Celda': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(81,3): message : see declaration of 'Celda'
+Configurar_Vehiculos.c(133,87): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Vehiculos.c(133,87): error C2143: syntax error: missing ';' before '*'
+Configurar_Vehiculos.c(134,32): error C2371: 'Celda': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(81,3): message : see declaration of 'Celda'
+Configurar_Vehiculos.c(134,38): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Vehiculos.c(134,38): error C2143: syntax error: missing ';' before '*'
+Configurar_Vehiculos.c(134,69): error C2059: syntax error: 'type'
+Configurar_Vehiculos.c(134,106): error C2059: syntax error: ')'
+Configurar_Vehiculos.c(152,49): error C2143: syntax error: missing ')' before '*'
+Configurar_Vehiculos.c(152,49): error C2143: syntax error: missing '{' before '*'
+Configurar_Vehiculos.c(152,81): error C2059: syntax error: 'type'
+Configurar_Vehiculos.c(153,51): error C2059: syntax error: ')'
+Configurar_Vehiculos.c(164,58): error C2143: syntax error: missing ')' before '*'
+Configurar_Vehiculos.c(164,58): error C2143: syntax error: missing '{' before '*'
+Configurar_Vehiculos.c(164,79): error C2371: 'Puntos_Optimizacion': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(69,3): message : see declaration of 'Puntos_Optimizacion'
+Configurar_Vehiculos.c(164,99): error C2143: syntax error: missing ';' before '*'
+Configurar_Vehiculos.c(165,41): error C2059: syntax error: 'type'
+Configurar_Vehiculos.c(166,54): error C2059: syntax error: ')'
+Configurar_Vehiculos.c(201,51): error C2143: syntax error: missing ')' before '*'
+Configurar_Vehiculos.c(201,51): error C2143: syntax error: missing '{' before '*'
+Configurar_Vehiculos.c(201,79): error C2371: 'Celda': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(81,3): message : see declaration of 'Celda'
+Configurar_Vehiculos.c(201,84): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Vehiculos.c(201,84): error C2143: syntax error: missing ';' before '*'
+Configurar_Vehiculos.c(202,33): error C2059: syntax error: 'type'
+Configurar_Vehiculos.c(202,72): error C2059: syntax error: ')'
+Configurar_Vehiculos.c(212,73): error C2143: syntax error: missing ')' before '*'
+Configurar_Vehiculos.c(212,73): error C2081: 'Elementos_Electrolinera': name in formal parameter list illegal
+Configurar_Vehiculos.c(212,73): error C2143: syntax error: missing '{' before '*'
+Configurar_Vehiculos.c(212,106): error C2059: syntax error: 'type'
+Configurar_Vehiculos.c(214,75): error C2059: syntax error: ')'
+Configurar_Vehiculos.c(226,59): error C2143: syntax error: missing ')' before '*'
+Configurar_Vehiculos.c(226,59): error C2143: syntax error: missing '{' before '*'
+Configurar_Vehiculos.c(226,87): error C2371: 'Celda': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(81,3): message : see declaration of 'Celda'
+Configurar_Vehiculos.c(226,93): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Vehiculos.c(226,93): error C2143: syntax error: missing ';' before '*'
+Configurar_Vehiculos.c(227,39): error C2371: 'Celda': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(81,3): message : see declaration of 'Celda'
+Configurar_Vehiculos.c(227,45): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Vehiculos.c(227,45): error C2143: syntax error: missing ';' before '*'
+Configurar_Vehiculos.c(227,76): error C2059: syntax error: 'type'
+Configurar_Vehiculos.c(228,77): error C2059: syntax error: ')'
+Configurar_Vehiculos.c(253,51): error C2143: syntax error: missing ')' before '*'
+Configurar_Vehiculos.c(253,51): error C2143: syntax error: missing '{' before '*'
+Configurar_Vehiculos.c(253,79): error C2371: 'Celda': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(81,3): message : see declaration of 'Celda'
+Configurar_Vehiculos.c(253,84): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Configurar_Vehiculos.c(253,84): error C2143: syntax error: missing ';' before '*'
+Configurar_Vehiculos.c(253,122): error C2059: syntax error: 'type'
+Configurar_Vehiculos.c(254,101): error C2059: syntax error: ')'
+  main.c
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(49,3): error C2061: syntax error: identifier 'Informacion_Terminal'
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(50,2): error C2059: syntax error: '}'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(17,64): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(17,64): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(17,85): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,54): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,54): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,77): error C2371: 'Puntos_Optimizacion': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(69,3): message : see declaration of 'Puntos_Optimizacion'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,96): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,121): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(20,108): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(20,108): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(20,129): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(21,68): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(21,68): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(21,89): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(9,51): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(9,51): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(9,80): error C2371: 'Celda': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(81,3): message : see declaration of 'Celda'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(9,85): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(9,85): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(10,34): error C2059: syntax error: 'type'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(11,69): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(12,64): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(12,64): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(12,67): error C2040: 'Informacion_Sistema': 'int **' differs in levels of indirection from 'int *'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(12,97): error C2059: syntax error: 'type'
+D:\NuevoBuildOSQP2\Configurar_Vehiculos.h(12,110): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Configurar_Baterias.h(8,50): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Configurar_Baterias.h(8,50): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Configurar_Baterias.h(8,79): error C2371: 'Celda': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(81,3): message : see declaration of 'Celda'
+D:\NuevoBuildOSQP2\Configurar_Baterias.h(8,84): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+D:\NuevoBuildOSQP2\Configurar_Baterias.h(8,84): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Configurar_Baterias.h(8,113): error C2059: syntax error: 'type'
+D:\NuevoBuildOSQP2\Configurar_Baterias.h(9,79): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Configurar_Precios.h(12,33): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Configurar_Precios.h(12,33): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Configurar_Precios.h(12,59): error C2059: syntax error: 'type'
+D:\NuevoBuildOSQP2\Configurar_Precios.h(12,102): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(17,36): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(17,36): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(17,60): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(18,53): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(18,53): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(18,103): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(18,103): error C2146: syntax error: missing ';' before identifier 'Tiempo_Simulacion'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(18,120): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(19,61): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(19,61): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(19,80): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(19,63): error C2040: 'Tiempo_Simulacion': 'int *' differs in levels of indirection from 'int'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(20,50): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(20,50): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(20,102): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(20,102): error C2146: syntax error: missing ';' before identifier 'Caracteristicas_Tiempo'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(20,124): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(21,42): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(21,42): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(21,84): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(21,84): error C2146: syntax error: missing ';' before identifier 'Caracteristicas_Tiempo'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(21,106): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(23,38): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(23,38): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(23,61): error C2059: syntax error: 'type'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(23,69): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(24,27): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(24,27): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(24,45): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(25,32): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(25,32): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(25,58): error C2371: 'Restricciones_Electrolinera': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(112,3): message : see declaration of 'Restricciones_Electrolinera'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(25,85): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(26,29): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(26,62): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(27,14): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(27,57): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(27,72): error C2371: 'c_float': redefinition; different basic types
+D:\OxfordSolver\osqp\include\glob_opts.h(87,16): message : see declaration of 'c_float'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(27,79): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(28,3): error C2371: 'c_float': redefinition; different basic types
+D:\OxfordSolver\osqp\include\glob_opts.h(87,16): message : see declaration of 'c_float'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(28,10): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(28,38): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(28,65): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Obtener_Info_Entrada.h(28,83): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Calcular_Vector_L_U.h(16,96): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Calcular_Vector_L_U.h(16,96): error C2081: 'Elementos_Electrolinera': name in formal parameter list illegal
+D:\NuevoBuildOSQP2\Calcular_Vector_L_U.h(16,96): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Calcular_Vector_L_U.h(17,9): error C2371: 'Restricciones_Electrolinera': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(112,3): message : see declaration of 'Restricciones_Electrolinera'
+D:\NuevoBuildOSQP2\Calcular_Vector_L_U.h(17,36): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+D:\NuevoBuildOSQP2\Calcular_Vector_L_U.h(17,36): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Calcular_Vector_L_U.h(17,57): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Optimizacion_Carga.h(14,60): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Optimizacion_Carga.h(14,60): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Optimizacion_Carga.h(15,9): error C2371: 'Restricciones_Electrolinera': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(112,3): message : see declaration of 'Restricciones_Electrolinera'
+D:\NuevoBuildOSQP2\Optimizacion_Carga.h(15,36): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+D:\NuevoBuildOSQP2\Optimizacion_Carga.h(15,36): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Optimizacion_Carga.h(15,59): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(16,40): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(16,40): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(16,74): error C2059: syntax error: 'type'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(16,103): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(17,47): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(17,47): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(17,56): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(18,67): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(18,67): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(18,86): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(18,69): error C2040: 'Tiempo_Simulacion': 'int *' differs in levels of indirection from 'int'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(19,55): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Preparar_Arrays.h(19,55): fatal  error C1003: error count exceeds 100; stopping compilation
+  Obtener_Info_Entrada.c
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(49,3): error C2061: syntax error: identifier 'Informacion_Terminal'
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(50,2): error C2059: syntax error: '}'
+D:\NuevoBuildOSQP2\preparar_arrays.h(16,40): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(16,40): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(16,74): error C2059: syntax error: 'type'
+D:\NuevoBuildOSQP2\preparar_arrays.h(16,103): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\preparar_arrays.h(17,47): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(17,47): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(17,56): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\preparar_arrays.h(18,67): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(18,67): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(18,86): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\preparar_arrays.h(19,55): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(19,55): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(19,65): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\preparar_arrays.h(20,44): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(20,44): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(20,51): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\preparar_arrays.h(21,46): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(21,46): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(21,59): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\preparar_arrays.h(22,39): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(22,39): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(22,69): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(22,90): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(23,29): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(23,63): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(23,72): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\preparar_arrays.h(24,60): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(24,60): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\preparar_arrays.h(24,84): error C2059: syntax error: 'type'
+D:\NuevoBuildOSQP2\preparar_arrays.h(25,46): error C2059: syntax error: ')'
+Obtener_Info_Entrada.c(47,33): warning C4047: '<': 'int' differs in levels of indirection from 'int *'
+Obtener_Info_Entrada.c(137,38): error C2143: syntax error: missing ')' before '*'
+Obtener_Info_Entrada.c(137,38): error C2143: syntax error: missing '{' before '*'
+Obtener_Info_Entrada.c(137,74): error C2059: syntax error: 'type'
+Obtener_Info_Entrada.c(137,100): error C2059: syntax error: ')'
+Obtener_Info_Entrada.c(164,35): error C2143: syntax error: missing ')' before '*'
+Obtener_Info_Entrada.c(164,35): error C2143: syntax error: missing '{' before '*'
+Obtener_Info_Entrada.c(164,59): error C2059: syntax error: ')'
+Obtener_Info_Entrada.c(164,61): error C2054: expected '(' to follow 'Objetivos_Optimizacion'
+Obtener_Info_Entrada.c(244,38): error C2143: syntax error: missing ')' before '*'
+Obtener_Info_Entrada.c(244,38): error C2143: syntax error: missing '{' before '*'
+Obtener_Info_Entrada.c(244,57): error C2059: syntax error: 'type'
+Obtener_Info_Entrada.c(244,62): error C2059: syntax error: ')'
+Obtener_Info_Entrada.c(288,51): error C2146: syntax error: missing ')' before identifier 'Coche'
+Obtener_Info_Entrada.c(288,51): error C2061: syntax error: identifier 'Coche'
+Obtener_Info_Entrada.c(288,51): error C2059: syntax error: ';'
+Obtener_Info_Entrada.c(288,56): error C2059: syntax error: ')'
+Obtener_Info_Entrada.c(288,58): error C2449: found '{' at file scope (missing function header?)
+Obtener_Info_Entrada.c(297,1): error C2059: syntax error: '}'
+Obtener_Info_Entrada.c(315,72): error C2146: syntax error: missing ')' before identifier 'Tiempo_Simulacion'
+Obtener_Info_Entrada.c(315,72): error C2061: syntax error: identifier 'Tiempo_Simulacion'
+Obtener_Info_Entrada.c(315,72): error C2059: syntax error: ';'
+Obtener_Info_Entrada.c(315,89): error C2059: syntax error: ','
+Obtener_Info_Entrada.c(315,106): error C2059: syntax error: ')'
+Obtener_Info_Entrada.c(362,50): error C2143: syntax error: missing ')' before '*'
+Obtener_Info_Entrada.c(362,50): error C2143: syntax error: missing '{' before '*'
+Obtener_Info_Entrada.c(362,92): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Obtener_Info_Entrada.c(362,92): error C2146: syntax error: missing ';' before identifier 'Tiempo_Simulacion'
+Obtener_Info_Entrada.c(362,109): error C2059: syntax error: ')'
+Obtener_Info_Entrada.c(362,92): error C2040: 'Tiempo_Simulacion': 'int' differs in levels of indirection from 'int *'
+Obtener_Info_Entrada.c(362,111): error C2054: expected '(' to follow 'Tiempo_Simulacion'
+Obtener_Info_Entrada.c(414,50): error C2143: syntax error: missing ')' before '*'
+Obtener_Info_Entrada.c(414,50): error C2143: syntax error: missing '{' before '*'
+Obtener_Info_Entrada.c(414,99): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Obtener_Info_Entrada.c(414,99): error C2146: syntax error: missing ';' before identifier 'Tiempo_Simulacion'
+Obtener_Info_Entrada.c(414,116): error C2059: syntax error: ')'
+Obtener_Info_Entrada.c(414,99): error C2040: 'Tiempo_Simulacion': 'int' differs in levels of indirection from 'int *'
+Obtener_Info_Entrada.c(414,118): error C2054: expected '(' to follow 'Tiempo_Simulacion'
+Obtener_Info_Entrada.c(434,52): error C2143: syntax error: missing ')' before '*'
+Obtener_Info_Entrada.c(434,52): error C2143: syntax error: missing '{' before '*'
+Obtener_Info_Entrada.c(434,102): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Obtener_Info_Entrada.c(434,102): error C2146: syntax error: missing ';' before identifier 'Tiempo_Simulacion'
+Obtener_Info_Entrada.c(434,119): error C2059: syntax error: ')'
+Obtener_Info_Entrada.c(434,102): error C2040: 'Tiempo_Simulacion': 'int' differs in levels of indirection from 'int *'
+Obtener_Info_Entrada.c(434,121): error C2054: expected '(' to follow 'Tiempo_Simulacion'
+Obtener_Info_Entrada.c(455,71): error C2143: syntax error: missing ')' before '*'
+Obtener_Info_Entrada.c(455,71): error C2143: syntax error: missing '{' before '*'
+Obtener_Info_Entrada.c(455,90): error C2059: syntax error: ')'
+Obtener_Info_Entrada.c(455,92): error C2054: expected '(' to follow 'Tiempo_Simulacion'
+Obtener_Info_Entrada.c(496,56): error C2143: syntax error: missing ')' before '*'
+Obtener_Info_Entrada.c(496,56): error C2143: syntax error: missing '{' before '*'
+Obtener_Info_Entrada.c(496,75): error C2059: syntax error: ')'
+Obtener_Info_Entrada.c(496,77): error C2054: expected '(' to follow 'Tiempo_Simulacion'
+Obtener_Info_Entrada.c(542,70): error C2143: syntax error: missing ')' before '*'
+Obtener_Info_Entrada.c(542,70): error C2143: syntax error: missing '{' before '*'
+Obtener_Info_Entrada.c(542,89): error C2059: syntax error: ')'
+Obtener_Info_Entrada.c(542,91): error C2054: expected '(' to follow 'Tiempo_Simulacion'
+Obtener_Info_Entrada.c(596,60): error C2143: syntax error: missing ')' before '*'
+Obtener_Info_Entrada.c(596,60): error C2143: syntax error: missing '{' before '*'
+Obtener_Info_Entrada.c(596,79): error C2059: syntax error: ')'
+Obtener_Info_Entrada.c(596,81): error C2054: expected '(' to follow 'Tiempo_Simulacion'
+Obtener_Info_Entrada.c(656,26): error C2143: syntax error: missing ')' before '*'
+Obtener_Info_Entrada.c(656,26): error C2143: syntax error: missing '{' before '*'
+Obtener_Info_Entrada.c(656,44): error C2059: syntax error: ')'
+Obtener_Info_Entrada.c(656,46): error C2054: expected '(' to follow 'Baterias_Sistema'
+Obtener_Info_Entrada.c(693,49): error C2143: syntax error: missing ')' before '*'
+Obtener_Info_Entrada.c(693,49): error C2143: syntax error: missing '{' before '*'
+Obtener_Info_Entrada.c(693,101): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Obtener_Info_Entrada.c(693,101): error C2146: syntax error: missing ';' before identifier 'Caracteristicas_Tiempo'
+Obtener_Info_Entrada.c(693,123): error C2059: syntax error: ')'
+Obtener_Info_Entrada.c(693,125): error C2054: expected '(' to follow 'Caracteristicas_Tiempo'
+Obtener_Info_Entrada.c(727,41): error C2143: syntax error: missing ')' before '*'
+Obtener_Info_Entrada.c(727,41): error C2143: syntax error: missing '{' before '*'
+Obtener_Info_Entrada.c(727,83): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Obtener_Info_Entrada.c(727,83): error C2146: syntax error: missing ';' before identifier 'Caracteristicas_Tiempo'
+Obtener_Info_Entrada.c(727,83): fatal  error C1003: error count exceeds 100; stopping compilation
+  Optimizacion_Carga.c
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(49,3): error C2061: syntax error: identifier 'Informacion_Terminal'
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(50,2): error C2059: syntax error: '}'
+D:\NuevoBuildOSQP2\Calcular_Vector_L_U.h(16,96): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Calcular_Vector_L_U.h(16,96): error C2081: 'Elementos_Electrolinera': name in formal parameter list illegal
+D:\NuevoBuildOSQP2\Calcular_Vector_L_U.h(16,96): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Calcular_Vector_L_U.h(17,9): error C2371: 'Restricciones_Electrolinera': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(112,3): message : see declaration of 'Restricciones_Electrolinera'
+D:\NuevoBuildOSQP2\Calcular_Vector_L_U.h(17,36): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+D:\NuevoBuildOSQP2\Calcular_Vector_L_U.h(17,36): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Calcular_Vector_L_U.h(17,57): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(17,64): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(17,64): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(17,85): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,54): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,54): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,77): error C2371: 'Puntos_Optimizacion': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(69,3): message : see declaration of 'Puntos_Optimizacion'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,96): error C2143: syntax error: missing ';' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(19,121): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(20,108): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(20,108): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(20,129): error C2059: syntax error: ')'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(21,68): error C2143: syntax error: missing ')' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(21,68): error C2143: syntax error: missing '{' before '*'
+D:\NuevoBuildOSQP2\Comprobar_Informacion.h(21,89): error C2059: syntax error: ')'
+Optimizacion_Carga.c(9,60): error C2143: syntax error: missing ')' before '*'
+Optimizacion_Carga.c(9,60): error C2143: syntax error: missing '{' before '*'
+Optimizacion_Carga.c(10,32): error C2371: 'Restricciones_Electrolinera': redefinition; different basic types
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(112,3): message : see declaration of 'Restricciones_Electrolinera'
+Optimizacion_Carga.c(10,60): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored
+Optimizacion_Carga.c(10,60): error C2143: syntax error: missing ';' before '*'
+Optimizacion_Carga.c(10,82): error C2059: syntax error: ')'
+Optimizacion_Carga.c(10,84): error C2054: expected '(' to follow 'Restricciones_Sistema'
+  Preparar_Arrays.c
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(49,3): error C2061: syntax error: identifier 'Informacion_Terminal'
+D:\NuevoBuildOSQP2\Tipos_Optimizacion.h(50,2): error C2059: syntax error: '}'
+Preparar_Arrays.c(6,45): error C2143: syntax error: missing ')' before '*'
+Preparar_Arrays.c(6,45): error C2143: syntax error: missing '{' before '*'
+Preparar_Arrays.c(6,52): error C2059: syntax error: ')'
+Preparar_Arrays.c(6,54): error C2054: expected '(' to follow 'Panel'
+Preparar_Arrays.c(23,43): error C2143: syntax error: missing ')' before '*'
+Preparar_Arrays.c(23,43): error C2143: syntax error: missing '{' before '*'
+Preparar_Arrays.c(23,50): error C2059: syntax error: ')'
+Preparar_Arrays.c(23,52): error C2054: expected '(' to follow 'Carga'
+Preparar_Arrays.c(40,54): error C2143: syntax error: missing ')' before '*'
+Preparar_Arrays.c(40,54): error C2143: syntax error: missing '{' before '*'
+Preparar_Arrays.c(40,64): error C2059: syntax error: ')'
+Preparar_Arrays.c(40,66): error C2054: expected '(' to follow 'Operador'
+Preparar_Arrays.c(52,66): error C2143: syntax error: missing ')' before '*'
+Preparar_Arrays.c(52,66): error C2143: syntax error: missing '{' before '*'
+Preparar_Arrays.c(52,85): error C2059: syntax error: ')'
+Preparar_Arrays.c(52,87): error C2054: expected '(' to follow 'Tiempo_Simulacion'
+Preparar_Arrays.c(60,46): error C2143: syntax error: missing ')' before '*'
+Preparar_Arrays.c(60,46): error C2143: syntax error: missing '{' before '*'
+Preparar_Arrays.c(60,55): error C2059: syntax error: ')'
+Preparar_Arrays.c(60,57): error C2054: expected '(' to follow 'Sistema'
+Preparar_Arrays.c(73,60): error C2143: syntax error: missing ')' before '*'
+Preparar_Arrays.c(73,60): error C2143: syntax error: missing '{' before '*'
+Preparar_Arrays.c(73,84): error C2059: syntax error: 'type'
+Preparar_Arrays.c(74,45): error C2059: syntax error: ')'
+Preparar_Arrays.c(80,38): error C2143: syntax error: missing ')' before '*'
+Preparar_Arrays.c(80,38): error C2143: syntax error: missing '{' before '*'
+Preparar_Arrays.c(80,62): error C2143: syntax error: missing ';' before '*'
+Preparar_Arrays.c(80,83): error C2143: syntax error: missing ';' before '*'
+Preparar_Arrays.c(81,28): error C2143: syntax error: missing ';' before '*'
+Preparar_Arrays.c(81,62): error C2143: syntax error: missing ';' before '*'
+Preparar_Arrays.c(81,71): error C2059: syntax error: ')'
+Preparar_Arrays.c(81,73): error C2054: expected '(' to follow 'Sistema'
+Preparar_Arrays.c(88,38): error C2143: syntax error: missing ')' before '*'
+Preparar_Arrays.c(88,38): error C2143: syntax error: missing '{' before '*'
+Preparar_Arrays.c(88,72): error C2059: syntax error: 'type'
+Preparar_Arrays.c(88,102): error C2059: syntax error: ')'
+  Generating Code...
