@@ -2,6 +2,12 @@
 #pragma once
 #ifndef DEFINICIONES_GLOBALES_H
 #define DEFINICIONES_GLOBALES_H
+
+
+//Se definen constantes relacionadas con el uso de la estructura temporal de tipo tm->
+#define OFFSET_ANYO_tm                   1900 //Usando variables de tipo tm los años empiezan a partir de 1900
+#define OFFSET_MES_tm                      1  //Usando variables de tipo tm los meses empiezan en el mes 0
+//Se definen constantes relacionadas con el problema matematico de optimizacion
 #define NUMERO_TERMINALES 12          //Numero de terminales que hay en la placa de redistribucion
 #define NUMERO_VARIABLES  36          //Numero de variables  que hay en el problema de optimizacion
 
@@ -18,9 +24,10 @@
 #define COLUMNA_DIA_FINAL_ALGORITMO         7  //Columna donde se encuentra el dia final del algoritmo
 #define COLUMNA_HORA_FINAL_ALGORITMO        8  //Columna donde se encuentra la hora final del algoritmo
 #define COLUMNA_MINUTO_FINAL_ALGORITMO      9  //Columna donde se encuentra el minuto final del algoritmo
+#define COLUMNA_DELTA_T                     10 //Columna donde se encuentra la diferencia temporal entre puntos.
 
 //Se definen las filas y columnas donde se encuentra la informacion en el CSV que contiene la informacion de los vehiculos
-#define OFSET_CSV_VEHICULOS                               1  //Variable para tener en cuenta que la primera fila del csv no tiene los datos.
+#define OFFSET_FILA_CSV_VEHICULOS                         1  //Variable para tener en cuenta que la primera fila del csv no tiene los datos.
 #define COLUMNA_CSV_VEHICULOS_NUMERO_TERMINAL             0  //Columna donde se encuentra el terminal al que esta conectado el vehiculos
 #define COLUMNA_CSV_VEHICULOS_MODO_CARGA                  1  //Columna donde se encuentra el modo de carga en el que se encuentra el vehiculo
 #define COLUMNA_CSV_VEHICULOS_CAPACIDAD_BATERIA           2  //Columna donde se encuentra la capacidad de la bateria del vehiculo
@@ -39,7 +46,7 @@
 #define COLUMNA_CSV_VEHICULOS_MINUTO_FINAL                15 //Columna donde se encuentra el minuto final de la carga del vehiculo
 //Defino las filas y columnas donde se encuentra la informacion en el CSV que contiene la informacion de las baterias
 
-
+#define OFFSET_FILA_CSV_BATERIAS
 #define COLUMNA_CSV_BATERIAS_NUMERO_TERMINAL                            0  //Columna donde se encuentra el terminal al que esta conectado la bateria
 #define COLUMNA_CSV_BATERIAS_CAPACIDAD_BATERIA                          1  // Columna donde se encuentra la capacidad de la bateria
 #define COLUMNA_CSV_BATERIAS_INICIAL                                    2  // Columna donde se encuentra el porcentaje de bateria inicial
@@ -65,6 +72,28 @@
 //Defino los codigos para las funciones tipo int que devuelven -1 si ha habido algun error y 0 si no
 #define EXITO 0
 #define ERROR -1
+
+
+
+//--------------Se definen las columnas donde se encuentran las columnas donde se encuentra la informacion en el CSV
+//--------------de los precios del kilovatio hora
+
+#define PRIMERA_FILA_CSV_PRECIO   1     //La primera fila que tiene informacion es la que viene indexada con el 1
+#define COLUMNA_CSV_ANYO_PRECIO   0     //La columna donde se encuentra el año asociado a la fecha es la columna 0
+#define COLUMNA_CSV_MES_PRECIO    1     //La columna donde se encuentra el mes asociado a la fecha es la columna 1
+#define COLUMNA_CSV_DIA_PRECIO    2     //La columna donde se encuentra el dia asociado a la fecha es la columna 2
+#define COLUMNA_CSV_HORA_PRECIO   3     //La columna donde se encuentra la hora asociada a la fecha es la columna 3
+#define COLUMNA_CSV_PRECIO        4     //La columna donde se encuentra el precio es la columna 4
+
+//---------------Definiciones adicionales----------------------------------------------------------------
+
+#define SEGUNDOS_HORA  3600   //Segundos que hay en una hora
+
+//--------------------Se define donde se encuentra la informacion en el CSV de los terminales
+
+#define COLUMNA_CSV_NUMERO_TERMINAL 0  // La columna donde viene indicado el numero de terminal
+#define COLUMNA_CSV_FASE_TERMINAL   1  // La columna donde viene indicado la fase del terminal.
+
 #ifdef __cplusplus
 extern "C" {
 #endif

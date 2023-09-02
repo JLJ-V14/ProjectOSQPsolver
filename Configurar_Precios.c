@@ -86,7 +86,7 @@ double Encontrar_Precio(const struct tm Fecha_Punto,const Celda ***Data_Precio, 
 	printf("Error Precio no encontrado \n");
 	return -1;
 }
-void Configurar_Precios(const Celda*** Data_Precio_Compra,const Celda *** Data_Precio_Venta,Puntos_Optimizacion *Array_Puntos_Simulacion,
+void Configurar_Precios(const Datos_CSV*** Data_Precio_Compra,const Datos_CSV *** Data_Precio_Venta,Puntos_Optimizacion *Array_Puntos_Simulacion,
 	                    const Elementos_Electrolinera *Electrolinera,const int Filas_CSV_Compra, const int Filas_CSV_Venta) {
 	//Se van añadiendo los precios de compra y venta a los puntos de sinmulacion correspondiente.
 	double Precio;
