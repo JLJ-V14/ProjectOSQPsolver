@@ -13,7 +13,7 @@
 
 //Se definen las filas columnas en las que se encuentra la informacion en el CSV que contiene la fecha inicial y final
 //del algoritmo.
-#define FILA_INFORMACION_TEMPORAL_ALGORITMO 1  //Fila    donde se encuentra la informacion en el CSV.
+#define FILA_INFORMACION_ALGORITMO          1  //Fila    donde se encuentra la informacion en el CSV.
 #define COLUMNA_ANYO_INICIAL_ALGORITMO      0  //Columna donde se encuentra el año inicial del algoritmo
 #define COLUMNA_MES_INICIAL_ALGORITMO       1  //Columna donde se encuentra el mes inicial del algoritmo
 #define COLUMNA_DIA_INICIAL_ALGORITMO       2  //Columna donde se ecuentra  el dia inicial del algoritmo
@@ -93,6 +93,10 @@
 
 #define COLUMNA_CSV_NUMERO_TERMINAL 0  // La columna donde viene indicado el numero de terminal
 #define COLUMNA_CSV_FASE_TERMINAL   1  // La columna donde viene indicado la fase del terminal.
+
+//-------------------Se define donde se encuentra la informacion en el CSV de las restricciones ->
+#define COLUMNA_CSV_NUMERO_TERMINAL   0 //La columna donde se encuentra el numero de terminal.
+#define COLUMNA_CSV_VALOR_RESTRICCION 1 //La columna donde se encuentra el valor de las restricciones
 
 #ifdef __cplusplus
 extern "C" {
