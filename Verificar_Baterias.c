@@ -1,7 +1,7 @@
 
 #include "Funciones_Auxiliares.h"
 #include "Tipos_Optimizacion.h"
-
+#include <stdio.h>
 //En este archivo .c vienen definidos los subprogramas que se encargan de comprobar que la informacion del CSV de las baterias
 //son correctas
 
@@ -10,38 +10,7 @@
 //que la informacion de la bateria es correcta->
 
 
-static void Cargar_Fecha_Objetivo_Bateria (struct tm* Fecha_Objetivo_Bateria, const Datos_CSV*** Datos_Baterias,
-	const int Numero_Bateria) {
-	Fecha_Objetivo_Bateria->tm_year = Datos_Baterias[OFFSET_FILA_CSV_BATERIAS + Numero_Bateria][COLUMNA_CSV_BATERIAS_ANYO_FINAL]->data.dbl - OFFSET_ANYO_tm;
-	Fecha_Objetivo_Bateria->tm_mon  = Datos_Baterias[OFFSET_FILA_CSV_BATERIAS + Numero_Bateria][COLUMNA_CSV_BATERIAS_MES_FINAL]->data.dbl - OFFSET_MES_tm;
-	Fecha_Objetivo_Bateria->tm_mday = Datos_Baterias[OFFSET_FILA_CSV_BATERIAS + Numero_Bateria][COLUMNA_CSV_BATERIAS_DIA_FINAL]->data.dbl;
-	Fecha_Objetivo_Bateria->tm_hour = Datos_Baterias[OFFSET_FILA_CSV_BATERIAS + Numero_Bateria][COLUMNA_CSV_BATERIAS_HORA_FINAL]->data.dbl;
-	Fecha_Objetivo_Bateria->tm_min  = Datos_Baterias[OFFSET_FILA_CSV_BATERIAS + Numero_Bateria][COLUMNA_CSV_BATERIAS_MINUTO_FINAL]->data.dbl;
-	Fecha_Objetivo_Bateria->tm_sec  = 0;
-}
-
-static void Cargar_Fecha_Inicial_Bateria(struct tm* Fecha_Inicial_Bateria, const Datos_CSV*** Datos_Baterias,
-	const int Numero_Bateria) {
-	//Este subprograma se utiliza para cargar la fecha inicial de la bateria en una variable->
-	Fecha_Inicial_Bateria->tm_year = Datos_Baterias[OFFSET_FILA_CSV_BATERIAS + Numero_Bateria][COLUMNA_CSV_BATERIAS_ANYO_INICIAL]->data.dbl - OFFSET_ANYO_tm;
-	Fecha_Inicial_Bateria->tm_mon  = Datos_Baterias[OFFSET_FILA_CSV_BATERIAS + Numero_Bateria][COLUMNA_CSV_BATERIAS_MES_INICIAL]->data.dbl - OFFSET_MES_tm;
-	Fecha_Inicial_Bateria->tm_mday = Datos_Baterias[OFFSET_FILA_CSV_BATERIAS + Numero_Bateria][COLUMNA_CSV_BATERIAS_DIA_INICIAL]->data.dbl;
-	Fecha_Inicial_Bateria->tm_hour = Datos_Baterias[OFFSET_FILA_CSV_BATERIAS + Numero_Bateria][COLUMNA_CSV_BATERIAS_HORA_INICIAL]->data.dbl;
-	Fecha_Inicial_Bateria->tm_min  = Datos_Baterias[OFFSET_FILA_CSV_BATERIAS + Numero_Bateria][COLUMNA_CSV_BATERIAS_MINUTO_INICIAL]->data.dbl;
-	Fecha_Inicial_Bateria->tm_sec  = 0;
-}
-
-static void Cargar_Fecha_Final_Bateria(struct tm* Fecha_Final_Bateria, const Datos_CSV*** Datos_Baterias,
-	const int Numero_Bateria) {
-	//Este subprograma se utiliza para cargar la fecha final de carga de la bateria en una variable
-	Fecha_Final_Bateria->tm_year = Datos_Baterias[OFFSET_FILA_CSV_BATERIAS + Numero_Bateria][COLUMNA_CSV_BATERIAS_ANYO_FINAL]->data.dbl - OFFSET_ANYO_tm;
-	Fecha_Final_Bateria->tm_mon = Datos_Baterias[OFFSET_FILA_CSV_BATERIAS + Numero_Bateria][COLUMNA_CSV_BATERIAS_MES_FINAL]->data.dbl - OFFSET_MES_tm;
-	Fecha_Final_Bateria->tm_mday = Datos_Baterias[OFFSET_FILA_CSV_BATERIAS + Numero_Bateria][COLUMNA_CSV_BATERIAS_DIA_FINAL]->data.dbl;
-	Fecha_Final_Bateria->tm_hour = Datos_Baterias[OFFSET_FILA_CSV_BATERIAS + Numero_Bateria][COLUMNA_CSV_BATERIAS_HORA_FINAL]->data.dbl;
-	Fecha_Final_Bateria->tm_min = Datos_Baterias[OFFSET_FILA_CSV_BATERIAS + Numero_Bateria][COLUMNA_CSV_BATERIAS_MINUTO_FINAL]->data.dbl;
-	Fecha_Final_Bateria->tm_sec = 0;
-}
-
+//----Revisado-----------------------------------------//
 
 static int Comprobar_Datos_Bateria(const Datos_CSV*** Datos_Bateria, const int Numero_Bateria) {
 
@@ -59,7 +28,7 @@ static int Comprobar_Datos_Bateria(const Datos_CSV*** Datos_Bateria, const int N
 	double Bateria_Deseada   = Datos_Bateria[Numero_Bateria][COLUMNA_CSV_BATERIAS_FINAL]->data.dbl;
 
 	if ((Numero_Terminal < 0) || (Numero_Terminal > 12)) {
-		printf("El numero de terminal al que esta conectado la bateria %d ", Numero_Bateria);
+		printf("El numero de terminal al que esta conectado la bateria %d  \n", Numero_Bateria);
 	}
 	if (Capacidad_Bateria <= 0) {
 		printf("La capacidad de la bateria %d no puede ser 0 o inferior a 0 \n",Numero_Bateria);
@@ -94,52 +63,60 @@ static int Comprobar_Objetivo_Bateria(const char* Objetivo) {
 	}
 }
 
-static int Comprobar_Orden(const struct tm Fecha_Inicial, const struct tm Fecha_Final) {
-	//Este subprograma se utiliza para comprobar que la fecha inicial de conexion de la bateria o vehiculo sea anterior
-	//a la fecha final de conexion de la bateria
 
-	int Resultado_Comparacion = Comprobar_Orden_Fechas(Fecha_Inicial, Fecha_Final);
-	if (Resultado_Comparacion > 0) {
-		return ERROR;
-	}
-	return EXITO;
-}
 
 static int Comprobar_Fecha_Inicial_Bateria(struct tm* Fecha_Inicial_Bateria, const Datos_CSV*** Datos_Baterias,
 	const int Numero_Bateria, const Datos_CSV ***Datos_Algoritmo) {
 
 	//Cargo la fecha inicial del algoritmo->
-	
 	struct tm Fecha_Inicial_Algoritmo = { 0 };
 	Cargar_Fecha(Datos_Algoritmo, &Fecha_Inicial_Algoritmo, COLUMNA_ANYO_INICIAL_ALGORITMO,
 		         COLUMNA_MES_INICIAL_ALGORITMO, COLUMNA_DIA_INICIAL_ALGORITMO, COLUMNA_HORA_INICIAL_ALGORITMO,
 		         COLUMNA_MINUTO_INICIAL_ALGORITMO, FILA_INFORMACION_ALGORITMO);
 
-	//Se comprueba si la fecha inicial de conexion de la bateria es posterior a la fecha de inicio del algoritmo.
-	
-	int Resultado_Comparacion;
-	Cargar_Fecha_Inicial_Bateria(&Fecha_Inicial_Bateria, Datos_Baterias, Numero_Bateria);
-	Resultado_Comparacion = Comprobar_Orden_Fechas(Fecha_Inicial_Algoritmo, *Fecha_Inicial_Bateria);
 
-	if (Resultado_Comparacion > 0) {
-		printf("La fecha inicial del vehiculo no puede ser anterior a la fecha inicial del algoritmo \n");
+	//Se comprueba si la fecha inicial de conexion de la bateria es posterior a la fecha de inicio del algoritmo.
+	Cargar_Fecha(Datos_Baterias, Fecha_Inicial_Bateria, COLUMNA_CSV_BATERIAS_ANYO_INICIAL,
+		         COLUMNA_CSV_BATERIAS_MES_INICIAL, COLUMNA_CSV_BATERIAS_DIA_INICIAL,
+		         COLUMNA_CSV_BATERIAS_HORA_INICIAL, COLUMNA_CSV_BATERIAS_MINUTO_INICIAL,
+		         Numero_Bateria);
+
+
+
+	if (Verificar_Orden_Fechas(Fecha_Inicial_Algoritmo, *Fecha_Inicial_Bateria) == ERROR) {
+		printf("La fecha final de la bateria no puede ser posterior a la del algoritmo \n");
 		return ERROR;
 	}
+
+
 	return EXITO;
 }
 
 static int Comprobar_Fecha_Final_Bateria(struct tm* Fecha_Final_Bateria, const Datos_CSV*** Datos_Baterias,
-	                                     const int Numero_Bateria, const Datos_CSV ***Datos_Algoritmo) {
+	                 const int Numero_Bateria, const Datos_CSV ***Datos_Algoritmo) {
+	
+	//Se comprueba que la fecha final de la bateria es correcta->
 
+	struct tm Fecha_Final_Algoritmo = { 0 };
+	Cargar_Fecha(Datos_Algoritmo, &Fecha_Final_Algoritmo, COLUMNA_ANYO_FINAL_ALGORITMO,
+		         COLUMNA_MES_FINAL_ALGORITMO, COLUMNA_DIA_FINAL_ALGORITMO, COLUMNA_HORA_FINAL_ALGORITMO,
+		         COLUMNA_MINUTO_FINAL_ALGORITMO, FILA_INFORMACION_ALGORITMO);
 
 	//Se comprueba si la fecha de desconexion de la bateria no es posterior a la finalizacion del algoritmo.
 	int Resultado_Comparacion;
-	Cargar_Fecha_Final_Bateria(&Fecha_Final_Bateria, Datos_Baterias, Numero_Bateria);
-	Resultado_Comparacion = Comprobar_Orden_Fechas(Fecha_Final_Algoritmo, *Fecha_Final_Bateria);
-	if (Resultado_Comparacion < 0) {
-		printf("Error el algoritmo no puede acabar antes que la carga de la bateria \n");
+
+	Cargar_Fecha(Datos_Baterias, Fecha_Final_Bateria, COLUMNA_CSV_BATERIAS_ANYO_FINAL,
+		         COLUMNA_CSV_BATERIAS_MES_FINAL,    COLUMNA_CSV_BATERIAS_DIA_FINAL,
+		         COLUMNA_CSV_BATERIAS_HORA_FINAL,   COLUMNA_CSV_BATERIAS_MINUTO_FINAL,
+		         Numero_Bateria);
+
+
+	if (Verificar_Orden_Fechas(Fecha_Final_Algoritmo, *Fecha_Final_Bateria) == ERROR) {
+		printf("La fecha final de la bateria no puede ser posterior a la del algoritmo \n");
 		return ERROR;
 	}
+
+	return EXITO;
 }
 
 bool Considerar_Objetivo_Bateria(const char* Objetivo) {
@@ -158,17 +135,21 @@ static int Comprobar_Fecha_Objetivo_Baterias(const Datos_CSV*** Datos_Baterias, 
 	struct tm Fecha_Objetivo_Bateria;
 	int       Resultado_Comparacion;
 
-	Cargar_Fecha_Objetivo_Bateria(&Fecha_Objetivo_Bateria, Datos_Baterias, Numero_Bateria);
-	Resultado_Comparacion = Comprobar_Orden_Fechas(Fecha_Inicial_Bateria, Fecha_Objetivo_Bateria);
-	if (Resultado_Comparacion > 0) {
-		printf("Error el objetivo de carga es anterior a la fecha inicial de la bateria, para la bateria %d \n ", Numero_Bateria);
+	Cargar_Fecha(Datos_Baterias,&Fecha_Objetivo_Bateria, COLUMNA_CSV_BATERIAS_ANYO_OBJETIVO,
+		         COLUMNA_CSV_BATERIAS_MES_OBJETIVO, COLUMNA_CSV_BATERIAS_DIA_OBJETIVO,
+		         COLUMNA_CSV_BATERIAS_HORA_OBJETIVO, COLUMNA_CSV_BATERIAS_MINUTO_OBJETIVO,
+		         Numero_Bateria);
+
+	if (Verificar_Orden_Fechas(Fecha_Objetivo_Bateria, Fecha_Inicial_Bateria) == ERROR) {
+		printf("La fecha final de la bateria no puede ser posterior a la del algoritmo \n");
 		return ERROR;
 	}
-	Resultado_Comparacion = Comprobar_Orden_Fechas(Fecha_Final_Bateria, Fecha_Objetivo_Bateria);
-	if (Resultado_Comparacion < 0) {
-		printf("La fecha de desconexion de la bateria no puede ser antes que el objetivo de carga par ala bateria %d \n", Numero_Bateria);
+	if (Verificar_Orden_Fechas(Fecha_Final_Bateria, Fecha_Objetivo_Bateria) == ERROR) {
+		printf("La fecha final de la bateria no puede ser posterior a la del algoritmo \n");
 		return ERROR;
 	}
+
+
 	return EXITO;
 }
 
@@ -192,13 +173,13 @@ static int Comprobar_Fecha_Baterias(const int Numero_Bateria, const Datos_CSV***
 		}
 
 		//Se comprueba si la fecha final de la bateria es correcta
-		if (Comprobar_Fecha_Final_Bateria(&Fecha_Final_Bateria, Datos_Baterias, Numero_Bateria, Fecha_Final_Algoritmo) == ERROR) {
+		if (Comprobar_Fecha_Final_Bateria(&Fecha_Final_Bateria, Datos_Baterias, Numero_Bateria, Datos_Algoritmo) == ERROR) {
 			printf("La fecha final de conexion de la bateria %d no es correcta", Numero_Bateria);
 			return ERROR;
 		}
 
 		//Se comprueba que la fecha inicial de la bateria es anterior a la de finalizacion.
-		if (Comprobar_Orden(Fecha_Inicial_Bateria, Fecha_Final_Bateria) == ERROR) {
+		if (Verificar_Orden_Fechas(Fecha_Final_Bateria,Fecha_Inicial_Bateria) == ERROR) {
 			printf("Error la fecha inicial de carga de la bateria no puede ser posterior a la fecha final de carga \n");
 			return ERROR;
 		}
@@ -220,13 +201,22 @@ static int Comprobar_Fecha_Baterias(const int Numero_Bateria, const Datos_CSV***
 
 
 
-void Verificar_Baterias(const Datos_CSV *** Datos_CSV_Baterias, const Datos_CSV *** Datos_CSV_Algoritmo,
+int Verificar_Baterias(const Datos_CSV *** Datos_CSV_Baterias, const Datos_CSV *** Datos_CSV_Algoritmo,
 	                    const int Numero_Filas_CSV_Baterias){
 	
 	//En este subprograma se va comprobando que los datos del CSV que contiene la informacion de 
 	//las baterias es correcto
 	for (int Numero_Bateria = 1; Numero_Bateria < Numero_Filas_CSV_Baterias; Numero_Bateria++) {
 
-		Comprobar_Datos_Bateria(Datos_CSV_Baterias, Numero_Bateria);
+		//Se comprueba que las fechas de conexion y desconexion de las baterias son correctas.
+		if (Comprobar_Fecha_Baterias(Numero_Bateria, Datos_CSV_Baterias, Datos_CSV_Algoritmo) == ERROR) {
+			return ERROR;
+		}
+
+		//Se comprueba que los datos de la bateria son correctos.
+		if (Comprobar_Datos_Bateria(Datos_CSV_Baterias, Numero_Bateria) == ERROR) {
+			return ERROR;
+		}
 	}
+	return EXITO;
 }

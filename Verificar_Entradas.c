@@ -58,5 +58,5 @@ int Verificar_Entradas( const Datos_CSV *** Datos_Tiempo,           const Datos_
 		printf("Los Datos del CSV que contiene la informacion de los vehiculos son incorrectos \n");
 		return ERROR;
 	}
-		                  
+	return EXITO;
 }
