@@ -333,7 +333,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="Optimizacion_Carga.c" />
     <ClCompile Include="Optimizacion_Cuadratica.c" />
     <ClCompile Include="Preparar_Arrays.c" />
+    <ClCompile Include="Verificar_Baterias.c" />
+    <ClCompile Include="Verificar_Datos_Vehiculos.c" />
     <ClCompile Include="Verificar_Entradas.c" />
+    <ClCompile Include="Verificar_Precios.c" />
+    <ClCompile Include="Verificar_Restricciones.c" />
+    <ClCompile Include="Verificar_Terminales.c" />
+    <ClCompile Include="Verificar_Tiempo_Algoritmo.c" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="D:\Nuevo_Build_OSQP\ZERO_CHECK.vcxproj">
@@ -370,7 +376,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="Optimizacion_Cuadratica.h" />
     <ClInclude Include="Preparar_Arrays.h" />
     <ClInclude Include="Tipos_Optimizacion.h" />
+    <ClInclude Include="Verificar_Baterias.h" />
+    <ClInclude Include="Verificar_Datos_Vehiculos.h" />
     <ClInclude Include="Verificar_Entradas.h" />
+    <ClInclude Include="Verificar_Precios.h" />
+    <ClInclude Include="Verificar_Restricciones.h" />
+    <ClInclude Include="Verificar_Terminales.h" />
+    <ClInclude Include="Verificar_Tiempo_Algoritmo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

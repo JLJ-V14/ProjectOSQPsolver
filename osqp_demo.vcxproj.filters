@@ -61,7 +61,27 @@
     <ClCompile Include="Verificar_Entradas.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Funciones_Auxiliares.c" />
+    <ClCompile Include="Funciones_Auxiliares.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Verificar_Precios.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Verificar_Terminales.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Verificar_Tiempo_Algoritmo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Verificar_Datos_Vehiculos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Verificar_Restricciones.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Verificar_Baterias.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\OxfordSolver\osqp\CMakeLists.txt" />
@@ -142,6 +162,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Funciones_Auxiliares.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Verificar_Precios.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Verificar_Terminales.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Verificar_Tiempo_Algoritmo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Verificar_Datos_Vehiculos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Verificar_Restricciones.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Verificar_Baterias.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

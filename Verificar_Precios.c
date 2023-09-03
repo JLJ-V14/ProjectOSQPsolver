@@ -1,15 +1,28 @@
 #include "Definiciones_Globales.h"
 #include "Funciones_Auxiliares.h"
 #include "Tipos_Optimizacion.h"
+#include <stdio.h>
+#include <time.h>
 
+
+//----------------Revisado------------------------------------------------------------------------------
 
 //----------------En este archivo se definen las funciones que se utilizan para comprobar que las entradas
-//----------------del precio son validas.
+//----------------del precio son validas-----------------------------------------------------------
 
 
+static int Comprobar_Valor_Precio(const Datos_CSV ***Datos_Precio, const int Numero_Fila) {
 
-static int Comprobar_Precio_Inicial(const Datos_CSV*** Datos_Precio, const Datos_CSV ***Datos_Algoritmo,
-	const int Numero_Filas_Precio) {
+	double Precio = Datos_Precio[Numero_Fila][COLUMNA_CSV_PRECIO]->data.dbl;
+
+	if (Precio < 0) {
+		printf("El precio inicial no puede ser inferior a 0 \n");
+		return ERROR;
+	}
+	return EXITO;
+}
+
+static int Comprobar_Precio_Inicial(const Datos_CSV*** Datos_Precio, const Datos_CSV ***Datos_Algoritmo) {
 
 	//Este subprograma se utiliza para comprobar que la hora inicial del algoritmo no es anterior a la primera 
 	//fecha del CSV de los precios. Para asegurar que no hay horar que no tienen precio asignado
@@ -18,33 +31,27 @@ static int Comprobar_Precio_Inicial(const Datos_CSV*** Datos_Precio, const Datos
 	struct tm Fecha_Inicial_Algoritmo = { 0 };
 
 	//Se carga la fecha inicial del algoritmo->
+	Cargar_Fecha_Sin_Minuto(Datos_Algoritmo, &Fecha_Inicial_Algoritmo, COLUMNA_ANYO_INICIAL_ALGORITMO,
+		                    COLUMNA_MES_INICIAL_ALGORITMO,COLUMNA_DIA_INICIAL_ALGORITMO,COLUMNA_HORA_INICIAL_ALGORITMO,
+		                    FILA_INFORMACION_ALGORITMO);
+
+
 	
-	Fecha_Inicial_Algoritmo.tm_year = Datos_Algoritmo[FILA_INFORMACION_ALGORITMO][COLUMNA_CSV_PRECIO]->data.dbl - OFFSET_ANYO_tm;
-	Fecha_Inicial_Algoritmo.tm_mon  = Datos_Algoritmo[FILA_INFORMACION_ALGORITMO][COLUMNA_CSV_PRECIO]->data.dbl - OFFSET_MES_tm;
-	Fecha_Inicial_Algoritmo.tm_mday = Datos_Algoritmo[FILA_INFORMACION_ALGORITMO][COLUMNA_CSV_PRECIO]->data.dbl;
-	Fecha_Inicial_Algoritmo.tm_hour = Datos_Algoritmo[FILA_INFORMACION_ALGORITMO][COLUMNA_CSV_PRECIO]->data.dbl;
-	Fecha_Inicial_Algoritmo.tm_min  = 0;
-	Fecha_Inicial_Algoritmo.tm_sec  = 0;
 
 	//Se carga la fecha inicial del precio.
-	Fecha_Inicial_Precio.tm_year = Datos_Precio[PRIMERA_FILA_CSV_PRECIO][COLUMNA_CSV_ANYO_PRECIO] - OFFSET_ANYO_tm;
-	Fecha_Inicial_Precio.tm_mon  = Datos_Precio[PRIMERA_FILA_CSV_PRECIO][COLUMNA_CSV_MES_PRECIO] - OFFSET_MES_tm;
-	Fecha_Inicial_Precio.tm_mday = Datos_Precio[PRIMERA_FILA_CSV_PRECIO][COLUMNA_CSV_DIA_PRECIO];
-	Fecha_Inicial_Precio.tm_hour = Datos_Precio[PRIMERA_FILA_CSV_PRECIO][COLUMNA_CSV_HORA_PRECIO];
-	Fecha_Inicial_Precio.tm_min = 0;
-	Fecha_Inicial_Precio.tm_sec = 0;
+	Cargar_Fecha_Sin_Minuto(Datos_Precio, &Fecha_Inicial_Precio, COLUMNA_CSV_ANYO_PRECIO, COLUMNA_CSV_MES_PRECIO,
+		                    COLUMNA_CSV_DIA_PRECIO, COLUMNA_CSV_HORA_PRECIO, PRIMERA_FILA_CSV_PRECIO);
 
-	int Resultado_Comparacion = Comprobar_Orden_Fechas(Fecha_Inicial_Algoritmo, Fecha_Inicial_Precio);
 
-	if (Resultado_Comparacion < 0) {
-		printf("La primera fecha del CSV de los precios no puede ser anterior a la fecha inicial del algoritmo \n");
+	//Se comprueba que el algoritmo no empieza antes de tener datos de precio.
+	if (Verificar_Orden_Fechas(Fecha_Inicial_Precio,Fecha_Inicial_Algoritmo) == ERROR) {
+		printf("Error la fecha inicial del algoritmo empieza antes que los precios disponibles \n");
 		return ERROR;
 	}
 
 	//Se pasa a comprobar que el precio inicial sea superior a 0
-	double Precio = Datos_Precio[PRIMERA_FILA_CSV_PRECIO][COLUMNA_CSV_PRECIO]->data.dbl;
 
-	if (Precio < 0) {
+	if (Comprobar_Valor_Precio(Datos_Precio, PRIMERA_FILA_CSV_PRECIO) == ERROR) {
 		return ERROR;
 	}
 
@@ -60,65 +67,38 @@ static int Comprobar_Precio_Final(const Datos_CSV*** Datos_Precio, const int Num
 	//la fecha final de ejecucion del algoritmo en el CSV de lor precios.
 
 	struct tm Fecha_Final_Algoritmo = { 0 };
-	Fecha_Final_Algoritmo.tm_year = Datos_Tiempo[FILA_INFORMACION_ALGORITMO][COLUMNA_ANYO_INICIAL_ALGORITMO]->data.dbl - OFFSET_ANYO_tm;
-	Fecha_Final_Algoritmo.tm_mon = Datos_Tiempo [FILA_INFORMACION_ALGORITMO][COLUMNA_MES_INICIAL_ALGORITMO]->data.dbl - OFFSET_MES_tm;
-	Fecha_Final_Algoritmo.tm_mday = Datos_Tiempo[FILA_INFORMACION_ALGORITMO][COLUMNA_DIA_INICIAL_ALGORITMO]->data.dbl;
-	Fecha_Final_Algoritmo.tm_hour = Datos_Tiempo[FILA_INFORMACION_ALGORITMO][COLUMNA_HORA_INICIAL_ALGORITMO]->data.dbl;
-	Fecha_Final_Algoritmo.tm_min = 0;
-	Fecha_Final_Algoritmo.tm_sec = 0;
-
 	struct tm Fecha_Final_Precio = { 0 };
-	Fecha_Final_Precio.tm_year = Datos_Precio[Numero_Filas_CSV - 1][COLUMNA_ANYO_FINAL_ALGORITMO]->data.dbl - OFFSET_ANYO_tm;
-	Fecha_Final_Precio.tm_mon =  Datos_Precio[Numero_Filas_CSV - 1][COLUMNA_MES_FINAL_ALGORITMO]->data.dbl - OFFSET_MES_tm;
-	Fecha_Final_Precio.tm_mday = Datos_Precio[Numero_Filas_CSV - 1][COLUMNA_DIA_FINAL_ALGORITMO]->data.dbl;
-	Fecha_Final_Precio.tm_hour = Datos_Precio[Numero_Filas_CSV - 1][COLUMNA_HORA_FINAL_ALGORITMO]->data.dbl;
-	Fecha_Final_Precio.tm_min = 0;
-	Fecha_Final_Precio.tm_sec = 0;
+	//Se define el indice de la fila final del CSV donde se encuentra el ultimo precio disponible.
+	int Fila_Final = Numero_Filas_CSV - 1;
+
+	Cargar_Fecha_Sin_Minuto(Datos_Tiempo, &Fecha_Final_Algoritmo, COLUMNA_ANYO_FINAL_ALGORITMO,
+		                    COLUMNA_MES_FINAL_ALGORITMO, COLUMNA_DIA_FINAL_ALGORITMO,
+		                    COLUMNA_HORA_FINAL_ALGORITMO, FILA_INFORMACION_ALGORITMO);
+	
+	
+	Cargar_Fecha_Sin_Minuto(Datos_Precio, &Fecha_Final_Precio, COLUMNA_ANYO_FINAL_ALGORITMO,
+		                    COLUMNA_MES_FINAL_ALGORITMO, COLUMNA_DIA_FINAL_ALGORITMO,
+		                    COLUMNA_HORA_FINAL_ALGORITMO, Fila_Final);
+
 
 	//Se comprueba que se tienen los datos de precios suficientes, que no hay hora sin precio.
-	int Resultado_Comparacion = Comprobar_Orden_Fechas(Fecha_Final_Algoritmo, Fecha_Final_Precio);
-	if (Resultado_Comparacion > 0) {
-		printf("Faltan datos de precios \n");
+
+	if (Verificar_Orden_Fechas(Fecha_Final_Algoritmo, Fecha_Final_Precio) == ERROR) {
+		printf("Error la fecha inicial del algoritmo empieza antes que los precios disponibles \n");
 		return ERROR;
 	}
 
 	//Se comprueba que el precio no es negativo.
-	double Precio = Datos_Precio[Numero_Filas_CSV - 1][COLUMNA_CSV_PRECIO]->data.dbl;
-
-	if (Precio < 0) {
-		printf("No puede haber precios negativos \n");
+	if (Comprobar_Valor_Precio(Datos_Precio, Numero_Filas_CSV-1) == ERROR) {
 		return ERROR;
 	}
 
 	return EXITO;
 }
 
-static int Comprobar_Precio(const Datos_CSV*** Datos_Precio, const int Numero_Fila_Fecha_Primera,
-	const int Numero_Fila_Fecha_Segunda) {
+static int Comprobar_Consecutividad_Horas(struct tm Fecha_1, struct tm Fecha_2) {
 
-	//Este subprograma comprueba que la fecha que viene en la fila Numero_Fila_Fecha_Primera del CSV de los precios
-	//solo se diferencia de la segunda en una hora, esto se utiliza para comprobar que las fechas del CSV de los precios
-	//son consecutivas por horas.
-
-	//Cargo las fechas a comprobar
-	struct tm Fecha_1 = { 0 };
-	struct tm Fecha_2 = { 0 };
-
-	//Se carga la primera fecha a comprobar
-	Fecha_1.tm_year = Datos_Precio[Numero_Fila_Fecha_Primera][COLUMNA_CSV_ANYO_PRECIO]->data.dbl - OFFSET_ANYO_tm;
-	Fecha_1.tm_mon = Datos_Precio[Numero_Fila_Fecha_Primera][COLUMNA_CSV_MES_PRECIO]->data.dbl - OFFSET_MES_tm;
-	Fecha_1.tm_mday = Datos_Precio[Numero_Fila_Fecha_Primera][COLUMNA_CSV_DIA_PRECIO]->data.dbl;
-	Fecha_1.tm_hour = Datos_Precio[Numero_Fila_Fecha_Primera][COLUMNA_CSV_HORA_PRECIO]->data.dbl;
-	Fecha_1.tm_min = 0;
-	Fecha_1.tm_sec = 0;
-
-	//Se carga la segunda fecha a comprobar
-	Fecha_2.tm_year = Datos_Precio[Numero_Fila_Fecha_Segunda][COLUMNA_CSV_ANYO_PRECIO]->data.dbl - OFFSET_ANYO_tm;
-	Fecha_2.tm_mon = Datos_Precio[Numero_Fila_Fecha_Segunda][COLUMNA_CSV_MES_PRECIO]->data.dbl - OFFSET_MES_tm;
-	Fecha_2.tm_mday = Datos_Precio[Numero_Fila_Fecha_Segunda][COLUMNA_CSV_DIA_PRECIO]->data.dbl;
-	Fecha_2.tm_hour = Datos_Precio[Numero_Fila_Fecha_Segunda][COLUMNA_CSV_HORA_PRECIO]->data.dbl;
-	Fecha_2.tm_min = 0;
-	Fecha_2.tm_sec = 0;
+	//Este subprograma se utiliza para comprobar que los precios del CSV están en horas consecutivas
 
 	time_t Fecha_1_Normalizada = mktime(&Fecha_1);
 	time_t Fecha_2_Normalizada = mktime(&Fecha_2);
@@ -129,10 +109,44 @@ static int Comprobar_Precio(const Datos_CSV*** Datos_Precio, const int Numero_Fi
 		return ERROR;
 	}
 
+	return EXITO;
+}
+static int Comprobar_Precio(const Datos_CSV*** Datos_Precio, const int Fila_Csv_Primer_Precio,
+	                        const int Fila_Csv_Segundo_Precio) {
+
+	//Este subprograma comprueba que la fecha que viene en la fila Numero_Fila_Fecha_Primera del CSV de los precios
+	//solo se diferencia de la segunda en una hora, esto se utiliza para comprobar que las fechas del CSV de los precios
+	//son consecutivas por horas.
+
+	//Cargo las fechas a comprobar
+	struct tm Fecha_1 = { 0 };
+	struct tm Fecha_2 = { 0 };
+
+	//Se carga la primera fecha a comprobar
+	Cargar_Fecha_Sin_Minuto(Datos_Precio,&Fecha_1, COLUMNA_CSV_ANYO_PRECIO, COLUMNA_CSV_MES_PRECIO, 
+		                    COLUMNA_CSV_DIA_PRECIO,COLUMNA_CSV_HORA_PRECIO, Fila_Csv_Primer_Precio);
+
+
+
+	//Se carga la segunda fecha a comprobar
+	Cargar_Fecha_Sin_Minuto(Datos_Precio, &Fecha_2, COLUMNA_CSV_ANYO_PRECIO, COLUMNA_CSV_MES_PRECIO,
+		                   COLUMNA_CSV_DIA_PRECIO, COLUMNA_CSV_HORA_PRECIO, Fila_Csv_Segundo_Precio);
+
+	
+	if (Comprobar_Consecutividad_Horas(Fecha_1, Fecha_2) == ERROR) {
+		printf("Los precios deben estar en horas consecutivas \n");
+		return ERROR;
+	}
+
 	//Se comprueba que el valor del precio no sea negativo->
-	double Precio = Datos_Precio[Numero_Fila_Fecha_Segunda][COLUMNA_CSV_PRECIO]->data.dbl;
-	if (Precio < 0) {
-		printf("No puede haber precios negativos \n");
+
+	if (Comprobar_Valor_Precio(Datos_Precio, Fila_Csv_Primer_Precio) == ERROR) {
+		printf("Error precio negativo en la fila %d", Fila_Csv_Primer_Precio);
+		return ERROR;
+	}
+
+	if (Comprobar_Valor_Precio(Datos_Precio, Fila_Csv_Segundo_Precio) == ERROR) {
+		printf("Error precio negativo en la fila %d", Fila_Csv_Segundo_Precio);
 		return ERROR;
 	}
 
@@ -146,9 +160,12 @@ static int Comprobar_Precios_CSV(const Datos_CSV*** Datos_Precio, const int Nume
 	//y que los valores de los precios son superiores o igual a 0.
 
 	for (int Numero_Fila_CSV = 1; Numero_Fila_CSV < Numero_Filas_Precio - 1; Numero_Fila_CSV++) {
-		Comprobar_Precio(Datos_Precio, Numero_Fila_CSV, Numero_Fila_CSV + 1);
+		if (Comprobar_Precio(Datos_Precio, Numero_Fila_CSV, Numero_Fila_CSV + 1) == ERROR) {
+			return ERROR;
+		}
 
 	}
+	return EXITO;
 }
 
 
@@ -162,19 +179,23 @@ static int Comprobar_Precios_CSV(const Datos_CSV*** Datos_Precio, const int Nume
 
 	
 
-	if ((Numero_Filas_Precio_Compra <= 1) || (Numero_Filas_Precio_Venta <= 1)) {
-		printf("No hay datos suficientes en el CSV que contiene los precios del kilovatio hora");
+	if ((Numero_Filas_Precio_Compra <= NUMERO_MINIMO_FILAS_CSV_PRECIO)) {
+        printf("No hay datos suficientes en el CSV que contiene los precios de compra \n");
 		return ERROR;
 	}
 
+	if (Numero_Filas_Precio_Venta <= NUMERO_MINIMO_FILAS_CSV_PRECIO) {
+		printf("No hay datos suficientes en el CSV que contiene los precios de venta \n");
+		return ERROR;
+	}
 
 	//Se pasa a comprobar si los datos de los CSV de los precios de compra y de venta tienen sentido
 
-	if (Comprobar_Precio_Inicial(Datos_Precio_Compra, Numero_Filas_Precio_Compra,Numero_Filas_Precio_Compra) == ERROR) {
+	if (Comprobar_Precio_Inicial(Datos_Precio_Compra, Datos_Tiempo_Algoritmo) == ERROR) {
 		return ERROR;
 	}
 
-	if (Comprobar_Precio_Inicial(Datos_Precio_Venta, Datos_Tiempo_Algoritmo, Numero_Filas_Precio_Venta) == ERROR) {
+	if (Comprobar_Precio_Inicial(Datos_Precio_Venta, Datos_Tiempo_Algoritmo) == ERROR) {
 		return ERROR;
 	}
 

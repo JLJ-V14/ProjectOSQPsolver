@@ -1,6 +1,7 @@
 #include "Definiciones_Globales.h"
 #include "Tipos_Optimizacion.h"
 
+//Revisado
 
 static int Comprobar_Fase(const Datos_CSV*** Datos_Terminales, const int Fila_Terminal) {
 	//Se utiliza este subprograma para comprobar la fase del terminal->
@@ -14,11 +15,11 @@ static int Comprobar_Fase(const Datos_CSV*** Datos_Terminales, const int Fila_Te
 		return ERROR;
 	}
 }
-static int Comprobar_Informacion_Terminal(const Datos_CSV*** Datos_Terminales, const int Fila_Terminal,
+static int Comprobar_Informacion_Terminal (const Datos_CSV*** Datos_Terminales, const int Fila_Terminal,
 	const int Terminal_Anterior) {
-	//Este subprograma acepta dos entradas el array donde esta contenida 
-	//la informacion de los terminales, la fila del csv que se esta 
-	// comprobando y el terminal en la fila anterior del CSV.
+	//En este subprograma se comprueba que los terminales esten en orden 
+	//consecutivo y que la fase a la que estan conectados sea R,S,T nada o
+	//neutro
 
 	//Se Lee el numero de terminal
 	int Numero_Terminal = Datos_Terminales[Fila_Terminal][COLUMNA_CSV_NUMERO_TERMINAL];
@@ -40,20 +41,20 @@ static int Comprobar_Informacion_Terminal(const Datos_CSV*** Datos_Terminales, c
  int Verificar_Datos_Terminales(const Datos_CSV*** Datos_Terminales, const int Numero_Filas_Terminales) {
 	//En este subprograma se verifica que los datos del CSV de los terminales son correctos.
 
-	if (Numero_Filas_Terminales != 13) {
+	if (Numero_Filas_Terminales != NUMERO_FILAS_TERMINALES) {
 		printf("El numero de filas debe ser 13, la primera para la informacion las 12 siguientes para los terminales \n");
 		return ERROR;
 	}
 
 	//Se crean variables auxiliares
 	int Terminal_Anterior = 0;
-	int Terminal_Actual;
+
 
 	//Se comprobará que:
 	//Los terminales están en orden
 	//Los terminales estan conectados a fase R,S,T,Neutro o Ninguna.
 
-	for (int Numero_Terminal = 1; Numero_Terminal < 13; Numero_Terminal++) {
+	for (int Numero_Terminal = 1; Numero_Terminal < NUMERO_FILAS_TERMINALES; Numero_Terminal++) {
 		if (Comprobar_Informacion_Terminal(Datos_Terminales, Numero_Terminal, Terminal_Anterior) == ERROR) {
 			return ERROR;
 		}

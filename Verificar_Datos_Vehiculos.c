@@ -8,6 +8,7 @@
 #include "Tipos_Optimizacion.h"
 #include "Verificar_Tiempo_Algoritmo.h"
 
+//--Revisado-----------
 
 static int Comprobar_Validez_Datos(const double Capacidad_Bateria, const double Maxima_Potencia, const double Bateria_Inicial,
 	const double Bateria_Deseada) {

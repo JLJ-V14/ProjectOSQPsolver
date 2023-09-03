@@ -91,12 +91,17 @@
 
 //--------------------Se define donde se encuentra la informacion en el CSV de los terminales
 
+#define NUMERO_FILAS_TERMINALES     13 // El numero de filas que debe tener el CSV de los terminales
 #define COLUMNA_CSV_NUMERO_TERMINAL 0  // La columna donde viene indicado el numero de terminal
 #define COLUMNA_CSV_FASE_TERMINAL   1  // La columna donde viene indicado la fase del terminal.
 
 //-------------------Se define donde se encuentra la informacion en el CSV de las restricciones ->
-#define COLUMNA_CSV_NUMERO_TERMINAL   0 //La columna donde se encuentra el numero de terminal.
-#define COLUMNA_CSV_VALOR_RESTRICCION 1 //La columna donde se encuentra el valor de las restricciones
+#define FILA_CSV_MAXIMA_POTENCIA_SISTEMA  0 //La fila    donde se encuentra la maxima potencia que puede intercambiar el sistema
+#define COLUMNA_CSV_NUMERO_TERMINAL       0  //La columna donde se encuentra el numero de terminal.
+#define COLUMNA_CSV_VALOR_RESTRICCION     1  //La columna donde se encuentra el valor de las restricciones
+
+//------------------Defino el numero de filas minimas que deben tener los CSVs de los precios
+#define NUMERO_MINIMO_FILAS_CSV_PRECIO       1
 
 #ifdef __cplusplus
 extern "C" {

@@ -1,28 +1,18 @@
 
+#include "Funciones_Auxiliares.h"
+#include "Definiciones_Globales.h"
 #include "Tipos_Optimizacion.h"
 #include <time.h>
 
+
+//-----Legilibilidad y Exactitud del codigo en este archivo revisadas BORRAR.
+
+
+
+
 //En este archivo se encuentran los subprogramas que verifican que la fecha de inicio del algoritmo es correcta->
 
- void Cargar_Fecha_Inicial_Algoritmo(const Datos_CSV*** Datos_Tiempo, struct tm* Fecha_Inicial) {
-	//Este subprograma se utiliza para cargar en la variable Fecha_Inicial la fecha inicial 
-	Fecha_Inicial->tm_year = Datos_Tiempo[FILA_INFORMACION_ALGORITMO][COLUMNA_ANYO_INICIAL_ALGORITMO]->data.dbl - OFFSET_ANYO_tm;
-	Fecha_Inicial->tm_mon = Datos_Tiempo[FILA_INFORMACION_ALGORITMO][COLUMNA_MES_INICIAL_ALGORITMO]->data.dbl - OFFSET_MES_tm;
-	Fecha_Inicial->tm_mday = Datos_Tiempo[FILA_INFORMACION_ALGORITMO][COLUMNA_DIA_INICIAL_ALGORITMO]->data.dbl;
-	Fecha_Inicial->tm_hour = Datos_Tiempo[FILA_INFORMACION_ALGORITMO][COLUMNA_HORA_INICIAL_ALGORITMO]->data.dbl;
-	Fecha_Inicial->tm_min = Datos_Tiempo[FILA_INFORMACION_ALGORITMO][COLUMNA_MINUTO_INICIAL_ALGORITMO]->data.dbl;
-	Fecha_Inicial->tm_sec = 0;
-}
 
- void Cargar_Fecha_Final_Algoritmo(const Datos_CSV*** Datos_Tiempo, struct tm* Fecha_Final) {
-	//Este subprograma se utiliza para cargar la fecha final en la variable fecha final
-	Fecha_Final->tm_year = Datos_Tiempo[FILA_INFORMACION_ALGORITMO][COLUMNA_ANYO_FINAL_ALGORITMO]->data.dbl - OFFSET_ANYO_tm;
-	Fecha_Final->tm_mon = Datos_Tiempo[FILA_INFORMACION_ALGORITMO][COLUMNA_MES_FINAL_ALGORITMO]->data.dbl - OFFSET_MES_tm;
-	Fecha_Final->tm_mday = Datos_Tiempo[FILA_INFORMACION_ALGORITMO][COLUMNA_DIA_FINAL_ALGORITMO]->data.dbl;
-	Fecha_Final->tm_hour = Datos_Tiempo[FILA_INFORMACION_ALGORITMO][COLUMNA_HORA_FINAL_ALGORITMO]->data.dbl;
-	Fecha_Final->tm_min = Datos_Tiempo[FILA_INFORMACION_ALGORITMO][COLUMNA_MINUTO_FINAL_ALGORITMO]->data.dbl;
-	Fecha_Final->tm_sec = 0;
-}
 
  int Verificar_Tiempo_Algoritmo(const Datos_CSV*** Datos_Tiempo) {
 
@@ -35,8 +25,15 @@
 	struct tm Fecha_Inicial;
 	struct tm Fecha_Final;
 	//Cargo la fecha inicial y final de la simulacion.
-	Cargar_Fecha_Inicial_Algoritmo(Datos_Tiempo, &Fecha_Inicial);
-	Cargar_Fecha_Final_Algoritmo(Datos_Tiempo, &Fecha_Final);
+
+	Cargar_Fecha(Datos_Tiempo, &Fecha_Inicial, COLUMNA_ANYO_INICIAL_ALGORITMO, COLUMNA_MES_INICIAL_ALGORITMO,
+		         COLUMNA_DIA_INICIAL_ALGORITMO, COLUMNA_HORA_INICIAL_ALGORITMO, COLUMNA_MINUTO_INICIAL_ALGORITMO,
+		         FILA_INFORMACION_ALGORITMO);
+
+	Cargar_Fecha(Datos_Tiempo, &Fecha_Final, COLUMNA_ANYO_FINAL_ALGORITMO, COLUMNA_MES_FINAL_ALGORITMO,
+		         COLUMNA_DIA_FINAL_ALGORITMO, COLUMNA_HORA_FINAL_ALGORITMO, COLUMNA_MINUTO_FINAL_ALGORITMO,
+		         FILA_INFORMACION_ALGORITMO);
+	
 	//Compruebo si la fecha inicial y final tienen sentido
 
 	int Resultado_Comparacion = Comprobar_Orden_Fechas(Fecha_Inicial, Fecha_Final);
