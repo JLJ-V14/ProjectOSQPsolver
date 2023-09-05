@@ -82,6 +82,9 @@
     <ClCompile Include="Verificar_Baterias.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sin_Superposicion.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\OxfordSolver\osqp\CMakeLists.txt" />
@@ -180,6 +183,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Verificar_Baterias.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sin_Superposicion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

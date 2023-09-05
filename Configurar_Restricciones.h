@@ -10,7 +10,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-	void Calcular_Restricciones_Sistema(const Celda*** Data_Restricciones, Restricciones_Electrolinera *Restricciones);
+	void Calcular_Restricciones_Sistema(const Datos_CSV *** Data_Restricciones, Restricciones_Electrolinera *Restricciones);
 #ifdef __cplusplus
 }
 #endif

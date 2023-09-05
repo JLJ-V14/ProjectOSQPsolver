@@ -89,7 +89,7 @@ void Comprobar_Array_Puntos_Adicionales(Puntos_Adicionales* Array_Puntos_Adicion
 }
 
 //Subprograma para cargar la fecha inicial y la fecha final en dos variables de formato tm->
-void Cargar_Fecha_Inicial_Final(struct tm* Fecha_Inicial, struct tm* Fecha_Final, const Celda*** Data_Tiempo) {
+void Cargar_Fecha_Inicial_Final(struct tm* Fecha_Inicial, struct tm* Fecha_Final, const Datos_CSV *** Data_Tiempo) {
 	//Este subprograma se utiliza para cargar en variables de tipo tm la fecha inicial y final de la simulacion->
 	Fecha_Inicial->tm_year = Data_Tiempo[FILA_PARAMETROS_TIEMPO][COLUMNA_ANYO_INICIAL]->data.dbl-1900;
 	Fecha_Inicial->tm_mon = Data_Tiempo[FILA_PARAMETROS_TIEMPO][COLUMNA_MES_INICIAL]->data.dbl-1;
@@ -197,7 +197,7 @@ bool Comprobar_Vehiculo(const char* Dispositivo) {
 	}
 	
 }
-int  Calcular_Numero_Vehiculos(const Celda*** Data_Vehiculos, const int *N_Filas_CSV) {
+int  Calcular_Numero_Vehiculos(const Datos_CSV *** Data_Vehiculos, const int *N_Filas_CSV) {
 	//Este subprograma se utiliza para obtener el numero de vehiculos que tienen su carga programada->
 	//Se va leyendo por todas las filas del excel que contiene la informacion de los vehiculos.
 
@@ -275,7 +275,7 @@ void Añadir_Puntos_Horas_En_Punto(Puntos_Adicionales **Array_Puntos,struct tm Fe
 	}
 
 }
-void Incluir_Inicio_Carga(Puntos_Adicionales* Array_Puntos_Adicionales,const Celda *** Data_Vehiculos, const int Numero_Fila,
+void Incluir_Inicio_Carga(Puntos_Adicionales* Array_Puntos_Adicionales,const Datos_CSV *** Data_Vehiculos, const int Numero_Fila,
 	                      const int Numero_Punto_Array) {
 	//En este subprograma se carga en el array de puntos adicionales la fecha de inicio de carga de un vehiculo.
 	Array_Puntos_Adicionales[Numero_Punto_Array].date.tm_year = Data_Vehiculos[Numero_Fila][COL_ANYO_INI_CARGA]->data.dbl - 1900;
@@ -286,7 +286,7 @@ void Incluir_Inicio_Carga(Puntos_Adicionales* Array_Puntos_Adicionales,const Cel
 	Array_Puntos_Adicionales[Numero_Punto_Array].date.tm_sec = 0;
 }
 
-void Incluir_Final_Carga(Puntos_Adicionales* Array_Puntos_Adicionales, const Celda*** Data_Vehiculos, const int Numero_Fila,
+void Incluir_Final_Carga(Puntos_Adicionales* Array_Puntos_Adicionales, const Datos_CSV *** Data_Vehiculos, const int Numero_Fila,
 	const int Numero_Punto_Array) {
 	//En este subprograma se carga en el array de puntos adicionales la fecha de finalizacion de carga de un vehiculo
 	Array_Puntos_Adicionales[Numero_Punto_Array].date.tm_year = Data_Vehiculos[Numero_Fila][COL_ANYO_FIN_CARGA]->data.dbl - 1900;
@@ -321,7 +321,7 @@ int Calcular_Punto_Final(const struct tm Fecha_Final) {
 	}
 	
 }
-int Obtener_Array_Puntos_Adicionales(const Celda*** Data_Vehiculos,const Celda ***Data_Tiempo, Puntos_Adicionales**Array_Puntos,
+int Obtener_Array_Puntos_Adicionales(const Datos_CSV *** Data_Vehiculos,const Datos_CSV ***Data_Tiempo, Puntos_Adicionales**Array_Puntos,
 	const int *N_Filas_CSV, int*Numero_Puntos) {
 	//En este subprograma se obtiene un array que contiene los puntos de simulacion que deben estar en la simulacion
 	//por que coinciden con la fecha de inicio o la fecha de finalizacion de una carga de un vehiculo.
@@ -483,7 +483,7 @@ bool Supera_Punto_Carga(Puntos_Adicionales *Array_Puntos,struct tm Punto_Siguien
 	
 }
 
-void Cargar_Fecha_Inicial(Puntos_Optimizacion* Array_Puntos_Simulacion,const Celda***Data_Tiempo) {
+void Cargar_Fecha_Inicial(Puntos_Optimizacion* Array_Puntos_Simulacion,const Datos_CSV ***Data_Tiempo) {
 	//Se carga el primer punto de la simulacion en el array que relaciona, los puntos de la simulacion con las fechas
 	//asociadas a los puntos de la simulacion.
 	Array_Puntos_Simulacion[0].Fecha.tm_year = Data_Tiempo[FILA_PARAMETROS_TIEMPO][COLUMNA_ANYO_INICIAL]->data.dbl-1900;
@@ -501,7 +501,7 @@ void Cargar_Fecha_Inicial(Puntos_Optimizacion* Array_Puntos_Simulacion,const Cel
 	Array_Puntos_Simulacion[0].Delta_Simulacion = 0;
 
 }
-int Inicializar_Array_Puntos_Simulacion(Puntos_Optimizacion **Array_Puntos_Simulacion,const Celda***Data_Tiempo) {
+int Inicializar_Array_Puntos_Simulacion(Puntos_Optimizacion **Array_Puntos_Simulacion,const Datos_CSV ***Data_Tiempo) {
 	//Este subprograma se utiliza para inicializar el array que contiene los puntos de simulacion, y la fecha 
 	//asociada a ellas.
 

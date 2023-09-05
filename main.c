@@ -1,4 +1,4 @@
-// Juan López Jódar Últimos Cambios : 30 / 08 / 2023
+// Juan López Jódar Últimos Cambios : 5 / 09 / 2023
 //Incluyo una serie de archivos
 #include <stdio.h>
 #include <stdbool.h>
@@ -12,7 +12,6 @@
 #include "Obtener_Info_Entrada.h"        //Header file que incluye las funciones de leer la entrada.
 #include "Optimizacion_Carga.h"          //Header file que incluye la funcion principal de optimizacion
 #include "osqp.h"                        //Header file que incluye las funciones del algoritmo de optimizacion
-#include "Preparar_Arrays.h"             //Header file en el que van incluidas las funciones para reservar memorias para los arrays.s
 #include "Tipos_Optimizacion.h"          //Header file que incluye los tipos propios definidos para el algoritmo de optimizacion 
 #include "time.h"
 
@@ -88,7 +87,7 @@ void main_optimizacionC(void) {
 	
 	//Se llama al subprograma que se encarga de configurar cuantos puntos de calculo tiene el algoritmo, asi como
 	//asociar a cada punto de la simulacion una fecha real. 
-	if (Configurar_Puntos_Simulacion(Data_Vehiculos, Data_Tiempo,&Array_Puntos_Simulacion,Filas_Vehiculos,&Numero_Puntos_Simulacion)==-1) {
+	if (Configurar_Puntos_Simulacion(Datos_Vehiculos, Datos_Tiempo,&Array_Puntos_Simulacion,Filas_Vehiculos,&Numero_Puntos_Simulacion)==-1) {
 		printf("Error Configurando los puntos de la simulacion \n");
 		free(Array_Puntos_Simulacion);
 	}
@@ -99,21 +98,21 @@ void main_optimizacionC(void) {
 		free(Informacion_Electrolinera);
 	}
 	//Se almacenan los datos en la variable que guarda la informacion sobre el sistema.
-	if (Identificar_Vehiculos(Informacion_Electrolinera,Data_Vehiculos,Filas_Vehiculos,Data_Terminales,
+	if (Identificar_Vehiculos(Informacion_Electrolinera,Datos_Vehiculos,Filas_Vehiculos,Datos_Terminales,
 		                      Array_Puntos_Simulacion)==-1) {
 		printf("Error asignando la informacion a los vehiculos \n");
 		free(Informacion_Electrolinera);
 	}
 	//Se almacenan y leen los datos de las baterias que hay presentes en el sistema->
-	if (Identificar_Baterias(Informacion_Electrolinera, Data_Baterias, *Filas_Baterias, Data_Terminales,
+	if (Identificar_Baterias(Informacion_Electrolinera, Datos_Baterias, *Filas_Baterias, Datos_Terminales,
 		Array_Puntos_Simulacion) == -1) {
 		printf("Error asignando la informacion a las baterias \n");
 		free(Informacion_Electrolinera);
 	}
 	
 	//Se calculan las restricciones del sistema
-	Calcular_Restricciones_Sistema(Data_Restricciones, &Restricciones_Sistema);
-	Configurar_Precios(Data_Precio_Compra,Data_Precio_Venta,Array_Puntos_Simulacion,Informacion_Electrolinera,
+	Calcular_Restricciones_Sistema(Datos_Restricciones, &Restricciones_Sistema);
+	Configurar_Precios(Datos_Precio_Compra,Datos_Precio_Venta,Array_Puntos_Simulacion,Informacion_Electrolinera,
 		*Filas_Precio_Compra, *Filas_Precio_Venta);
 	
 	
@@ -123,13 +122,13 @@ void main_optimizacionC(void) {
 	Comprobar_Restricciones_Sistema(&Restricciones_Sistema);
 	Comprobar_Precios(Informacion_Electrolinera, Array_Puntos_Simulacion);
 
-	Escribir_CSV("Comprobar_Terminales.csv",Data_Terminales,*Filas_Terminales,*Columnas_Terminales);
-	Escribir_CSV("Comprobar_Vehiculos.csv", Data_Vehiculos, *Filas_Vehiculos, *Columnas_Vehiculos);
-	Escribir_CSV("Comprobar_Tiempo.csv", Data_Tiempo, *Filas_Tiempo, *Columnas_Tiempo);
-	Escribir_CSV("Comprobar_Restricciones.csv", Data_Restricciones, *Filas_Restricciones, *Columnas_Restricciones);
-	Escribir_CSV("Comprobar_Precio_Compra.csv", Data_Precio_Compra, *Filas_Precio_Compra, *Columnas_Precio_Compra);
-    Escribir_CSV("Comprobar_Precio_Venta.csv",  Data_Precio_Venta,  *Filas_Precio_Venta,  *Columnas_Precio_Venta);
-	Escribir_CSV("Comprobar_Baterias.csv", Data_Baterias, *Filas_Baterias, *Columnas_Baterias);
+	Escribir_CSV("Comprobar_Terminales.csv",    Datos_Terminales,    *Filas_Terminales,    *Columnas_Terminales);
+	Escribir_CSV("Comprobar_Vehiculos.csv",     Datos_Vehiculos,     *Filas_Vehiculos,     *Columnas_Vehiculos);
+	Escribir_CSV("Comprobar_Tiempo.csv",        Datos_Tiempo,        *Filas_Tiempo,        *Columnas_Tiempo);
+	Escribir_CSV("Comprobar_Restricciones.csv", Datos_Restricciones, *Filas_Restricciones, *Columnas_Restricciones);
+	Escribir_CSV("Comprobar_Precio_Compra.csv", Datos_Precio_Compra, *Filas_Precio_Compra, *Columnas_Precio_Compra);
+    Escribir_CSV("Comprobar_Precio_Venta.csv",  Datos_Precio_Venta,  *Filas_Precio_Venta,  *Columnas_Precio_Venta);
+	Escribir_CSV("Comprobar_Baterias.csv",      Datos_Baterias,      *Filas_Baterias,      *Columnas_Baterias);
 	//Compruebo el array de que almacena los puntos de simulacion->
 	//Escribir_Array_Puntos_Simulacion(Array_Puntos_Simulacion, &Numero_Puntos_Simulacion);
 	
@@ -142,12 +141,12 @@ void main_optimizacionC(void) {
 	free(Informacion_Electrolinera);
 
 	//Libero la memoria reservada para leer los datos almacenados en el excel.
-	freeCSV(Data_Terminales, *Filas_Terminales, *Columnas_Terminales);
-	freeCSV(Data_Vehiculos, *Filas_Vehiculos, *Columnas_Vehiculos);
-	freeCSV(Data_Tiempo, *Filas_Tiempo, *Columnas_Tiempo);
-	freeCSV(Data_Restricciones, *Filas_Restricciones, *Columnas_Restricciones);
-	freeCSV(Data_Precio_Compra, *Filas_Precio_Compra, *Columnas_Precio_Compra);
-	freeCSV(Data_Precio_Venta, *Filas_Precio_Venta,   *Columnas_Precio_Venta);
+	freeCSV(Datos_Terminales, *Filas_Terminales, *Columnas_Terminales);
+	freeCSV(Datos_Vehiculos, *Filas_Vehiculos, *Columnas_Vehiculos);
+	freeCSV(Datos_Tiempo, *Filas_Tiempo, *Columnas_Tiempo);
+	freeCSV(Datos_Restricciones, *Filas_Restricciones, *Columnas_Restricciones);
+	freeCSV(Datos_Precio_Compra, *Filas_Precio_Compra, *Columnas_Precio_Compra);
+	freeCSV(Datos_Precio_Venta, *Filas_Precio_Venta,   *Columnas_Precio_Venta);
 
 	free(Filas_Terminales);
 	free(Columnas_Terminales);

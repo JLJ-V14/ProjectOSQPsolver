@@ -125,6 +125,21 @@ extern "C" {
 		double  Minima_Potencia_Terminal[NUMERO_TERMINALES];  //Minima Potenica que pueden intercambiar los terminales
 	}Restricciones_Electrolinera;                            
 
+
+	//---Creo un tipo para poder revisar facilmente si se tienen vehiculos o baterias
+	//---conectados en el mismo instante:
+
+	typedef struct {
+		struct tm  Fecha_Inicial;    //Fecha en la que empieza la ocupacion de una franja del terminal
+		struct tm  Fecha_Final;      //Fecha en la que termina la ocupacion de una franja del terminal
+	}Franja_Ocupada;
+
+	typedef struct {
+		int Numero_Franjas_Ocupadas; //Numero de franjas que se han ocupado
+		Franja_Ocupada* Franjas;     //Tipo que define la ocupacion de un terminal de fecha inicial a final.
+	}Ocupacion_Terminales;
+
+
 #ifdef __cplusplus
 }
 #endif

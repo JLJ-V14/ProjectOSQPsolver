@@ -12,7 +12,7 @@ extern "C" {
 #endif
 
 	/* Function Declarations */
-	void Escribir_CSV(const char* Nombre_Archivo, Celda*** data, int Filas, int Columnas);
+	void Escribir_CSV(const char* Nombre_Archivo, Datos_CSV*** data, int Filas, int Columnas);
 	void Escribir_Array_Puntos_Simulacion(Puntos_Optimizacion* Array_Puntos_Simulacion, const int* Numero_Puntos);
 	void Comprobar_Elementos_Electrolinera(Elementos_Electrolinera* Informacion_Sistema);
 	void Comprobar_Restricciones_Sistema(Restricciones_Electrolinera* Restricciones);

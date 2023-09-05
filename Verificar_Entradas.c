@@ -2,6 +2,7 @@
 #include "Funciones_Auxiliares.h"
 #include "time.h"
 #include "Tipos_Optimizacion.h"
+#include "Sin_Superposicion.h"
 #include "Verificar_Datos_Vehiculos.h"
 #include "Verificar_Precios.h"
 #include "Verificar_Restricciones.h"
@@ -14,9 +15,9 @@
 #include <string.h>
 
 
-int Verificar_Entradas( const Datos_CSV *** Datos_Tiempo,           const Datos_CSV  *** Datos_Vehiculos,
-	                    const Datos_CSV *** Datos_Bateria,          const Datos_CSV *** Datos_Precio_Compra,
-                        const Datos_CSV *** Datos_Precio_Venta,     const Datos_CSV *** Datos_Terminales,
+int Verificar_Entradas( const Datos_CSV *** Datos_Tiempo,            const Datos_CSV  *** Datos_Vehiculos,
+	                    const Datos_CSV *** Datos_Baterias,          const Datos_CSV *** Datos_Precio_Compra,
+                        const Datos_CSV *** Datos_Precio_Venta,      const Datos_CSV *** Datos_Terminales,
 	                    const Datos_CSV *** Datos_Restricciones,
 	                    const int Numero_Filas_CSV_Tiempo,          const int Numero_Filas_CSV_Vehiculos,       
 	                    const int Numero_Filas_CSV_Bateria,         const int Numero_Filas_Precio_Compra,       
@@ -49,14 +50,21 @@ int Verificar_Entradas( const Datos_CSV *** Datos_Tiempo,           const Datos_
 	}
 
 	//Se verifica que el CSV de las restricciones del sistema es correcto->
-	if (Verificar_Restricciones(Datos_Restricciones, Numero_Filas_CSV_Restricciones)) {
+	if (Verificar_Restricciones(Datos_Restricciones, Numero_Filas_CSV_Restricciones)==ERROR) {
 		printf("Los Datos del CSV que contiene las restricciones del sistema son incorrectas \n");
 		return ERROR;
 	}
 
-	if (Verificar_Informacion_Vehiculos(Datos_Vehiculos,Numero_Filas_CSV_Vehiculos,Datos_Vehiculos)) {
+	if (Verificar_Informacion_Vehiculos(Datos_Vehiculos,Numero_Filas_CSV_Vehiculos,Datos_Vehiculos)==ERROR) {
 		printf("Los Datos del CSV que contiene la informacion de los vehiculos son incorrectos \n");
 		return ERROR;
 	}
+
+	if (Verificar_Superposicion_Terminales(Datos_Vehiculos, Datos_Baterias, Numero_Filas_CSV_Vehiculos,
+		Numero_Filas_CSV_Bateria) == ERROR) {
+		printf("Hay superposicion en los terminales \n ");
+		return ERROR;
+	}
+	
 	return EXITO;
 }
